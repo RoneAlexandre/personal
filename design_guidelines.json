@@ -1,0 +1,109 @@
+{
+  "theme": "dark",
+  "project_context": {
+    "name": "Rone Batista - Muaythai Coach Landing Page",
+    "type": "landing_page",
+    "target_audience": "Potential private Muaythai students in Itapeva-SP",
+    "aesthetic": "Modern, elite sports/martial identity, raw, dark, disciplined, high-contrast, premium."
+  },
+  "typography": {
+    "google_fonts_url": "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700&display=swap",
+    "primary_font": "Bebas Neue, sans-serif",
+    "secondary_font": "Barlow, sans-serif",
+    "heading_strategy": "Bebas Neue for H1/H2 (uppercase, tracking-tight), Barlow for H3/H4 and body. Avoid Inter/Roboto entirely.",
+    "sizes": {
+      "h1": "text-5xl sm:text-6xl tracking-tighter leading-none uppercase",
+      "h2": "text-4xl sm:text-5xl tracking-tight leading-none uppercase",
+      "h3": "text-2xl sm:text-3xl font-bold uppercase tracking-normal",
+      "h4": "text-xl sm:text-2xl font-bold uppercase",
+      "body": "text-base lg:text-lg text-neutral-300 leading-relaxed"
+    }
+  },
+  "colors": {
+    "background": "#0A0A0A",
+    "surface": "#141414",
+    "surface_hover": "#1F1F1F",
+    "primary": "#DC2626",
+    "primary_hover": "#B91C1C",
+    "secondary": "#D4AF37",
+    "text_main": "#FFFFFF",
+    "text_muted": "#A3A3A3",
+    "border": "#262626"
+  },
+  "visual_enhancers": {
+    "shadows": "Strictly NO soft shadows. Use 1px solid strokes (border-border) and 2px inner glow for highlights.",
+    "borders": "Sharp edges (rounded-none or minimal rounded-sm) for a raw, martial tactical feel.",
+    "textures": "Subtle grain/noise overlay on dark backgrounds to add grit and remove digital flatness."
+  },
+  "component_styling": {
+    "buttons": "Sharp rectangular (rounded-none), high contrast. Primary CTA is Blood Red (#DC2626) with White text. Hover: -translate-y-1, brighter red, subtle red drop-shadow. No generic transitions.",
+    "cards": "Flat background (#141414), 1px solid border (#262626), no drop shadow. On hover: slight lift, border changes to primary (red) or secondary (gold) color.",
+    "icons": "Use lucide-react, large sizes, stroke-width 1.5. Tint icons toward primary or secondary colors.",
+    "accordion": "Flat styling, high-contrast borders between items, plus/minus icon indicators."
+  },
+  "layouts": {
+    "general": "Generous spacing (py-24, py-32). Mobile-first responsive grids. Optical alignment over mathematical alignment.",
+    "hero": "min-h-[90vh] flex flex-col justify-center, strong left alignment, heavy background image overlay (bg-black/70 to bg-black/90). Let the hero text dominate.",
+    "about": "Asymmetric bento/split layout (e.g., md:grid-cols-12, image col-span-5, text col-span-7). Use negative space effectively.",
+    "formats": "3 columns (grid-cols-1 md:grid-cols-3) gap-8. High density but sharp, cardless or 1px border cards.",
+    "benefits": "Dense grid (gap-6) with dominant icons.",
+    "pricing": "3 standard pricing cards. Middle (monthly) card highlighted with secondary (Gold) border and badge.",
+    "gallery": "Tetris grid layout (mixing col-span-2, row-span-2 for visual tension, avoid boring perfect squares)."
+  },
+  "motion": {
+    "scroll_reveal": "Framer Motion: initial opacity 0, y 20 -> whileInView opacity 1, y 0. Transition 0.5s ease. Stagger children for lists.",
+    "floating_whatsapp": "Fixed bottom-right (z-50), bg-green-500, continuous subtle pulse animation (animate-pulse or custom ping).",
+    "interactions": "Hover states on all interactive elements (scale, color shift)."
+  },
+  "accessibility": {
+    "contrast": "Ensure APCA contrast on all text. Muted text must be #A3A3A3 or lighter.",
+    "focus": "focus:ring-2 focus:ring-primary focus:outline-none focus:ring-offset-2 focus:ring-offset-black"
+  },
+  "image_urls": [
+    {
+      "url": "https://images.unsplash.com/photo-1525680996651-0222228be6f0",
+      "category": "hero",
+      "description": "Muay Thai boxer kicking opponent, high energy action"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1",
+      "category": "about",
+      "description": "Coach training with focus mitts"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1737381508529-a110d717d5a7",
+      "category": "gallery",
+      "description": "Man in hoodie in dark boxing ring"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1762336219284-a0a5488342a0",
+      "category": "gallery",
+      "description": "Two boxers in dark boxing ring"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1561532325-7d5231a2dede",
+      "category": "gallery",
+      "description": "Red boxing gloves"
+    },
+    {
+      "url": "https://images.unsplash.com/photo-1558366972-9db89881cbdb",
+      "category": "gallery",
+      "description": "Grayscale photo of boxing match"
+    }
+  ],
+  "instructions_to_main_agent": [
+    "Build a single-page React frontend using Tailwind CSS and Framer Motion.",
+    "Force a 'dark' theme aesthetic (base bg: #0A0A0A, text: #FFFFFF).",
+    "Implement the layout with specific sections in order: Hero, Sobre, Formatos, Benefícios, Planos, Depoimentos, Galeria, FAQ, and Footer CTA.",
+    "Write all copy in Brazilian Portuguese based on the user prompt.",
+    "Use Shadcn Accordion for the FAQ section and generic raw HTML/Tailwind for cards to ensure sharp 1px borders.",
+    "Integrate Lucide React for all iconography (benefits, contact, checkmarks in pricing).",
+    "Never use `transition: all`. Use specific transitions (e.g., `transition-colors duration-200 ease-in-out`).",
+    "Do not use generic Inter/Roboto fonts. Apply Bebas Neue for headers and Barlow for body.",
+    "Ensure the fixed WhatsApp floating button has a pulse animation and links to `https://wa.me/5511999999999` (placeholder).",
+    "DO NOT use `.App { text-align: center; }`. Keep text alignment deliberate (mostly left-aligned for readability, centered for specific pricing/hero headers only if needed).",
+    "Add `data-testid` to all interactive buttons, cards, and links to ensure testing compatibility.",
+    "For the hero overlay, ensure it is completely dark (bg-black/70+) so the white and red text pops."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": "Prioritize high-contrast, 'tactical minimalism' aesthetic. Use deep black backgrounds (#0A0A0A), red/gold accents, 1px borders instead of soft shadows. Create a dense, focused vibe suitable for a Muaythai coach. The page must feel energetic, raw, and professional. Avoid 'AI slop' by using aggressive asymmetry in the About and Gallery sections."
+}

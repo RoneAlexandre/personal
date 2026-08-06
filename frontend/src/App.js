@@ -1,56 +1,52 @@
 import { useEffect } from "react";
+import Lenis from "lenis";
 import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
-import { HOME } from "@/constants/testIds";
-
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          data-testid={HOME.emergentLink}
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
-};
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { Marquee } from "./components/Marquee";
+import { About } from "./components/About";
+import { Formats } from "./components/Formats";
+import { Benefits } from "./components/Benefits";
+import { Pricing } from "./components/Pricing";
+import { Testimonials } from "./components/Testimonials";
+import { Gallery } from "./components/Gallery";
+import { FAQ } from "./components/FAQ";
+import { FinalCTA } from "./components/FinalCTA";
+import { WhatsAppFloat } from "./components/WhatsAppFloat";
 
 function App() {
-  return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+    useEffect(() => {
+        const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+        let rafId;
+        const raf = (time) => {
+            lenis.raf(time);
+            rafId = requestAnimationFrame(raf);
+        };
+        rafId = requestAnimationFrame(raf);
+        return () => {
+            cancelAnimationFrame(rafId);
+            lenis.destroy();
+        };
+    }, []);
+
+    return (
+        <div className="bg-[#0A0A0A] text-white min-h-screen">
+            <Navbar />
+            <main>
+                <Hero />
+                <Marquee />
+                <About />
+                <Formats />
+                <Benefits />
+                <Pricing />
+                <Testimonials />
+                <Gallery />
+                <FAQ />
+                <FinalCTA />
+            </main>
+            <WhatsAppFloat />
+        </div>
+    );
 }
 
 export default App;

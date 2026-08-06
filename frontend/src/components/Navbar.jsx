@@ -1,0 +1,59 @@
+import { useEffect, useState } from "react";
+import { MessageCircle } from "lucide-react";
+import { WHATSAPP_URL } from "../data/content";
+
+const LINKS = [
+    { href: "#sobre", label: "Sobre" },
+    { href: "#aulas", label: "Aulas" },
+    { href: "#planos", label: "Planos" },
+    { href: "#galeria", label: "Galeria" },
+    { href: "#faq", label: "FAQ" },
+];
+
+export const Navbar = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 40);
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    return (
+        <header
+            data-testid="navbar"
+            className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 border-b ${
+                scrolled ? "bg-black/85 backdrop-blur-md border-neutral-800" : "bg-transparent border-transparent"
+            }`}
+        >
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
+                <a href="#topo" data-testid="nav-logo" className="font-display text-2xl tracking-wide text-white">
+                    RONE<span className="text-red-600">BATISTA</span>
+                </a>
+                <nav className="hidden md:flex items-center gap-8">
+                    {LINKS.map((l) => (
+                        <a
+                            key={l.href}
+                            href={l.href}
+                            data-testid={`nav-link-${l.label.toLowerCase()}`}
+                            className="text-sm font-medium text-neutral-300 hover:text-white transition-colors duration-200 uppercase tracking-widest"
+                        >
+                            {l.label}
+                        </a>
+                    ))}
+                </nav>
+                <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-testid="nav-whatsapp-btn"
+                    className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-4 py-2 uppercase tracking-wider transition-colors duration-200"
+                >
+                    <MessageCircle size={16} strokeWidth={2} />
+                    <span className="hidden sm:inline">Agendar aula</span>
+                    <span className="sm:hidden">Agendar</span>
+                </a>
+            </div>
+        </header>
+    );
+};

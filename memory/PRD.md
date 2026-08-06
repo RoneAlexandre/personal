@@ -1,0 +1,46 @@
+# PRD — Rone Batista | Aulas Particulares de Muaythai (Itapeva-SP)
+
+## Problem Statement (original)
+Landing page (vitrine) para Rone Batista, professor particular de Muaythai em Itapeva-SP, com objetivo de apresentar o trabalho e converter visitantes em alunos. Estilo: moderno, esportivo/marcial, tons escuros (preto, vermelho, dourado, cinza-chumbo), tipografia forte, contraste alto, sensação de disciplina e energia. Seções: Hero, Sobre, Formatos de aula (presencial academia / domicílio / online), Benefícios, Planos com "[valor]" placeholder, Depoimentos, Galeria, FAQ, CTA final WhatsApp + Instagram. Requisitos técnicos: responsivo mobile-first, botão flutuante de WhatsApp, scroll reveal, SEO local ("Muaythai Itapeva").
+
+## Arquitetura
+- Frontend-only (React 19 + Tailwind + Framer Motion + Lenis smooth scroll). Sem backend necessário para o MVP.
+- Todo o conteúdo centralizado em `/app/frontend/src/data/content.js` (número de WhatsApp, Instagram, planos, depoimentos, FAQ, imagens) — facilita troca de placeholders.
+- Componentes em `/app/frontend/src/components/`: Navbar, Hero, Marquee, About, Formats, Benefits, Pricing, Testimonials, Gallery, FAQ, FinalCTA, WhatsAppFloat, Reveal (animações).
+
+## User Personas
+- Visitante de Itapeva-SP buscando aula particular de luta (iniciante ou avançado), acessando majoritariamente pelo celular.
+- Rone Batista (dono): precisa trocar placeholders (número, Instagram, preços, fotos) facilmente.
+
+## Core Requirements (estáticos)
+- Hero com nome, frase de impacto e CTA WhatsApp
+- 3 formatos de aula explicados; benefícios com ícones; planos com "[valor]"
+- Depoimentos, galeria, FAQ, CTA final; botão flutuante WhatsApp; SEO local
+
+## Implementado (2026-08-06)
+- Landing page completa com todas as 9 seções pedidas, em pt-BR
+- Direção de arte dark premium: obsidiana #0A0A0A, vermelho #DC2626, dourado #D4AF37; Bebas Neue + Barlow
+- Hero com reveal mascarado linha a linha (nome em outline), parallax na imagem de fundo, estatísticas
+- Marquee editorial lenta (Disciplina • Respeito • Força...)
+- Sobre em capítulos numerados (01 Formação, 02 Experiência, 03 Filosofia) com foto emoldurada em dourado
+- Scroll reveal com Framer Motion em todas as seções; scroll suave com Lenis
+- Botão flutuante de WhatsApp com animação de pulso; CTAs apontando para wa.me com mensagem pré-preenchida
+- FAQ em acordeão (shadcn), planos com card mensal destacado em dourado, galeria em grid tetris com hover
+- SEO local: title, description, keywords, Open Graph, lang pt-BR
+
+## Placeholders pendentes (MOCKED — trocar em /app/frontend/src/data/content.js)
+- WhatsApp: 5515999999999 (placeholder)
+- Instagram: @ronebatista.muaythai (placeholder)
+- Preços: "[valor]" nos 3 planos
+- Fotos: stock do Unsplash (hero, sobre, galeria) — trocar por fotos reais
+- Depoimentos: textos de exemplo com avatares de iniciais
+
+## Backlog priorizado
+- P0: Inserir número real de WhatsApp, Instagram real e valores dos planos
+- P0: Substituir fotos de stock pelas fotos reais do professor/treinos
+- P1: Fotos reais nos depoimentos; adicionar vídeo curto na galeria
+- P2: Formulário de lead com fallback para WhatsApp; Google Business/Schema.org LocalBusiness
+
+## Próximas tarefas
+1. Receber credenciais/dados reais do Rone e atualizar content.js
+2. Subir fotos reais (object storage) e plugar na galeria/sobre

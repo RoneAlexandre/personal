@@ -4,9 +4,10 @@
 Landing page (vitrine) para Rone Batista, professor particular de Muaythai em Itapeva-SP, com objetivo de apresentar o trabalho e converter visitantes em alunos. Estilo: moderno, esportivo/marcial, tons escuros (preto, vermelho, dourado, cinza-chumbo), tipografia forte, contraste alto, sensação de disciplina e energia. Seções: Hero, Sobre, Formatos de aula (presencial academia / domicílio / online), Benefícios, Planos com "[valor]" placeholder, Depoimentos, Galeria, FAQ, CTA final WhatsApp + Instagram. Requisitos técnicos: responsivo mobile-first, botão flutuante de WhatsApp, scroll reveal, SEO local ("Muaythai Itapeva").
 
 ## Arquitetura
-- Frontend-only (React 19 + Tailwind + Framer Motion + Lenis smooth scroll). Sem backend necessário para o MVP.
-- Todo o conteúdo centralizado em `/app/frontend/src/data/content.js` (número de WhatsApp, Instagram, planos, depoimentos, FAQ, imagens) — facilita troca de placeholders.
-- Componentes em `/app/frontend/src/components/`: Navbar, Hero, Marquee, About, Formats, Benefits, Pricing, Testimonials, Gallery, FAQ, FinalCTA, WhatsAppFloat, Reveal (animações).
+- Duas versões do mesmo site:
+  1. **React** (preview ao vivo): `/app/frontend/` — React 19 + Tailwind + Framer Motion + Lenis. Conteúdo centralizado em `/app/frontend/src/data/content.js`.
+  2. **Estática HTML/CSS/JS puros** (pedida pelo usuário para edição manual): `/app/site/` — `index.html` + `css/styles.css` (mobile-first) + `js/script.js` + `README.md` com guia de edição. Sem frameworks; FAQ usa `<details>` nativo; reveal via IntersectionObserver.
+- Sem backend necessário para o MVP.
 
 ## User Personas
 - Visitante de Itapeva-SP buscando aula particular de luta (iniciante ou avançado), acessando majoritariamente pelo celular.
@@ -27,6 +28,7 @@ Landing page (vitrine) para Rone Batista, professor particular de Muaythai em It
 - Botão flutuante de WhatsApp com animação de pulso; CTAs apontando para wa.me com mensagem pré-preenchida
 - FAQ em acordeão (shadcn), planos com card mensal destacado em dourado, galeria em grid tetris com hover
 - SEO local: title, description, keywords, Open Graph, lang pt-BR
+- (2026-08-06) Versão estática HTML/CSS/JS mobile-first em `/app/site/`, com guia de edição (README.md) e comentários no HTML para troca de WhatsApp, Instagram, preços e fotos. Verificada em desktop e mobile (menu hamburger, FAQ, CTAs).
 
 ## Placeholders pendentes (MOCKED — trocar em /app/frontend/src/data/content.js)
 - WhatsApp: 5515999999999 (placeholder)

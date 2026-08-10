@@ -1368,3 +1368,216 @@ a {
         font-size: 1.7rem;
     }
 }
+
+/* ============================================================
+   MELHORIAS (trajetória, atletas, promoção, extras, política, pack)
+   ============================================================ */
+
+/* --- Carrossel da trajetória (arraste para o lado) --- */
+.traj-track {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 74%;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 0 1.25rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--red) transparent;
+}
+
+.traj-item {
+    position: relative;
+    scroll-snap-align: start;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+}
+
+.traj-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: transform 0.6s, filter 0.6s;
+}
+
+.traj-item:hover img {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.traj-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.6rem 0.9rem 0.8rem;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+@media (min-width: 768px) {
+    .traj-track {
+        grid-auto-columns: 31%;
+        padding-inline: max(1.25rem, calc((100vw - 72rem) / 2));
+    }
+}
+
+/* --- Destaque: Formação de Atletas --- */
+.athletes-banner {
+    margin-top: 2.5rem;
+    border: 1px solid var(--gold);
+    background: rgba(212, 175, 55, 0.07);
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.athletes-banner svg {
+    width: 2rem;
+    height: 2rem;
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.athletes-banner h3 {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+}
+
+.athletes-banner p {
+    color: #d4d4d4;
+    font-size: 0.92rem;
+    line-height: 1.65;
+}
+
+/* --- Selo "Promoção" nos cards mensais (CSS puro) --- */
+.cell.best {
+    position: relative;
+}
+
+.cell.best::before {
+    content: "Promoção";
+    position: absolute;
+    top: -0.65rem;
+    right: 0.6rem;
+    background: var(--red);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.56rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.55rem;
+}
+
+/* --- Nota "valor por pessoa" nos painéis --- */
+.per-person {
+    max-width: 52rem;
+    margin: 0 auto 1rem;
+    color: var(--gold);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+/* --- Destaque: escolha a data do pagamento --- */
+.pay-banner {
+    margin: 2.5rem auto 0;
+    max-width: 52rem;
+    border: 1px solid var(--gold);
+    background: rgba(212, 175, 55, 0.08);
+    padding: 1.2rem 1.4rem;
+    display: flex;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.pay-banner svg {
+    width: 1.8rem;
+    height: 1.8rem;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.pay-banner p {
+    font-size: 0.92rem;
+    color: #d4d4d4;
+    line-height: 1.55;
+}
+
+.pay-banner strong {
+    color: var(--gold);
+}
+
+/* --- Título "Valores Adicionais" da seção Extras --- */
+.plan-extras h1 {
+    grid-column: 1 / -1;
+    background: var(--bg-alt);
+    padding: 1.3rem 1.4rem;
+    font-family: var(--font-display);
+    font-size: 1.7rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.plan-extras h1::before {
+    content: "";
+    width: 1.8rem;
+    height: 2px;
+    background: var(--red);
+    flex-shrink: 0;
+}
+
+/* --- Teaser: Pack "Treine em Casa" --- */
+.pack-teaser {
+    max-width: 46rem;
+    margin-inline: auto;
+    border: 1px dashed rgba(212, 175, 55, 0.5);
+    background: rgba(212, 175, 55, 0.04);
+    padding: 3rem 1.5rem;
+    text-align: center;
+}
+
+.soon-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.pack-sub {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 34rem;
+    margin: 0 auto 2rem;
+}
+
+/* A seção de regras tem 4 itens (a grade de benefícios tem 5 colunas no desktop) */
+@media (min-width: 1024px) {
+    #regras .benefits-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

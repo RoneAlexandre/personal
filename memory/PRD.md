@@ -19,7 +19,7 @@ Landing page (vitrine) para Rone Batista, professor particular de Muaythai em It
 - Depoimentos, galeria, FAQ, CTA final; botão flutuante WhatsApp; SEO local
 
 ## Implementado (2026-08-06)
-- (2026-08-10) Seção de Planos refeita com preços reais em ambas as versões: abas Individual / Dupla / Grupo (4-8), valores semanais e mensais por frequência (1x, 2x, 3x), destaque dourado no mensal com preço por aula, faixa de extras (+R$20 domicílio, R$10 aluguel de equipamento) e CTA por formato com mensagem pré-preenchida no WhatsApp
+- (2026-08-13) 8 melhorias na versão estática (index.html do usuário já continha edições manuais: WhatsApp real 5515996984251, hero "PERSONAL FIGHT", 2 formatos, depoimentos reais): carrossel Trajetória (#trajetoria), banner Formação de Atletas no Sobre, selo "Promoção" via CSS ::before em .cell.best, nota "valores por pessoa" nos painéis dupla/grupo, banner "escolha a data do pagamento" (.pay-banner), h1 "Valores Adicionais" formatado, seção Política de Remarcação (#regras), teaser Pack "Treine em Casa" (#treine-em-casa, "Em breve" + CTA WhatsApp). Versão React do preview está DESATUALIZADA em relação à estática (não sincronizada a pedido de economia de créditos).
 - Landing page completa com todas as 9 seções pedidas, em pt-BR
 - Direção de arte dark premium: obsidiana #0A0A0A, vermelho #DC2626, dourado #D4AF37; Bebas Neue + Barlow
 - Hero com reveal mascarado linha a linha (nome em outline), parallax na imagem de fundo, estatísticas

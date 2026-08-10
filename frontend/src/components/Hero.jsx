@@ -36,13 +36,13 @@ export const Hero = () => {
 
             <motion.div
                 style={{ opacity: fade }}
-                className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-5 sm:px-8 pt-28 pb-16"
+                className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-5 sm:px-8 pt-24 pb-12 sm:pt-28 sm:pb-16"
             >
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.8 }}
-                    className="flex items-center gap-3 mb-6"
+                    className="flex items-center gap-3 mb-5"
                 >
                     <span className="h-px w-10 bg-red-600" />
                     <span className="text-red-500 font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm">
@@ -59,7 +59,7 @@ export const Hero = () => {
                     </MaskedLine>
                 </h1>
 
-                <MaskedLine delay={0.75} className="mt-6 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
+                <MaskedLine delay={0.75} className="mt-5 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
                     Transforme seu corpo e sua mente com treinos feitos de acordo com seu objetivo.
                 </MaskedLine>
 
@@ -67,14 +67,14 @@ export const Hero = () => {
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                    className="mt-10 flex flex-col sm:flex-row gap-4"
+                    className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
                 >
                     <a
                         href={WHATSAPP_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="hero-whatsapp-cta"
-                        className="group inline-flex items-center justify-center gap-3 bg-red-600 hover:bg-red-500 text-white font-display text-xl sm:text-2xl tracking-widest px-8 py-4 uppercase transition-[background-color,transform] duration-300 hover:-translate-y-0.5"
+                        className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-red-600 hover:bg-red-500 text-white font-display text-xl sm:text-2xl tracking-widest px-8 py-4 uppercase transition-[background-color,transform] duration-300 hover:-translate-y-0.5"
                     >
                         Agende sua aula
                         <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -92,7 +92,7 @@ export const Hero = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 1.3, duration: 0.8 }}
-                    className="mt-14 grid grid-cols-3 max-w-lg gap-6 border-t border-neutral-800 pt-6"
+                    className="mt-10 sm:mt-14 grid grid-cols-3 max-w-lg gap-4 sm:gap-6 border-t border-neutral-800 pt-5 sm:pt-6"
                     data-testid="hero-stats"
                 >
                     {[

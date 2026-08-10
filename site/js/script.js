@@ -59,3 +59,14 @@ document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
 
 // 5) Ano atual no rodapé
 document.getElementById("year").textContent = new Date().getFullYear();
+
+// 5) Abas da seção de planos (Individual / Dupla / Grupo)
+const planTabs = document.querySelectorAll(".plan-tab");
+planTabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+        planTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        document.querySelectorAll(".plan-panel").forEach((p) => p.classList.remove("active"));
+        document.getElementById("panel-" + tab.dataset.plan).classList.add("active");
+    });
+});

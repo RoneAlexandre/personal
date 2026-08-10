@@ -256,52 +256,123 @@
             <div class="container">
                 <p class="kicker center reveal">Investimento</p>
                 <h2 class="title center reveal">Planos e valores</h2>
+                <p class="section-sub reveal">Planos semanais ou mensais, individual, em dupla ou em grupo — o mensal sempre sai mais barato.</p>
 
-                <div class="plans-grid">
-                    <article class="plan reveal" data-testid="plan-card-aula-avulsa">
-                        <h3>Aula Avulsa</h3>
-                        <p class="plan-price">[valor]<small>/aula</small></p>
-                        <ul class="checklist">
-                            <li>1 aula particular</li>
-                            <li>Formato de sua escolha</li>
-                            <li>Avaliação de nível inclusa</li>
-                        </ul>
-                        <a class="btn btn-outline btn-block" data-testid="plan-cta-aula-avulsa"
-                           href="https://wa.me/5515999999999?text=Ol%C3%A1%2C%20Rone!%20Quero%20consultar%20o%20valor%20da%20aula%20avulsa."
-                           target="_blank" rel="noopener noreferrer">Consultar valor</a>
-                    </article>
-
-                    <article class="plan plan-featured reveal" data-testid="plan-card-pacote-mensal">
-                        <span class="plan-badge">Mais escolhido</span>
-                        <h3>Pacote Mensal</h3>
-                        <p class="plan-price">[valor]<small>/mês</small></p>
-                        <ul class="checklist">
-                            <li>8 aulas particulares</li>
-                            <li>Plano de evolução individual</li>
-                            <li>Prioridade de horários</li>
-                            <li>Suporte via WhatsApp</li>
-                        </ul>
-                        <a class="btn btn-gold btn-block" data-testid="plan-cta-pacote-mensal"
-                           href="https://wa.me/5515999999999?text=Ol%C3%A1%2C%20Rone!%20Quero%20consultar%20o%20valor%20do%20pacote%20mensal."
-                           target="_blank" rel="noopener noreferrer">Consultar valor</a>
-                    </article>
-
-                    <article class="plan reveal" data-testid="plan-card-pacote-trimestral">
-                        <h3>Pacote Trimestral</h3>
-                        <p class="plan-price">[valor]<small>/trimestre</small></p>
-                        <ul class="checklist">
-                            <li>24 aulas particulares</li>
-                            <li>Melhor custo por aula</li>
-                            <li>Acompanhamento de resultados</li>
-                            <li>Graduação de treino por metas</li>
-                        </ul>
-                        <a class="btn btn-outline btn-block" data-testid="plan-cta-pacote-trimestral"
-                           href="https://wa.me/5515999999999?text=Ol%C3%A1%2C%20Rone!%20Quero%20consultar%20o%20valor%20do%20pacote%20trimestral."
-                           target="_blank" rel="noopener noreferrer">Consultar valor</a>
-                    </article>
+                <!-- Abas de formato (clique para alternar) -->
+                <div class="plan-tabs reveal" role="tablist">
+                    <button class="plan-tab active" data-plan="individual" role="tab" data-testid="plan-tab-individual">Individual<small>100% focado em você</small></button>
+                    <button class="plan-tab" data-plan="dupla" role="tab" data-testid="plan-tab-dupla">Dupla<small>valor por pessoa</small></button>
+                    <button class="plan-tab" data-plan="grupo" role="tab" data-testid="plan-tab-grupo">Grupo 4–8<small>valor por pessoa</small></button>
                 </div>
 
-                <p class="note reveal">Valores sob consulta — chame no WhatsApp e receba a tabela atualizada.</p>
+                <!-- PAINEL: INDIVIDUAL -->
+                <div class="plan-panel active" id="panel-individual" data-testid="plan-panel-individual">
+                    <div class="price-head">
+                        <span>Frequência</span><span>Semanal</span><span>Mensal · com desconto</span>
+                    </div>
+                    <div class="price-row" data-testid="price-row-individual-0">
+                        <span class="freq">1x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 60</strong></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 200</strong><em>R$ 50 por aula</em></div>
+                        </div>
+                    </div>
+                    <div class="price-row" data-testid="price-row-individual-1">
+                        <span class="freq">2x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 100</strong><em>R$ 50 por aula</em></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 360</strong><em>R$ 45 por aula</em></div>
+                        </div>
+                    </div>
+                    <div class="price-row" data-testid="price-row-individual-2">
+                        <span class="freq">3x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 135</strong><em>R$ 45 por aula</em></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 480</strong><em>R$ 40 por aula</em></div>
+                        </div>
+                    </div>
+                    <a class="btn btn-red plan-cta" data-testid="plan-cta-individual"
+                       href="https://wa.me/5515999999999?text=Ol%C3%A1%2C%20Rone!%20Quero%20montar%20meu%20plano%20individual%20de%20Muaythai."
+                       target="_blank" rel="noopener noreferrer">Quero treinar individual</a>
+                </div>
+
+                <!-- PAINEL: DUPLA -->
+                <div class="plan-panel" id="panel-dupla" data-testid="plan-panel-dupla">
+                    <div class="price-head">
+                        <span>Frequência</span><span>Semanal</span><span>Mensal · com desconto</span>
+                    </div>
+                    <div class="price-row" data-testid="price-row-dupla-0">
+                        <span class="freq">1x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 45</strong></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 160</strong><em>R$ 40 por aula</em></div>
+                        </div>
+                    </div>
+                    <div class="price-row" data-testid="price-row-dupla-1">
+                        <span class="freq">2x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 80</strong><em>R$ 40 por aula</em></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 290</strong><em>R$ 36,25 por aula</em></div>
+                        </div>
+                    </div>
+                    <div class="price-row" data-testid="price-row-dupla-2">
+                        <span class="freq">3x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 105</strong><em>R$ 35 por aula</em></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 380</strong><em>R$ 31,66 por aula</em></div>
+                        </div>
+                    </div>
+                    <a class="btn btn-red plan-cta" data-testid="plan-cta-dupla"
+                       href="https://wa.me/5515999999999?text=Ol%C3%A1%2C%20Rone!%20Quero%20montar%20um%20plano%20em%20dupla%20de%20Muaythai."
+                       target="_blank" rel="noopener noreferrer">Quero treinar em dupla</a>
+                </div>
+
+                <!-- PAINEL: GRUPO (4-8 pessoas) -->
+                <div class="plan-panel" id="panel-grupo" data-testid="plan-panel-grupo">
+                    <div class="price-head">
+                        <span>Frequência</span><span>Semanal</span><span>Mensal · com desconto</span>
+                    </div>
+                    <div class="price-row" data-testid="price-row-grupo-0">
+                        <span class="freq">1x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 35</strong></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 125</strong></div>
+                        </div>
+                    </div>
+                    <div class="price-row" data-testid="price-row-grupo-1">
+                        <span class="freq">2x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 30</strong></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 215</strong></div>
+                        </div>
+                    </div>
+                    <div class="price-row" data-testid="price-row-grupo-2">
+                        <span class="freq">3x por semana</span>
+                        <div class="price-cells">
+                            <div class="cell"><small>Semanal</small><strong>R$ 25</strong></div>
+                            <div class="cell best"><small>Mensal</small><strong>R$ 270</strong></div>
+                        </div>
+                    </div>
+                    <a class="btn btn-red plan-cta" data-testid="plan-cta-grupo"
+                       href="https://wa.me/5515999999999?text=Ol%C3%A1%2C%20Rone!%20Quero%20montar%20um%20plano%20em%20grupo%20de%20Muaythai."
+                       target="_blank" rel="noopener noreferrer">Quero treinar em grupo</a>
+                </div>
+
+                <!-- Extras -->
+                <div class="plan-extras reveal" data-testid="pricing-extras">
+                    <div class="extra">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <p>Na academia ou na casa do aluno — em domicílio, <strong>+ R$ 20 por aula</strong></p>
+                    </div>
+                    <div class="extra">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h2"/><path d="M6 8v8"/><path d="M18 8v8"/><path d="M20 12h2"/><path d="M6 12h12"/></svg>
+                        <p>Aluguel de equipamento (luvas e caneleiras): <strong>R$ 10 por aula</strong></p>
+                    </div>
+                    <div class="extra">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15 9-6 6"/><path d="M9 9h.01"/><path d="M15 15h.01"/></svg>
+                        <p>Pague por semana ou feche o mês — o <strong>plano mensal sempre tem desconto</strong></p>
+                    </div>
+                </div>
             </div>
         </section>
 

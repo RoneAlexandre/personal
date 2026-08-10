@@ -19,6 +19,7 @@ Landing page (vitrine) para Rone Batista, professor particular de Muaythai em It
 - Depoimentos, galeria, FAQ, CTA final; botão flutuante WhatsApp; SEO local
 
 ## Implementado (2026-08-06)
+- (2026-08-10) Seção de Planos refeita com preços reais em ambas as versões: abas Individual / Dupla / Grupo (4-8), valores semanais e mensais por frequência (1x, 2x, 3x), destaque dourado no mensal com preço por aula, faixa de extras (+R$20 domicílio, R$10 aluguel de equipamento) e CTA por formato com mensagem pré-preenchida no WhatsApp
 - Landing page completa com todas as 9 seções pedidas, em pt-BR
 - Direção de arte dark premium: obsidiana #0A0A0A, vermelho #DC2626, dourado #D4AF37; Bebas Neue + Barlow
 - Hero com reveal mascarado linha a linha (nome em outline), parallax na imagem de fundo, estatísticas

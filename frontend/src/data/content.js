@@ -66,40 +66,53 @@ export const BENEFITS = [
     { icon: "HeartPulse", title: "Redução de Estresse", text: "Descarregue a tensão do dia a dia em cada golpe." },
 ];
 
-export const PLANS = [
-    {
-        name: "Aula Avulsa",
-        price: "[valor]",
-        period: "/aula",
-        features: ["1 aula particular", "Formato de sua escolha", "Avaliação de nível inclusa"],
-        highlighted: false,
-    },
-    {
-        name: "Pacote Mensal",
-        price: "[valor]",
-        period: "/mês",
-        badge: "Mais escolhido",
-        features: [
-            "8 aulas particulares",
-            "Plano de evolução individual",
-            "Prioridade de horários",
-            "Suporte via WhatsApp",
-        ],
-        highlighted: true,
-    },
-    {
-        name: "Pacote Trimestral",
-        price: "[valor]",
-        period: "/trimestre",
-        features: [
-            "24 aulas particulares",
-            "Melhor custo por aula",
-            "Acompanhamento de resultados",
-            "Graduação de treino por metas",
-        ],
-        highlighted: false,
-    },
-];
+const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+export const PRICING = {
+    formats: [
+        {
+            id: "individual",
+            label: "Individual",
+            note: "100% focado em você",
+            cta: "Quero treinar individual",
+            waUrl: waLink("Olá, Rone! Quero montar meu plano individual de Muaythai."),
+            rows: [
+                { freq: "1x por semana", weekly: "R$ 60", monthly: "R$ 200", perClass: "R$ 50 por aula" },
+                { freq: "2x por semana", weekly: "R$ 100", weeklyNote: "R$ 50 por aula", monthly: "R$ 360", perClass: "R$ 45 por aula" },
+                { freq: "3x por semana", weekly: "R$ 135", weeklyNote: "R$ 45 por aula", monthly: "R$ 480", perClass: "R$ 40 por aula" },
+            ],
+        },
+        {
+            id: "dupla",
+            label: "Dupla",
+            note: "valor por pessoa",
+            cta: "Quero treinar em dupla",
+            waUrl: waLink("Olá, Rone! Quero montar um plano em dupla de Muaythai."),
+            rows: [
+                { freq: "1x por semana", weekly: "R$ 45", monthly: "R$ 160", perClass: "R$ 40 por aula" },
+                { freq: "2x por semana", weekly: "R$ 80", weeklyNote: "R$ 40 por aula", monthly: "R$ 290", perClass: "R$ 36,25 por aula" },
+                { freq: "3x por semana", weekly: "R$ 105", weeklyNote: "R$ 35 por aula", monthly: "R$ 380", perClass: "R$ 31,66 por aula" },
+            ],
+        },
+        {
+            id: "grupo",
+            label: "Grupo 4–8",
+            note: "valor por pessoa",
+            cta: "Quero treinar em grupo",
+            waUrl: waLink("Olá, Rone! Quero montar um plano em grupo de Muaythai."),
+            rows: [
+                { freq: "1x por semana", weekly: "R$ 35", monthly: "R$ 125" },
+                { freq: "2x por semana", weekly: "R$ 30", monthly: "R$ 215" },
+                { freq: "3x por semana", weekly: "R$ 25", monthly: "R$ 270" },
+            ],
+        },
+    ],
+    extras: [
+        "Na academia ou na casa do aluno — em domicílio, + R$ 20 por aula",
+        "Aluguel de equipamento (luvas e caneleiras): R$ 10 por aula",
+        "Pague por semana ou feche o mês — o plano mensal sempre tem desconto",
+    ],
+};
 
 export const TESTIMONIALS = [
     {

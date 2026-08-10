@@ -125,6 +125,26 @@ export const POLICY = [
 
 export const HOMEPACK = {
     waUrl: waLink("Olá, Rone! Quero ser avisado do lançamento do Pack Treine em Casa."),
+    packs: [
+        {
+            name: "Pack Iniciante",
+            description: "Fundamentos: postura, guarda, socos e chutes básicos para começar do zero em casa.",
+            price: "[valor]",
+            includes: ["4 semanas de treino", "Vídeos de apoio", "Progressão semanal"],
+        },
+        {
+            name: "Pack Condicionamento",
+            description: "Treinos físicos intensos: queima de gordura, explosão e resistência sem equipamento.",
+            price: "[valor]",
+            includes: ["4 semanas de treino", "Circuitos em casa", "Tabela de evolução"],
+        },
+        {
+            name: "Pack Completo",
+            description: "Técnica + condicionamento: o programa completo de Muaythai para treinar em casa.",
+            price: "[valor]",
+            includes: ["8 semanas de treino", "Sequências de golpes", "Suporte via WhatsApp"],
+        },
+    ],
 };
 
 export const TESTIMONIALS = [

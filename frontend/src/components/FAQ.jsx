@@ -3,7 +3,7 @@ import { Reveal, SectionHeader } from "./Reveal";
 import { FAQ_ITEMS, WHATSAPP_URL } from "../data/content";
 
 export const FAQ = () => (
-    <section id="faq" data-testid="faq-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
+    <section id="faq" data-testid="faq-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800">
         <div className="max-w-4xl mx-auto px-5 sm:px-8">
             <SectionHeader kicker="Dúvidas" title="Perguntas frequentes" align="center" />
             <Reveal delay={0.15} className="mt-12">

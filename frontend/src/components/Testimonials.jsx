@@ -3,7 +3,7 @@ import { Reveal, SectionHeader } from "./Reveal";
 import { TESTIMONIALS } from "../data/content";
 
 export const Testimonials = () => (
-    <section data-testid="testimonials-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
+    <section data-testid="testimonials-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <SectionHeader kicker="Depoimentos" title="Quem treina, recomenda" />
             <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

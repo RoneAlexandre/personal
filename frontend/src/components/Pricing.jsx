@@ -1,23 +1,21 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, Dumbbell, BadgePercent } from "lucide-react";
+import { Home, Dumbbell, CalendarCheck } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
 import { PRICING } from "../data/content";
 
-const EXTRA_ICONS = [Home, Dumbbell, BadgePercent];
+const EXTRA_ICONS = { Home, Dumbbell };
 
 export const Pricing = () => {
     const [active, setActive] = useState("individual");
     const current = PRICING.formats.find((f) => f.id === active);
 
     return (
-        <section id="planos" data-testid="pricing-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800">
+        <section id="planos" data-testid="pricing-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
             <div className="max-w-5xl mx-auto px-5 sm:px-8">
                 <SectionHeader kicker="Investimento" title="Planos e valores" align="center" />
                 <Reveal delay={0.1} className="text-center mt-4">
-                    <p className="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto">
-                        Planos semanais ou mensais, individual, em dupla ou em grupo — o mensal sempre sai mais barato.
-                    </p>
+                    <p className="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto">{PRICING.subtitle}</p>
                 </Reveal>
 
                 <Reveal delay={0.15}>
@@ -52,10 +50,15 @@ export const Pricing = () => {
                         transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                         className="mt-8"
                     >
+                        {current.perPerson && (
+                            <p className="text-center text-[#D4AF37] text-xs uppercase tracking-[0.2em] mb-5" data-testid={`per-person-${active}`}>
+                                * Todos os valores desta tabela são por pessoa
+                            </p>
+                        )}
                         <div className="hidden md:grid grid-cols-[1fr_1fr_1.15fr] gap-4 px-6 pb-3 text-xs uppercase tracking-[0.2em] text-neutral-500">
                             <span>Frequência</span>
                             <span>Semanal</span>
-                            <span>Mensal · com desconto</span>
+                            <span>Mensal</span>
                         </div>
                         <div className="border-t border-neutral-800">
                             {current.rows.map((row, i) => (
@@ -71,7 +74,10 @@ export const Pricing = () => {
                                             <span className="font-display text-2xl sm:text-3xl text-white">{row.weekly}</span>
                                             {row.weeklyNote && <span className="block text-xs text-neutral-500 mt-0.5">{row.weeklyNote}</span>}
                                         </div>
-                                        <div className="border border-[#D4AF37] bg-[#D4AF37]/5 px-4 py-3">
+                                        <div className="relative border border-[#D4AF37] bg-[#D4AF37]/5 px-4 py-3">
+                                            <span className="absolute -top-2.5 right-2 bg-red-600 text-white text-[9px] font-bold uppercase tracking-[0.14em] px-2 py-0.5">
+                                                Promoção
+                                            </span>
                                             <span className="block text-[10px] uppercase tracking-[0.2em] text-[#D4AF37]/80 md:hidden">Mensal</span>
                                             <span className="font-display text-2xl sm:text-3xl text-[#D4AF37]">{row.monthly}</span>
                                             {row.perClass && <span className="block text-xs text-[#D4AF37]/90 mt-0.5">{row.perClass}</span>}
@@ -92,14 +98,30 @@ export const Pricing = () => {
                     </motion.div>
                 </AnimatePresence>
 
-                <Reveal delay={0.1} className="mt-14">
-                    <div className="grid md:grid-cols-3 gap-px bg-neutral-800 border border-neutral-800" data-testid="pricing-extras">
-                        {PRICING.extras.map((ex, i) => {
-                            const Icon = EXTRA_ICONS[i];
+                <Reveal delay={0.1} className="mt-12">
+                    <div className="flex items-center gap-4 border border-[#D4AF37] bg-[#D4AF37]/[0.08] px-6 py-5" data-testid="payment-date-banner">
+                        <CalendarCheck size={28} strokeWidth={1.5} className="text-[#D4AF37] shrink-0" />
+                        <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+                            <strong className="text-[#D4AF37]">Você escolhe a data do pagamento.</strong>{" "}
+                            Fechou o plano? Combinamos juntos o melhor dia do mês para você pagar sem aperto.
+                        </p>
+                    </div>
+                </Reveal>
+
+                <Reveal delay={0.15} className="mt-12">
+                    <div className="grid md:grid-cols-2 gap-px bg-neutral-800 border border-neutral-800" data-testid="pricing-extras">
+                        <h3 className="md:col-span-2 bg-[#0A0A0A] px-6 py-4 font-display text-2xl sm:text-3xl uppercase tracking-wide text-white flex items-center gap-3">
+                            <span className="w-7 h-0.5 bg-red-600 shrink-0" aria-hidden="true" />
+                            {PRICING.extrasTitle}
+                        </h3>
+                        {PRICING.extras.map((ex) => {
+                            const Icon = EXTRA_ICONS[ex.icon];
                             return (
-                                <div key={ex} className="bg-[#0D0D0D] px-6 py-5 flex items-start gap-3">
+                                <div key={ex.text} className="bg-[#0A0A0A] px-6 py-5 flex items-start gap-3">
                                     <Icon size={20} strokeWidth={1.5} className="text-[#D4AF37] mt-0.5 shrink-0" />
-                                    <p className="text-sm text-neutral-300">{ex}</p>
+                                    <p className="text-sm text-neutral-300">
+                                        {ex.text} <strong className="text-white">{ex.price}</strong>
+                                    </p>
                                 </div>
                             );
                         })}

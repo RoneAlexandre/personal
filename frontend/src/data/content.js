@@ -1,15 +1,22 @@
-export const WHATSAPP_NUMBER = "5515999999999"; // PLACEHOLDER — trocar pelo número real
-export const INSTAGRAM_HANDLE = "ronebatista.muaythai"; // PLACEHOLDER — trocar pelo perfil real
+export const WHATSAPP_NUMBER = "5515996984251";
+export const INSTAGRAM_HANDLE = "ronebatista.muaythai";
 
-const waText = encodeURIComponent(
-    "Olá, Rone! Vi seu site e quero agendar uma aula particular de Muaythai.",
-);
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${waText}`;
+const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
+
+export const WHATSAPP_URL = waLink("Olá, Rone! Vi seu site e quero agendar uma aula particular de Muaythai.");
 export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 export const IMAGES = {
     hero: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=1920&auto=format&fit=crop",
     about: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=1200&auto=format&fit=crop",
+    journey: [
+        { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores" },
+        { url: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=800&auto=format&fit=crop", caption: "Dia de luta" },
+        { url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=800&auto=format&fit=crop", caption: "Seminários e cursos" },
+        { url: "https://images.unsplash.com/photo-1737381508529-a110d717d5a7?q=80&w=800&auto=format&fit=crop", caption: "Preparação no ringue" },
+        { url: "https://images.unsplash.com/photo-1558366972-9db89881cbdb?q=80&w=800&auto=format&fit=crop", caption: "Competição" },
+        { url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=800&auto=format&fit=crop", caption: "Aulas em Itapeva" },
+    ],
     gallery: [
         {
             url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=1200&auto=format&fit=crop",
@@ -49,31 +56,24 @@ export const FORMATS = [
             "O treino vai até você. Atendimento na sua casa, condomínio ou espaço preferido, em Itapeva e região, com equipamentos levados pelo professor.",
         includes: ["Aulas de 60 minutos", "Equipamentos levados pelo professor", "Horários flexíveis"],
     },
-    {
-        number: "03",
-        title: "Online ao Vivo",
-        description:
-            "Aulas particulares por videochamada, com correção de técnica em tempo real e plano de treino para você praticar onde estiver.",
-        includes: ["Aulas de 50 minutos", "Correção técnica em tempo real", "Plano de treino semanal"],
-    },
 ];
 
 export const BENEFITS = [
-    { icon: "Activity", title: "Condicionamento Físico", text: "Treinos intensos que elevam fôlego, força e explosão." },
-    { icon: "Shield", title: "Autodefesa Real", text: "Técnicas eficientes da arte das oito armas para se proteger." },
-    { icon: "Flame", title: "Queima de Gordura", text: "Até 800 calorias por sessão de alta intensidade." },
-    { icon: "Brain", title: "Disciplina Mental", text: "Foco, constância e controle emocional dentro e fora do treino." },
+    { icon: "Activity", title: "Condicionamento Físico", text: "Treinos intensos que elevam fôlego, força e resistência." },
+    { icon: "Shield", title: "Autodefesa Real", text: "Técnicas eficientes para se proteger em caso de necessidade." },
+    { icon: "Flame", title: "Queima de Gordura", text: "Até 1200 calorias por treino de alta intensidade." },
+    { icon: "Brain", title: "Disciplina Mental", text: "Foco, constância e controle emocional dentro e fora do tatâme." },
     { icon: "HeartPulse", title: "Redução de Estresse", text: "Descarregue a tensão do dia a dia em cada golpe." },
 ];
 
-const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
-
 export const PRICING = {
+    subtitle: "Planos semanais ou mensais · Individual, Dupla ou Grupos",
     formats: [
         {
             id: "individual",
             label: "Individual",
             note: "100% focado em você",
+            perPerson: false,
             cta: "Quero treinar individual",
             waUrl: waLink("Olá, Rone! Quero montar meu plano individual de Muaythai."),
             rows: [
@@ -86,6 +86,7 @@ export const PRICING = {
             id: "dupla",
             label: "Dupla",
             note: "valor por pessoa",
+            perPerson: true,
             cta: "Quero treinar em dupla",
             waUrl: waLink("Olá, Rone! Quero montar um plano em dupla de Muaythai."),
             rows: [
@@ -98,6 +99,7 @@ export const PRICING = {
             id: "grupo",
             label: "Grupo 4–8",
             note: "valor por pessoa",
+            perPerson: true,
             cta: "Quero treinar em grupo",
             waUrl: waLink("Olá, Rone! Quero montar um plano em grupo de Muaythai."),
             rows: [
@@ -107,32 +109,43 @@ export const PRICING = {
             ],
         },
     ],
+    extrasTitle: "Valores Adicionais",
     extras: [
-        "Na academia ou na casa do aluno — em domicílio, + R$ 20 por aula",
-        "Aluguel de equipamento (luvas e caneleiras): R$ 10 por aula",
-        "Pague por semana ou feche o mês — o plano mensal sempre tem desconto",
+        { icon: "Home", text: "Aulas a domicílio ou em espaços públicos:", price: "R$ 20 por aula" },
+        { icon: "Dumbbell", text: "Aluguel de equipamento (bandagem, luvas e caneleiras):", price: "R$ 10 por aula" },
     ],
+};
+
+export const POLICY = [
+    { icon: "Clock", title: "Avise com antecedência", text: "Para desmarcar, avise pelo WhatsApp com pelo menos 12 horas de antecedência." },
+    { icon: "CalendarCheck", title: "Remarcação sem custo", text: "Aulas desmarcadas no prazo podem ser remarcadas sem custo dentro do mesmo mês." },
+    { icon: "AlertTriangle", title: "Falta sem aviso", text: "A aula que não for desmarcada no prazo é computada como realizada no plano." },
+    { icon: "Timer", title: "Atrasos", text: "Tolerância de 15 minutos. Após esse período, a aula pode ser encurtada ou remarcada." },
+];
+
+export const HOMEPACK = {
+    waUrl: waLink("Olá, Rone! Quero ser avisado do lançamento do Pack Treine em Casa."),
 };
 
 export const TESTIMONIALS = [
     {
-        name: "Marcos V.",
-        role: "Aluno há 1 ano",
+        name: "Gabriel M.",
+        role: "Aluno há 6 anos",
         quote: "Comecei do zero e o Rone me deu base, confiança e condicionamento. Melhor decisão que tomei.",
     },
     {
-        name: "Juliana R.",
-        role: "Aluna online",
+        name: "Diogo A.",
+        role: "Aluno online",
         quote: "Mesmo online, a correção de técnica é impressionante. Perdi 8kg em quatro meses de treino.",
     },
     {
-        name: "Felipe A.",
+        name: "Jamil",
         role: "Aulas em domicílio",
         quote: "Treino em casa com horário flexível. A disciplina que aprendi no Muaythai mudou minha rotina.",
     },
     {
-        name: "Camila T.",
-        role: "Aluna na academia",
+        name: "André",
+        role: "Aluno na academia",
         quote: "Ambiente respeitoso e treino desafiador. O Rone cobra na medida certa e celebra cada evolução.",
     },
 ];

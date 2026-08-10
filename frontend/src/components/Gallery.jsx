@@ -2,13 +2,13 @@ import { Reveal, SectionHeader } from "./Reveal";
 import { IMAGES } from "../data/content";
 
 export const Gallery = () => (
-    <section id="galeria" data-testid="gallery-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800">
+    <section id="galeria" data-testid="gallery-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
                 <SectionHeader kicker="Dentro do treino" title="A arte em movimento" />
                 <Reveal delay={0.2}>
                     <p className="text-neutral-400 text-sm sm:text-base max-w-sm md:text-right">
-                        Treinos, técnicas e os diferentes formatos de aula — em breve com fotos reais das sessões.
+                        Treinos, técnicas e os diferentes formatos de aula.
                     </p>
                 </Reveal>
             </div>

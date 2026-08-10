@@ -1,6 +1,5 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { MapPin } from "lucide-react";
 import { IMAGES, WHATSAPP_URL } from "../data/content";
 
 const MaskedLine = ({ children, delay, className = "" }) => (
@@ -46,23 +45,22 @@ export const Hero = () => {
                     className="flex items-center gap-3 mb-6"
                 >
                     <span className="h-px w-10 bg-red-600" />
-                    <span className="inline-flex items-center gap-2 text-red-500 font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm">
-                        <MapPin size={14} strokeWidth={2} /> Muaythai · Itapeva/SP
+                    <span className="text-red-500 font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm">
+                        Muaythai · Kickboxing · Boxe
                     </span>
                 </motion.div>
 
                 <h1 className="font-display uppercase leading-[0.85] tracking-tight text-white">
                     <MaskedLine delay={0.35} className="text-[clamp(4rem,14vw,11rem)]">
-                        Rone
+                        Personal
                     </MaskedLine>
                     <MaskedLine delay={0.5} className="text-[clamp(4rem,14vw,11rem)] text-stroke">
-                        Batista
+                        Fight
                     </MaskedLine>
                 </h1>
 
-                <MaskedLine delay={0.75} className="mt-6 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed font-body normal-case">
-                    Professor particular de Muaythai. Transforme seu corpo e sua mente com treinos
-                    individuais, feitos para o seu nível, no seu ritmo.
+                <MaskedLine delay={0.75} className="mt-6 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
+                    Transforme seu corpo e sua mente com treinos feitos de acordo com seu objetivo.
                 </MaskedLine>
 
                 <motion.div
@@ -78,7 +76,7 @@ export const Hero = () => {
                         data-testid="hero-whatsapp-cta"
                         className="group inline-flex items-center justify-center gap-3 bg-red-600 hover:bg-red-500 text-white font-display text-xl sm:text-2xl tracking-widest px-8 py-4 uppercase transition-[background-color,transform] duration-300 hover:-translate-y-0.5"
                     >
-                        Agende sua aula pelo WhatsApp
+                        Agende sua aula
                         <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
                     <a
@@ -98,9 +96,9 @@ export const Hero = () => {
                     data-testid="hero-stats"
                 >
                     {[
-                        ["+10", "anos de arte"],
-                        ["03", "formatos de aula"],
-                        ["100%", "treino individual"],
+                        ["+10", "anos de experiência"],
+                        ["03", "modalidades"],
+                        ["100%", "treino exclusivo"],
                     ].map(([n, label]) => (
                         <div key={label}>
                             <p className="font-display text-3xl sm:text-4xl text-[#D4AF37]">{n}</p>

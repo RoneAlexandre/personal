@@ -5,9 +5,12 @@ import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
 import { About } from "./components/About";
+import { Journey } from "./components/Journey";
 import { Formats } from "./components/Formats";
 import { Benefits } from "./components/Benefits";
 import { Pricing } from "./components/Pricing";
+import { Policy } from "./components/Policy";
+import { HomePack } from "./components/HomePack";
 import { Testimonials } from "./components/Testimonials";
 import { Gallery } from "./components/Gallery";
 import { FAQ } from "./components/FAQ";
@@ -36,9 +39,12 @@ function App() {
                 <Hero />
                 <Marquee />
                 <About />
+                <Journey />
                 <Formats />
                 <Benefits />
                 <Pricing />
+                <Policy />
+                <HomePack />
                 <Testimonials />
                 <Gallery />
                 <FAQ />

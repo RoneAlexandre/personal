@@ -6,7 +6,7 @@ import { BENEFITS } from "../data/content";
 const ICONS = { Activity, Shield, Flame, Brain, HeartPulse };
 
 export const Benefits = () => (
-    <section data-testid="benefits-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
+    <section data-testid="benefits-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <SectionHeader kicker="Por que treinar" title="Benefícios do Muaythai" align="center" />
             <motion.div

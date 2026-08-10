@@ -1,4 +1,4 @@
-import { MapPin } from "lucide-react";
+import { MapPin, Award } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
 import { IMAGES } from "../data/content";
 
@@ -30,7 +30,7 @@ export const About = () => (
                         <div className="relative overflow-hidden group">
                             <img
                                 src={IMAGES.about}
-                                alt="Professor Rone Batista treinando com aparadores de foco"
+                                alt="Professor Rone Batista"
                                 className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
                                 loading="lazy"
                             />
@@ -48,8 +48,9 @@ export const About = () => (
                 <Reveal delay={0.15} className="mt-6">
                     <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-2xl">
                         Mais do que um professor de luta, Rone é um treinador de pessoas. Sua história no
-                        Muaythai começou como aluno e virou missão: provar que qualquer pessoa — de qualquer
-                        idade ou condicionamento — é capaz de aprender a arte tailandesa com o método certo.
+                        Muaythai começou como aluno e virou uma missão: provar que qualquer pessoa de qualquer
+                        idade ou condicionamento é capaz de aprender e evoluir em uma arte marcial treinando com o
+                        método certo.
                     </p>
                 </Reveal>
                 <div className="mt-10 space-y-0 border-t border-neutral-800">
@@ -69,6 +70,21 @@ export const About = () => (
                         </Reveal>
                     ))}
                 </div>
+
+                <Reveal delay={0.35}>
+                    <div className="mt-10 flex items-start gap-4 border border-[#D4AF37] bg-[#D4AF37]/[0.07] p-6" data-testid="athletes-highlight">
+                        <Award size={32} strokeWidth={1.5} className="text-[#D4AF37] shrink-0 mt-1" />
+                        <div>
+                            <h3 className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-[#D4AF37] mb-1">
+                                Formação de Atletas
+                            </h3>
+                            <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
+                                Além das aulas particulares, Rone prepara alunos para competições: treino específico,
+                                estratégia de luta e acompanhamento completo até o dia do combate.
+                            </p>
+                        </div>
+                    </div>
+                </Reveal>
             </div>
         </div>
     </section>

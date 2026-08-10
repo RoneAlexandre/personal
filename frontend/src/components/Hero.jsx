@@ -36,8 +36,12 @@ export const Hero = () => {
 
             <motion.div
                 style={{ opacity: fade }}
-                className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-5 sm:px-8 pt-24 pb-12 sm:pt-28 sm:pb-16"
+                className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-5 sm:px-8 pt-16 pb-12 sm:pt-28 sm:pb-16"
             >
+                <MaskedLine delay={0.15} className="font-display text-2xl sm:text-4xl uppercase tracking-[0.12em] text-[#D4AF37] mb-5">
+                    Você é mais forte do que pensa
+                </MaskedLine>
+
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

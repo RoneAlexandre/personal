@@ -10,12 +10,12 @@ export const IMAGES = {
     hero: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=1920&auto=format&fit=crop",
     about: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=1200&auto=format&fit=crop",
     journey: [
-        { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores" },
-        { url: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=800&auto=format&fit=crop", caption: "Dia de luta" },
-        { url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=800&auto=format&fit=crop", caption: "Seminários e cursos" },
-        { url: "https://images.unsplash.com/photo-1737381508529-a110d717d5a7?q=80&w=800&auto=format&fit=crop", caption: "Preparação no ringue" },
-        { url: "https://images.unsplash.com/photo-1558366972-9db89881cbdb?q=80&w=800&auto=format&fit=crop", caption: "Competição" },
-        { url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=800&auto=format&fit=crop", caption: "Aulas em Itapeva" },
+        { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores", cat: "aulas" },
+        { url: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=800&auto=format&fit=crop", caption: "Dia de luta", cat: "lutas" },
+        { url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=800&auto=format&fit=crop", caption: "Seminários e cursos", cat: "seminarios" },
+        { url: "https://images.unsplash.com/photo-1737381508529-a110d717d5a7?q=80&w=800&auto=format&fit=crop", caption: "Preparação no ringue", cat: "lutas" },
+        { url: "https://images.unsplash.com/photo-1558366972-9db89881cbdb?q=80&w=800&auto=format&fit=crop", caption: "Competição", cat: "lutas" },
+        { url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=800&auto=format&fit=crop", caption: "Aulas em Itapeva", cat: "aulas" },
     ],
     gallery: [
         {

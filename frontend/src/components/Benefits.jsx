@@ -1,19 +1,19 @@
 import { Activity, Shield, Flame, Brain, HeartPulse } from "lucide-react";
 import { motion } from "framer-motion";
-import { SectionHeader, useAutoScroll } from "./Reveal";
+import { SectionHeader, Reveal, useAutoScroll, CarouselControls } from "./Reveal";
 import { BENEFITS } from "../data/content";
 
 const ICONS = { Activity, Shield, Flame, Brain, HeartPulse };
 
 export const Benefits = () => {
-    const trackRef = useAutoScroll(0.4);
+    const trackRef = useAutoScroll(0.25);
     return (
     <section data-testid="benefits-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800 overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <SectionHeader kicker="Por que treinar" title="Benefícios do Muaythai" align="center" />
         </div>
         <motion.div
-            ref={trackRef}
+            ref={trackRef.ref}
             className="mt-12 flex gap-3 overflow-x-auto px-5 sm:px-8 pb-3 [scrollbar-width:thin] [scrollbar-color:#dc2626_transparent] lg:grid lg:grid-cols-5 lg:gap-px lg:bg-neutral-800 lg:border lg:border-neutral-800 lg:overflow-visible lg:px-0 lg:pb-0 lg:max-w-7xl lg:mx-auto"
             initial="hidden"
             whileInView="show"
@@ -45,6 +45,11 @@ export const Benefits = () => {
                 );
             })}
         </motion.div>
+        <Reveal className="lg:hidden" delay={0.1}>
+            <div className="px-5 mt-4 flex justify-end">
+                <CarouselControls controls={trackRef} testid="benefits" />
+            </div>
+        </Reveal>
     </section>
     );
 };

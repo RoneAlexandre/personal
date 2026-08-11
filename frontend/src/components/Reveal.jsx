@@ -1,45 +1,93 @@
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 
-export const useAutoScroll = (speed = 0.4) => {
+export const useAutoScroll = (speed = 0.3) => {
     const ref = useRef(null);
+    const posRef = useRef(0);
+    const userPausedRef = useRef(false);
+    const touchRef = useRef(false);
+    const [paused, setPaused] = useState(false);
+
     useEffect(() => {
         const el = ref.current;
         if (!el) return;
         let raf;
         let running = false;
-        let paused = false;
-        let pos = el.scrollLeft;
+        posRef.current = el.scrollLeft;
         const step = () => {
-            if (running && !paused && el.scrollWidth > el.clientWidth) {
-                pos += speed;
-                if (pos >= el.scrollWidth - el.clientWidth - 1) pos = 0;
-                el.scrollLeft = pos;
+            if (running && !userPausedRef.current && !touchRef.current && el.scrollWidth > el.clientWidth) {
+                posRef.current += speed;
+                if (posRef.current >= el.scrollWidth - el.clientWidth - 1) posRef.current = 0;
+                el.scrollLeft = posRef.current;
             }
             raf = requestAnimationFrame(step);
         };
         const io = new IntersectionObserver(([e]) => (running = e.isIntersecting), { threshold: 0.3 });
         io.observe(el);
-        const pause = () => (paused = true);
-        const resume = () => {
-            pos = el.scrollLeft;
-            paused = false;
+        const onDown = () => (touchRef.current = true);
+        const onUp = () => {
+            touchRef.current = false;
+            posRef.current = el.scrollLeft;
         };
-        el.addEventListener("pointerdown", pause);
-        el.addEventListener("pointerup", resume);
-        el.addEventListener("pointercancel", resume);
+        el.addEventListener("pointerdown", onDown);
+        el.addEventListener("pointerup", onUp);
+        el.addEventListener("pointercancel", onUp);
         raf = requestAnimationFrame(step);
         return () => {
             cancelAnimationFrame(raf);
             io.disconnect();
-            el.removeEventListener("pointerdown", pause);
-            el.removeEventListener("pointerup", resume);
-            el.removeEventListener("pointercancel", resume);
+            el.removeEventListener("pointerdown", onDown);
+            el.removeEventListener("pointerup", onUp);
+            el.removeEventListener("pointercancel", onUp);
         };
     }, [speed]);
-    return ref;
+
+    const go = (dir) => {
+        const el = ref.current;
+        if (!el) return;
+        el.scrollLeft += dir * el.clientWidth * 0.75;
+        posRef.current = el.scrollLeft;
+    };
+
+    const togglePause = () => {
+        const el = ref.current;
+        userPausedRef.current = !userPausedRef.current;
+        if (!userPausedRef.current && el) posRef.current = el.scrollLeft;
+        setPaused(userPausedRef.current);
+    };
+
+    return { ref, paused, go, togglePause };
 };
 
+export const CarouselControls = ({ controls, testid }) => (
+    <div className="flex items-center gap-2" data-testid={`${testid}-controls`}>
+        <button
+            onClick={() => controls.go(-1)}
+            data-testid={`${testid}-prev`}
+            aria-label="Voltar"
+            className="border border-neutral-700 hover:border-[#D4AF37] hover:text-[#D4AF37] text-neutral-300 p-2.5 transition-colors duration-200"
+        >
+            <ChevronLeft size={18} />
+        </button>
+        <button
+            onClick={controls.togglePause}
+            data-testid={`${testid}-pause`}
+            aria-label={controls.paused ? "Retomar" : "Pausar"}
+            className="border border-neutral-700 hover:border-[#D4AF37] hover:text-[#D4AF37] text-neutral-300 p-2.5 transition-colors duration-200"
+        >
+            {controls.paused ? <Play size={18} /> : <Pause size={18} />}
+        </button>
+        <button
+            onClick={() => controls.go(1)}
+            data-testid={`${testid}-next`}
+            aria-label="Avançar"
+            className="border border-neutral-700 hover:border-[#D4AF37] hover:text-[#D4AF37] text-neutral-300 p-2.5 transition-colors duration-200"
+        >
+            <ChevronRight size={18} />
+        </button>
+    </div>
+);
 
 export const Reveal = ({ children, delay = 0, y = 28, className = "" }) => (
     <motion.div

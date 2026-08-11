@@ -1,4 +1,45 @@
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
+
+export const useAutoScroll = (speed = 0.4) => {
+    const ref = useRef(null);
+    useEffect(() => {
+        const el = ref.current;
+        if (!el) return;
+        let raf;
+        let running = false;
+        let paused = false;
+        let pos = el.scrollLeft;
+        const step = () => {
+            if (running && !paused && el.scrollWidth > el.clientWidth) {
+                pos += speed;
+                if (pos >= el.scrollWidth - el.clientWidth - 1) pos = 0;
+                el.scrollLeft = pos;
+            }
+            raf = requestAnimationFrame(step);
+        };
+        const io = new IntersectionObserver(([e]) => (running = e.isIntersecting), { threshold: 0.3 });
+        io.observe(el);
+        const pause = () => (paused = true);
+        const resume = () => {
+            pos = el.scrollLeft;
+            paused = false;
+        };
+        el.addEventListener("pointerdown", pause);
+        el.addEventListener("pointerup", resume);
+        el.addEventListener("pointercancel", resume);
+        raf = requestAnimationFrame(step);
+        return () => {
+            cancelAnimationFrame(raf);
+            io.disconnect();
+            el.removeEventListener("pointerdown", pause);
+            el.removeEventListener("pointerup", resume);
+            el.removeEventListener("pointercancel", resume);
+        };
+    }, [speed]);
+    return ref;
+};
+
 
 export const Reveal = ({ children, delay = 0, y = 28, className = "" }) => (
     <motion.div

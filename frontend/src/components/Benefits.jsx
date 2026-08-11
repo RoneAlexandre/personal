@@ -1,17 +1,20 @@
 import { Activity, Shield, Flame, Brain, HeartPulse } from "lucide-react";
 import { motion } from "framer-motion";
-import { SectionHeader } from "./Reveal";
+import { SectionHeader, useAutoScroll } from "./Reveal";
 import { BENEFITS } from "../data/content";
 
 const ICONS = { Activity, Shield, Flame, Brain, HeartPulse };
 
-export const Benefits = () => (
+export const Benefits = () => {
+    const trackRef = useAutoScroll(0.4);
+    return (
     <section data-testid="benefits-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800 overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <SectionHeader kicker="Por que treinar" title="Benefícios do Muaythai" align="center" />
         </div>
         <motion.div
-            className="mt-12 flex gap-3 overflow-x-auto snap-x snap-mandatory px-5 sm:px-8 pb-3 [scrollbar-width:thin] [scrollbar-color:#dc2626_transparent] lg:grid lg:grid-cols-5 lg:gap-px lg:bg-neutral-800 lg:border lg:border-neutral-800 lg:overflow-visible lg:px-0 lg:pb-0 lg:max-w-7xl lg:mx-auto"
+            ref={trackRef}
+            className="mt-12 flex gap-3 overflow-x-auto px-5 sm:px-8 pb-3 [scrollbar-width:thin] [scrollbar-color:#dc2626_transparent] lg:grid lg:grid-cols-5 lg:gap-px lg:bg-neutral-800 lg:border lg:border-neutral-800 lg:overflow-visible lg:px-0 lg:pb-0 lg:max-w-7xl lg:mx-auto"
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-60px" }}
@@ -27,7 +30,7 @@ export const Benefits = () => (
                             hidden: { opacity: 0, y: 24 },
                             show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } },
                         }}
-                        className="group shrink-0 w-[68%] sm:w-[42%] lg:w-auto snap-start bg-[#0A0A0A] border border-neutral-800 lg:border-0 hover:bg-[#141414] p-6 sm:p-8 transition-colors duration-300"
+                        className="group shrink-0 w-[68%] sm:w-[42%] lg:w-auto bg-[#0A0A0A] border border-neutral-800 lg:border-0 hover:bg-[#141414] p-6 sm:p-8 transition-colors duration-300"
                     >
                         <Icon
                             size={36}
@@ -43,4 +46,5 @@ export const Benefits = () => (
             })}
         </motion.div>
     </section>
-);
+    );
+};

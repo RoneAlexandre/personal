@@ -1,7 +1,9 @@
-import { Reveal, SectionHeader } from "./Reveal";
+import { Reveal, SectionHeader, useAutoScroll } from "./Reveal";
 import { IMAGES } from "../data/content";
 
-export const Journey = () => (
+export const Journey = () => {
+    const trackRef = useAutoScroll(0.5);
+    return (
     <section id="trajetoria" data-testid="journey-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800 overflow-hidden">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
@@ -15,14 +17,15 @@ export const Journey = () => (
         </div>
         <Reveal>
             <div
+                ref={trackRef}
                 data-testid="journey-carousel"
-                className="flex gap-4 overflow-x-auto snap-x snap-mandatory px-5 sm:px-8 pb-4 [scrollbar-width:thin] [scrollbar-color:#dc2626_transparent]"
+                className="flex gap-4 overflow-x-auto px-5 sm:px-8 pb-4 [scrollbar-width:thin] [scrollbar-color:#dc2626_transparent]"
             >
                 {IMAGES.journey.map((img, i) => (
                     <figure
                         key={img.caption}
                         data-testid={`journey-item-${i}`}
-                        className="group relative shrink-0 w-[74%] sm:w-[44%] lg:w-[30%] aspect-[3/4] snap-start overflow-hidden border border-neutral-800"
+                        className="group relative shrink-0 w-[74%] sm:w-[44%] lg:w-[30%] aspect-[3/4] overflow-hidden border border-neutral-800"
                     >
                         <img
                             src={img.url}
@@ -38,4 +41,5 @@ export const Journey = () => (
             </div>
         </Reveal>
     </section>
-);
+    );
+};

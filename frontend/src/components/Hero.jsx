@@ -48,8 +48,7 @@ export const Hero = () => {
                     transition={{ delay: 0.2, duration: 0.8 }}
                     className="flex items-center gap-3 mb-5"
                 >
-                    <span className="h-px w-10 bg-red-600" />
-                    <span className="text-red-500 font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm">
+                    <span className="font-display text-red-500 tracking-[0.25em] uppercase text-lg sm:text-xl">
                         Muaythai · Kickboxing · Boxe
                     </span>
                 </motion.div>

@@ -66,6 +66,14 @@ export const BENEFITS = [
     { icon: "HeartPulse", title: "Redução de Estresse", text: "Descarregue a tensão do dia a dia em cada golpe." },
 ];
 
+export const ORBITAL_BENEFITS = [
+    { id: 1, title: "Condicionamento", date: "corpo", content: "Treinos intensos que elevam fôlego, força e resistência desde a primeira semana.", category: "Base", icon: "Activity", relatedIds: [2, 3], status: "completed", energy: 95 },
+    { id: 2, title: "Autodefesa", date: "técnica", content: "Golpes eficientes da arte das oito armas e confiança para se proteger em qualquer situação.", category: "Essencial", icon: "Shield", relatedIds: [1, 5], status: "completed", energy: 90 },
+    { id: 3, title: "Queima de Gordura", date: "corpo", content: "Até 1200 calorias por treino de alta intensidade, com resultados visíveis no espelho.", category: "Intenso", icon: "Flame", relatedIds: [1, 4], status: "in-progress", energy: 100 },
+    { id: 4, title: "Disciplina Mental", date: "mente", content: "Foco, constância e controle emocional que você leva para dentro e fora do tatame.", category: "Intenso", icon: "Brain", relatedIds: [3, 5], status: "in-progress", energy: 85 },
+    { id: 5, title: "Menos Estresse", date: "mente", content: "Descarregue a tensão do dia a dia em cada golpe e termine a aula mais leve.", category: "Bônus", icon: "HeartPulse", relatedIds: [2, 4], status: "pending", energy: 80 },
+];
+
 export const PRICING = {
     subtitle: "Planos semanais ou mensais · Individual, Dupla ou Grupos",
     formats: [

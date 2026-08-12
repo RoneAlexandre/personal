@@ -1,6 +1,6 @@
 import { Activity, Shield, Flame, Brain, HeartPulse } from "lucide-react";
 import { motion } from "framer-motion";
-import { SectionHeader, Reveal, useAutoScroll, CarouselControls } from "./Reveal";
+import { SectionHeader, useAutoScroll } from "./Reveal";
 import { BENEFITS } from "../data/content";
 
 const ICONS = { Activity, Shield, Flame, Brain, HeartPulse };
@@ -45,11 +45,6 @@ export const Benefits = () => {
                 );
             })}
         </motion.div>
-        <Reveal className="lg:hidden" delay={0.1}>
-            <div className="px-5 mt-4 flex justify-end">
-                <CarouselControls controls={trackRef} testid="benefits" />
-            </div>
-        </Reveal>
     </section>
     );
 };

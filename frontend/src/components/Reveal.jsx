@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
 
 export const useAutoScroll = (speed = 0.3) => {
     const ref = useRef(null);
@@ -59,35 +58,6 @@ export const useAutoScroll = (speed = 0.3) => {
 
     return { ref, paused, go, togglePause };
 };
-
-export const CarouselControls = ({ controls, testid }) => (
-    <div className="flex items-center gap-2" data-testid={`${testid}-controls`}>
-        <button
-            onClick={() => controls.go(-1)}
-            data-testid={`${testid}-prev`}
-            aria-label="Voltar"
-            className="border border-neutral-700 hover:border-[#D4AF37] hover:text-[#D4AF37] text-neutral-300 p-2.5 transition-colors duration-200"
-        >
-            <ChevronLeft size={18} />
-        </button>
-        <button
-            onClick={controls.togglePause}
-            data-testid={`${testid}-pause`}
-            aria-label={controls.paused ? "Retomar" : "Pausar"}
-            className="border border-neutral-700 hover:border-[#D4AF37] hover:text-[#D4AF37] text-neutral-300 p-2.5 transition-colors duration-200"
-        >
-            {controls.paused ? <Play size={18} /> : <Pause size={18} />}
-        </button>
-        <button
-            onClick={() => controls.go(1)}
-            data-testid={`${testid}-next`}
-            aria-label="Avançar"
-            className="border border-neutral-700 hover:border-[#D4AF37] hover:text-[#D4AF37] text-neutral-300 p-2.5 transition-colors duration-200"
-        >
-            <ChevronRight size={18} />
-        </button>
-    </div>
-);
 
 export const Reveal = ({ children, delay = 0, y = 28, className = "" }) => (
     <motion.div

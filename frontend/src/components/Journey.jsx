@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Reveal, SectionHeader, useAutoScroll, CarouselControls } from "./Reveal";
+import { Reveal, SectionHeader, useAutoScroll } from "./Reveal";
 import { IMAGES } from "../data/content";
 
 const CATS = [
@@ -32,8 +32,7 @@ export const Journey = () => {
                     </Reveal>
                 </div>
                 <Reveal delay={0.25}>
-                    <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-                        <div className="flex flex-wrap gap-2" role="tablist">
+                        <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8" role="tablist">
                             {CATS.map((c) => (
                                 <button
                                     key={c.id}
@@ -41,18 +40,17 @@ export const Journey = () => {
                                     aria-selected={cat === c.id}
                                     data-testid={`journey-tab-${c.id}`}
                                     onClick={() => selectCat(c.id)}
-                                    className={`border px-4 py-2 text-xs font-semibold uppercase tracking-[0.15em] transition-colors duration-200 ${
-                                        cat === c.id
-                                            ? "bg-red-600 border-red-600 text-white"
-                                            : "border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500"
+                                    className={`relative pb-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 ${
+                                        cat === c.id ? "text-white" : "text-neutral-500 hover:text-neutral-300"
                                     }`}
                                 >
                                     {c.label}
+                                    {cat === c.id && (
+                                        <span className="absolute left-0 bottom-0 h-0.5 w-full bg-red-600" aria-hidden="true" />
+                                    )}
                                 </button>
                             ))}
                         </div>
-                        <CarouselControls controls={controls} testid="journey" />
-                    </div>
                 </Reveal>
             </div>
             <Reveal>

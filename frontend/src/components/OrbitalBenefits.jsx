@@ -30,12 +30,11 @@ export default function OrbitalBenefits({ timelineData }) {
     }, []);
 
     const handleContainerClick = (e) => {
-        if (e.target === containerRef.current || e.target === orbitRef.current) {
-            setExpandedItems({});
-            setActiveNodeId(null);
-            setPulseEffect({});
-            setAutoRotate(true);
-        }
+        if (e.target.closest("[data-node]")) return;
+        setExpandedItems({});
+        setActiveNodeId(null);
+        setPulseEffect({});
+        setAutoRotate(true);
     };
 
     const toggleItem = (id) => {
@@ -127,7 +126,7 @@ export default function OrbitalBenefits({ timelineData }) {
                     <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-red-600 via-red-500 to-[#D4AF37] animate-pulse flex items-center justify-center z-10">
                         <div className="absolute w-20 h-20 rounded-full border border-white/20 animate-ping opacity-70"></div>
                         <div className="absolute w-24 h-24 rounded-full border border-[#D4AF37]/20 animate-ping opacity-50" style={{ animationDelay: "0.5s" }}></div>
-                        <div className="w-8 h-8 rounded-full bg-[#D4AF37]/80 backdrop-blur-md"></div>
+                        <HeartPulse size={26} strokeWidth={2.2} className="text-white relative" />
                     </div>
 
                     <div
@@ -153,6 +152,7 @@ export default function OrbitalBenefits({ timelineData }) {
                                 key={item.id}
                                 ref={(el) => (nodeRefs.current[item.id] = el)}
                                 data-testid={`benefit-node-${item.id}`}
+                                data-node="true"
                                 className="absolute transition-all duration-700 cursor-pointer"
                                 style={nodeStyle}
                                 onClick={(e) => {

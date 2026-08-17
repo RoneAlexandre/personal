@@ -14,6 +14,7 @@ export const Journey = () => {
     const controls = useAutoScroll(0.3);
     const [cat, setCat] = useState("tudo");
     const items = cat === "tudo" ? IMAGES.journey : IMAGES.journey.filter((i) => i.cat === cat);
+    const loopItems = [...items, ...items];
 
     const selectCat = (id) => {
         setCat(id);
@@ -59,9 +60,9 @@ export const Journey = () => {
                     data-testid="journey-carousel"
                     className="flex gap-4 overflow-x-auto px-5 sm:px-8 pb-4 [scrollbar-width:thin] [scrollbar-color:#dc2626_transparent]"
                 >
-                    {items.map((img, i) => (
+                    {loopItems.map((img, i) => (
                         <motion.figure
-                            key={img.caption}
+                            key={`${img.caption}-${i}`}
                             initial={{ opacity: 0, scale: 0.96 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.4, delay: i * 0.05 }}

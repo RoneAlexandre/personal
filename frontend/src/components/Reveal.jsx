@@ -1,12 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
+// Carrossel infinito e fluido: conteúdo duplicado + deslocamento invisível na metade.
+// Autoplay cede ao toque e à inércia do swipe, retomando 1,6s depois da interação.
 export const useAutoScroll = (speed = 0.3) => {
     const ref = useRef(null);
     const posRef = useRef(0);
-    const userPausedRef = useRef(false);
     const touchRef = useRef(false);
-    const [paused, setPaused] = useState(false);
+    const lastUserScroll = useRef(0);
 
     useEffect(() => {
         const el = ref.current;
@@ -14,21 +15,40 @@ export const useAutoScroll = (speed = 0.3) => {
         let raf;
         let running = false;
         posRef.current = el.scrollLeft;
+
+        const halfWidth = () => el.scrollWidth / 2;
+
         const step = () => {
-            if (running && !userPausedRef.current && !touchRef.current && el.scrollWidth > el.clientWidth) {
+            const userActive = touchRef.current || Date.now() - lastUserScroll.current < 1600;
+            if (running && !userActive && el.scrollWidth > el.clientWidth) {
                 posRef.current += speed;
-                if (posRef.current >= el.scrollWidth - el.clientWidth - 1) posRef.current = 0;
+                const half = halfWidth();
+                if (half > 0 && posRef.current >= half) posRef.current -= half;
                 el.scrollLeft = posRef.current;
             }
             raf = requestAnimationFrame(step);
         };
+
+        const onScroll = () => {
+            const jumped = Math.abs(el.scrollLeft - posRef.current) > 5;
+            if (touchRef.current || jumped || Date.now() - lastUserScroll.current < 1600) {
+                lastUserScroll.current = Date.now();
+                const half = halfWidth();
+                if (half > 0 && el.scrollLeft >= half) el.scrollLeft -= half;
+                else if (half > 0 && el.scrollLeft <= 0) el.scrollLeft += half;
+                posRef.current = el.scrollLeft;
+            }
+        };
+
         const io = new IntersectionObserver(([e]) => (running = e.isIntersecting), { threshold: 0.3 });
         io.observe(el);
         const onDown = () => (touchRef.current = true);
         const onUp = () => {
             touchRef.current = false;
+            lastUserScroll.current = Date.now();
             posRef.current = el.scrollLeft;
         };
+        el.addEventListener("scroll", onScroll, { passive: true });
         el.addEventListener("pointerdown", onDown);
         el.addEventListener("pointerup", onUp);
         el.addEventListener("pointercancel", onUp);
@@ -36,27 +56,14 @@ export const useAutoScroll = (speed = 0.3) => {
         return () => {
             cancelAnimationFrame(raf);
             io.disconnect();
+            el.removeEventListener("scroll", onScroll);
             el.removeEventListener("pointerdown", onDown);
             el.removeEventListener("pointerup", onUp);
             el.removeEventListener("pointercancel", onUp);
         };
     }, [speed]);
 
-    const go = (dir) => {
-        const el = ref.current;
-        if (!el) return;
-        el.scrollLeft += dir * el.clientWidth * 0.75;
-        posRef.current = el.scrollLeft;
-    };
-
-    const togglePause = () => {
-        const el = ref.current;
-        userPausedRef.current = !userPausedRef.current;
-        if (!userPausedRef.current && el) posRef.current = el.scrollLeft;
-        setPaused(userPausedRef.current);
-    };
-
-    return { ref, paused, go, togglePause };
+    return { ref };
 };
 
 export const Reveal = ({ children, delay = 0, y = 28, className = "" }) => (

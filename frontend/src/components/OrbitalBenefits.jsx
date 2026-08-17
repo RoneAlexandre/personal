@@ -63,13 +63,17 @@ export default function OrbitalBenefits({ timelineData }) {
     };
 
     useEffect(() => {
-        let rotationTimer;
-        if (autoRotate) {
-            rotationTimer = setInterval(() => {
-                setRotationAngle((prev) => Number(((prev + 0.3) % 360).toFixed(3)));
-            }, 50);
-        }
-        return () => rotationTimer && clearInterval(rotationTimer);
+        if (!autoRotate) return;
+        let raf;
+        let last = performance.now();
+        const tick = (now) => {
+            const dt = now - last;
+            last = now;
+            setRotationAngle((prev) => (prev + dt * 0.006) % 360);
+            raf = requestAnimationFrame(tick);
+        };
+        raf = requestAnimationFrame(tick);
+        return () => cancelAnimationFrame(raf);
     }, [autoRotate]);
 
     const centerViewOnNode = (nodeId) => {
@@ -123,12 +127,6 @@ export default function OrbitalBenefits({ timelineData }) {
                     ref={orbitRef}
                     style={{ perspective: "1000px", transform: `translate(${centerOffset.x}px, ${centerOffset.y}px)` }}
                 >
-                    <div className="absolute w-16 h-16 rounded-full bg-gradient-to-br from-red-600 via-red-500 to-[#D4AF37] animate-pulse flex items-center justify-center z-10">
-                        <div className="absolute w-20 h-20 rounded-full border border-white/20 animate-ping opacity-70"></div>
-                        <div className="absolute w-24 h-24 rounded-full border border-[#D4AF37]/20 animate-ping opacity-50" style={{ animationDelay: "0.5s" }}></div>
-                        <HeartPulse size={26} strokeWidth={2.2} className="text-white relative" />
-                    </div>
-
                     <div
                         className="absolute rounded-full border border-white/10"
                         style={{ width: radius * 2, height: radius * 2 }}

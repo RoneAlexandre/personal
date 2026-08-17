@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Reveal, SectionHeader, useAutoScroll } from "./Reveal";
+import { Reveal, SectionHeader } from "./Reveal";
 import { IMAGES } from "../data/content";
 
 const CATS = [
@@ -11,14 +11,13 @@ const CATS = [
 ];
 
 export const Journey = () => {
-    const controls = useAutoScroll(0.3);
+    const trackRef = useRef(null);
     const [cat, setCat] = useState("tudo");
     const items = cat === "tudo" ? IMAGES.journey : IMAGES.journey.filter((i) => i.cat === cat);
-    const loopItems = [...items, ...items];
 
     const selectCat = (id) => {
         setCat(id);
-        if (controls.ref.current) controls.ref.current.scrollLeft = 0;
+        if (trackRef.current) trackRef.current.scrollLeft = 0;
     };
 
     return (
@@ -56,11 +55,11 @@ export const Journey = () => {
             </div>
             <Reveal>
                 <div
-                    ref={controls.ref}
+                    ref={trackRef}
                     data-testid="journey-carousel"
                     className="flex gap-4 overflow-x-auto px-5 sm:px-8 pb-4 [scrollbar-width:thin] [scrollbar-color:#dc2626_transparent]"
                 >
-                    {loopItems.map((img, i) => (
+                    {items.map((img, i) => (
                         <motion.figure
                             key={`${img.caption}-${i}`}
                             initial={{ opacity: 0, scale: 0.96 }}

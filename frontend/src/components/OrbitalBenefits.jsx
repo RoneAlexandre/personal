@@ -9,7 +9,13 @@ const ICONS = { Activity, Shield, Flame, Brain, HeartPulse };
 export default function OrbitalBenefits({ timelineData }) {
     const [expandedItems, setExpandedItems] = useState({});
     const [rotationAngle, setRotationAngle] = useState(0);
-    const [autoRotate, setAutoRotate] = useState(true);
+    const [isInteracting, setIsInteracting] = useState(false);
+    const resumeTimer = useRef(null);
+
+    const scheduleResume = () => {
+        clearTimeout(resumeTimer.current);
+        resumeTimer.current = setTimeout(() => setIsInteracting(false), 2000);
+    };
     const [pulseEffect, setPulseEffect] = useState({});
     const [centerOffset] = useState({ x: 0, y: 0 });
     const [activeNodeId, setActiveNodeId] = useState(null);
@@ -34,7 +40,7 @@ export default function OrbitalBenefits({ timelineData }) {
         setExpandedItems({});
         setActiveNodeId(null);
         setPulseEffect({});
-        setAutoRotate(true);
+        scheduleResume();
     };
 
     const toggleItem = (id) => {
@@ -47,7 +53,8 @@ export default function OrbitalBenefits({ timelineData }) {
 
             if (!prev[id]) {
                 setActiveNodeId(id);
-                setAutoRotate(false);
+                clearTimeout(resumeTimer.current);
+                setIsInteracting(true);
                 const relatedItems = getRelatedItems(id);
                 const newPulseEffect = {};
                 relatedItems.forEach((relId) => (newPulseEffect[relId] = true));
@@ -55,7 +62,7 @@ export default function OrbitalBenefits({ timelineData }) {
                 centerViewOnNode(id);
             } else {
                 setActiveNodeId(null);
-                setAutoRotate(true);
+                scheduleResume();
                 setPulseEffect({});
             }
             return newState;
@@ -63,7 +70,7 @@ export default function OrbitalBenefits({ timelineData }) {
     };
 
     useEffect(() => {
-        if (!autoRotate) return;
+        if (isInteracting) return;
         let raf;
         let last = performance.now();
         const tick = (now) => {
@@ -74,7 +81,7 @@ export default function OrbitalBenefits({ timelineData }) {
         };
         raf = requestAnimationFrame(tick);
         return () => cancelAnimationFrame(raf);
-    }, [autoRotate]);
+    }, [isInteracting]);
 
     const centerViewOnNode = (nodeId) => {
         if (!nodeRefs.current[nodeId]) return;

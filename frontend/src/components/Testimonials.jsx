@@ -14,10 +14,10 @@ const Stars = () => (
 const QuoteCard = ({ t, i }) => (
     <figure
         data-testid={`testimonial-card-${i}`}
-        className="snap-start w-[280px] sm:w-[340px] shrink-0 flex flex-col bg-[#141414] border border-neutral-800 hover:border-[#D4AF37]/60 p-6 transition-colors duration-300"
+        className="w-full max-w-[320px] sm:max-w-sm mx-auto flex flex-col bg-[#141414] border border-neutral-800 p-6 sm:p-8"
     >
         <Stars />
-        <blockquote className="mt-4 flex-1 text-neutral-300 text-sm leading-relaxed">“{t.quote}”</blockquote>
+        <blockquote className="mt-4 flex-1 text-neutral-300 text-sm sm:text-base leading-relaxed">“{t.quote}”</blockquote>
         <figcaption className="mt-5 pt-4 border-t border-neutral-800 flex items-center gap-3">
             <span className="w-10 h-10 shrink-0 flex items-center justify-center bg-red-600/15 border border-red-600/40 font-display text-base text-red-500">
                 {t.name.split(" ").map((w) => w[0]).join("").replace(".", "")}
@@ -30,91 +30,97 @@ const QuoteCard = ({ t, i }) => (
     </figure>
 );
 
+const ArrowButton = ({ direction, onClick, className = "" }) => (
+    <button
+        type="button"
+        aria-label={direction === "prev" ? "Ver depoimento anterior" : "Ver próximo depoimento"}
+        onClick={onClick}
+        className={`w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-[#0D0D0D]/90 border border-neutral-800 text-neutral-300 hover:border-[#D4AF37]/70 hover:text-[#D4AF37] active:border-[#D4AF37]/70 active:text-[#D4AF37] transition-colors duration-300 ${className}`}
+    >
+        {direction === "prev" ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
+    </button>
+);
+
 export const Testimonials = () => {
-    const trackRef = useRef(null);
-    const [canScrollLeft, setCanScrollLeft] = useState(false);
-    const [canScrollRight, setCanScrollRight] = useState(true);
+    const total = TESTIMONIALS.length;
+    const [index, setIndex] = useState(0);
+    const viewportRef = useRef(null);
+    const touchStartX = useRef(null);
 
-    const updateArrows = useCallback(() => {
-        const el = trackRef.current;
-        if (!el) return;
-        setCanScrollLeft(el.scrollLeft > 4);
-        setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
-    }, []);
+    const goTo = useCallback(
+        (i) => setIndex(((i % total) + total) % total),
+        [total]
+    );
+    const next = useCallback(() => goTo(index + 1), [goTo, index]);
+    const prev = useCallback(() => goTo(index - 1), [goTo, index]);
 
-    useEffect(() => {
-        updateArrows();
-        window.addEventListener("resize", updateArrows);
-        return () => window.removeEventListener("resize", updateArrows);
-    }, [updateArrows]);
-
-    const scrollByCard = (direction) => {
-        const el = trackRef.current;
-        if (!el) return;
-        const card = el.querySelector("[data-testid^='testimonial-card-']");
-        const amount = card ? card.getBoundingClientRect().width + 20 : 300;
-        el.scrollBy({ left: direction * amount, behavior: "smooth" });
+    const onTouchStart = (e) => {
+        touchStartX.current = e.touches[0].clientX;
+    };
+    const onTouchEnd = (e) => {
+        if (touchStartX.current === null) return;
+        const delta = e.changedTouches[0].clientX - touchStartX.current;
+        if (Math.abs(delta) > 40) {
+            delta < 0 ? next() : prev();
+        }
+        touchStartX.current = null;
     };
 
     return (
         <section data-testid="testimonials-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800 overflow-hidden">
             <div className="max-w-7xl mx-auto px-5 sm:px-8">
-                <div className="flex items-end justify-between gap-4">
-                    <SectionHeader kicker="Depoimentos" title="Quem treina, recomenda" />
-                    <div className="hidden sm:flex gap-2 pb-1">
-                        <button
-                            type="button"
-                            aria-label="Ver depoimento anterior"
-                            onClick={() => scrollByCard(-1)}
-                            disabled={!canScrollLeft}
-                            className="w-10 h-10 flex items-center justify-center border border-neutral-800 text-neutral-400 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] disabled:opacity-30 disabled:pointer-events-none transition-colors duration-300"
-                        >
-                            <ChevronLeft size={18} />
-                        </button>
-                        <button
-                            type="button"
-                            aria-label="Ver próximo depoimento"
-                            onClick={() => scrollByCard(1)}
-                            disabled={!canScrollRight}
-                            className="w-10 h-10 flex items-center justify-center border border-neutral-800 text-neutral-400 hover:border-[#D4AF37]/60 hover:text-[#D4AF37] disabled:opacity-30 disabled:pointer-events-none transition-colors duration-300"
-                        >
-                            <ChevronRight size={18} />
-                        </button>
-                    </div>
-                </div>
+                <SectionHeader kicker="Depoimentos" title="Quem treina, recomenda" align="center" />
             </div>
 
-            <div className="relative mt-12">
+            <div className="max-w-3xl mx-auto mt-12 px-4 sm:px-16">
                 <div
-                    ref={trackRef}
-                    onScroll={updateArrows}
+                    ref={viewportRef}
+                    className="relative overflow-hidden"
+                    onTouchStart={onTouchStart}
+                    onTouchEnd={onTouchEnd}
                     data-testid="testimonial-track"
-                    className="flex gap-5 px-5 sm:px-8 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
                 >
-                    {TESTIMONIALS.map((t, i) => (
-                        <QuoteCard key={t.name} t={t} i={i} />
-                    ))}
+                    <div
+                        className="flex transition-transform duration-500 ease-out"
+                        style={{ transform: `translateX(-${index * 100}%)` }}
+                    >
+                        {TESTIMONIALS.map((t, i) => (
+                            <div key={t.name} className="w-full shrink-0 px-1">
+                                <QuoteCard t={t} i={i} />
+                            </div>
+                        ))}
+                    </div>
+
+                    <ArrowButton direction="prev" onClick={prev} className="hidden sm:flex absolute -left-14 top-1/2 -translate-y-1/2" />
+                    <ArrowButton direction="next" onClick={next} className="hidden sm:flex absolute -right-14 top-1/2 -translate-y-1/2" />
                 </div>
 
-                <div className="flex sm:hidden justify-center gap-3 mt-6">
-                    <button
-                        type="button"
-                        aria-label="Ver depoimento anterior"
-                        onClick={() => scrollByCard(-1)}
-                        disabled={!canScrollLeft}
-                        className="w-11 h-11 flex items-center justify-center border border-neutral-800 text-neutral-400 active:border-[#D4AF37]/60 active:text-[#D4AF37] disabled:opacity-30 disabled:pointer-events-none transition-colors duration-300"
-                    >
-                        <ChevronLeft size={20} />
-                    </button>
-                    <button
-                        type="button"
-                        aria-label="Ver próximo depoimento"
-                        onClick={() => scrollByCard(1)}
-                        disabled={!canScrollRight}
-                        className="w-11 h-11 flex items-center justify-center border border-neutral-800 text-neutral-400 active:border-[#D4AF37]/60 active:text-[#D4AF37] disabled:opacity-30 disabled:pointer-events-none transition-colors duration-300"
-                    >
-                        <ChevronRight size={20} />
-                    </button>
+                <div className="flex sm:hidden items-center justify-center gap-4 mt-6">
+                    <ArrowButton direction="prev" onClick={prev} />
+                    <div className="flex gap-1.5">
+                        {TESTIMONIALS.map((_, i) => (
+                            <button
+                                key={i}
+                                type="button"
+                                aria-label={`Ir para depoimento ${i + 1}`}
+                                onClick={() => goTo(i)}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? "w-5 bg-[#D4AF37]" : "w-1.5 bg-neutral-700"}`}
+                            />
+                        ))}
+                    </div>
+                    <ArrowButton direction="next" onClick={next} />
+                </div>
+
+                <div className="hidden sm:flex justify-center gap-1.5 mt-8">
+                    {TESTIMONIALS.map((_, i) => (
+                        <button
+                            key={i}
+                            type="button"
+                            aria-label={`Ir para depoimento ${i + 1}`}
+                            onClick={() => goTo(i)}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? "w-6 bg-[#D4AF37]" : "w-1.5 bg-neutral-700"}`}
+                        />
+                    ))}
                 </div>
             </div>
         </section>

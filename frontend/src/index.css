@@ -78,6 +78,15 @@
     animation: marquee 40s linear infinite;
 }
 
+.no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
 @keyframes float-ping {
     0% {
         transform: scale(1);

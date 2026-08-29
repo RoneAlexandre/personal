@@ -8,12 +8,14 @@ export const Benefits = () => (
             <SectionHeader kicker="Por que treinar" title="Benefícios do Muaythai" align="center" />
             <Reveal delay={0.1}>
                 <p className="text-center text-neutral-400 text-sm sm:text-base mt-4">
-                    Toque em um ponto da órbita para explorar cada benefício.
+                    Os principais ganhos de quem treina Muaythai com o Rone.
                 </p>
             </Reveal>
+            <Reveal delay={0.15}>
+                <div className="mt-10">
+                    <OrbitalBenefits timelineData={ORBITAL_BENEFITS} />
+                </div>
+            </Reveal>
         </div>
-        <Reveal delay={0.15}>
-            <OrbitalBenefits timelineData={ORBITAL_BENEFITS} />
-        </Reveal>
     </section>
 );

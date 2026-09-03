@@ -52,6 +52,15 @@ module.exports = {
           '3': 'hsl(var(--chart-3))',
           '4': 'hsl(var(--chart-4))',
           '5': 'hsl(var(--chart-5))'
+        },
+        terracota: {
+          DEFAULT: '#A76E36',
+          dark: '#8C5B2A'
+        },
+        cream: '#E3DBCC',
+        brown: {
+          DEFAULT: '#56301B',
+          light: '#9C8674'
         }
       },
       keyframes: {

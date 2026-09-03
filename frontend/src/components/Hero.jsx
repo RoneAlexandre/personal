@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { IMAGES, WHATSAPP_URL } from "../data/content";
+import logo from "../assets/logo-horizontal.png";
 
 const MaskedLine = ({ children, delay, className = "" }) => (
     <span className="block overflow-hidden">
@@ -38,31 +39,35 @@ export const Hero = () => {
                 style={{ opacity: fade }}
                 className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-5 sm:px-8 pt-16 pb-12 sm:pt-28 sm:pb-16"
             >
-                <MaskedLine delay={0.15} className="font-display text-2xl sm:text-4xl uppercase tracking-[0.12em] text-[#D4AF37] mb-5">
-                    Você é mais forte do que pensa
+                <MaskedLine delay={0.15} className="font-light-display text-3xl sm:text-5xl text-brown-light mb-6">
+                    Propósito gera excelência
                 </MaskedLine>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.35, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    data-testid="hero-logo"
+                >
+                    <img
+                        src={logo}
+                        alt="Rone Batista — Personal Fight"
+                        className="w-full max-w-[280px] sm:max-w-md h-auto"
+                    />
+                </motion.div>
 
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.8 }}
-                    className="flex items-center gap-3 mb-5"
+                    transition={{ delay: 0.6, duration: 0.8 }}
+                    className="flex items-center gap-3 mt-5 mb-1"
                 >
-                    <span className="font-display text-red-500 tracking-[0.25em] uppercase text-lg sm:text-xl">
-                        Muaythai · Kickboxing · Boxe
+                    <span className="font-light-display tracking-[0.2em] uppercase text-base sm:text-lg text-terracota">
+                        Muaythai · Kickboxing
                     </span>
                 </motion.div>
 
-                <h1 className="font-display uppercase leading-[0.85] tracking-tight text-white">
-                    <MaskedLine delay={0.35} className="text-[clamp(4rem,14vw,11rem)]">
-                        Personal
-                    </MaskedLine>
-                    <MaskedLine delay={0.5} className="text-[clamp(4rem,14vw,11rem)] text-stroke">
-                        Fight
-                    </MaskedLine>
-                </h1>
-
-                <MaskedLine delay={0.75} className="mt-5 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
+                <MaskedLine delay={0.75} className="mt-4 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
                     Transforme seu corpo e sua mente com treinos feitos de acordo com seu objetivo.
                 </MaskedLine>
 
@@ -77,7 +82,7 @@ export const Hero = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="hero-whatsapp-cta"
-                        className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-red-600 hover:bg-red-500 text-white font-display text-xl sm:text-2xl tracking-widest px-8 py-4 uppercase transition-[background-color,transform] duration-300 hover:-translate-y-0.5"
+                        className="group inline-flex w-full sm:w-auto items-center justify-center gap-3 bg-terracota hover:bg-terracota-dark text-cream font-display text-xl sm:text-2xl tracking-widest px-8 py-4 uppercase transition-[background-color,transform] duration-300 hover:-translate-y-0.5"
                     >
                         Agende sua aula
                         <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
@@ -85,7 +90,7 @@ export const Hero = () => {
                     <a
                         href="#aulas"
                         data-testid="hero-secondary-cta"
-                        className="inline-flex items-center justify-center border border-neutral-600 hover:border-[#D4AF37] hover:text-[#D4AF37] text-neutral-200 font-semibold px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300"
+                        className="inline-flex items-center justify-center border border-neutral-600 hover:border-brown-light hover:text-brown-light text-neutral-200 font-semibold px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300"
                     >
                         Conheça os formatos
                     </a>
@@ -100,11 +105,11 @@ export const Hero = () => {
                 >
                     {[
                         ["+10", "anos de experiência"],
-                        ["03", "modalidades"],
+                        ["02", "modalidades"],
                         ["100%", "treino exclusivo"],
                     ].map(([n, label]) => (
                         <div key={label}>
-                            <p className="font-display text-3xl sm:text-4xl text-[#D4AF37]">{n}</p>
+                            <p className="font-display text-3xl sm:text-4xl text-brown-light">{n}</p>
                             <p className="text-xs sm:text-sm text-neutral-400 uppercase tracking-widest mt-1">{label}</p>
                         </div>
                     ))}

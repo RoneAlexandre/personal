@@ -17,7 +17,7 @@ export const FAQ = () => (
                         >
                             <AccordionTrigger
                                 data-testid={`faq-trigger-${i}`}
-                                className="text-left font-display text-xl sm:text-2xl uppercase tracking-wide text-white hover:text-red-500 hover:no-underline py-6 transition-colors duration-200"
+                                className="text-left font-display text-xl sm:text-2xl uppercase tracking-wide text-cream hover:text-terracota hover:no-underline py-6 transition-colors duration-200"
                             >
                                 {item.q}
                             </AccordionTrigger>
@@ -36,7 +36,7 @@ export const FAQ = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="faq-whatsapp-link"
-                        className="text-red-500 hover:text-red-400 font-semibold transition-colors duration-200"
+                        className="text-terracota hover:text-terracota font-semibold transition-colors duration-200"
                     >
                         Chame no WhatsApp
                     </a>{" "}

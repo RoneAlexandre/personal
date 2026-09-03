@@ -28,8 +28,8 @@ export const Navbar = () => {
             }`}
         >
             <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-                <a href="#topo" data-testid="nav-logo" className="font-display text-2xl tracking-wide text-white" onClick={() => setOpen(false)}>
-                    RONE<span className="text-red-600">BATISTA</span>
+                <a href="#topo" data-testid="nav-logo" className="font-display text-2xl tracking-wide text-cream" onClick={() => setOpen(false)}>
+                    RONE<span className="text-terracota">BATISTA</span>
                 </a>
                 <nav className="hidden md:flex items-center gap-8">
                     {LINKS.map((l) => (
@@ -37,7 +37,7 @@ export const Navbar = () => {
                             key={l.href}
                             href={l.href}
                             data-testid={`nav-link-${l.label.toLowerCase()}`}
-                            className="text-sm font-medium text-neutral-300 hover:text-white transition-colors duration-200 uppercase tracking-widest"
+                            className="text-sm font-medium text-neutral-300 hover:text-cream transition-colors duration-200 uppercase tracking-widest"
                         >
                             {l.label}
                         </a>
@@ -49,7 +49,7 @@ export const Navbar = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="nav-whatsapp-btn"
-                        className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white text-sm font-semibold px-4 py-2 uppercase tracking-wider transition-colors duration-200"
+                        className="inline-flex items-center gap-2 bg-terracota hover:bg-terracota-dark text-cream text-sm font-semibold px-4 py-2 uppercase tracking-wider transition-colors duration-200"
                     >
                         <MessageCircle size={16} strokeWidth={2} />
                         <span className="hidden sm:inline">Agendar aula</span>
@@ -59,7 +59,7 @@ export const Navbar = () => {
                         onClick={() => setOpen(!open)}
                         data-testid="nav-toggle"
                         aria-label={open ? "Fechar menu" : "Abrir menu"}
-                        className="md:hidden text-white p-2 border border-neutral-700 hover:border-red-600 transition-colors duration-200"
+                        className="md:hidden text-cream p-2 border border-neutral-700 hover:border-terracota transition-colors duration-200"
                     >
                         {open ? <X size={20} /> : <Menu size={20} />}
                     </button>
@@ -73,7 +73,7 @@ export const Navbar = () => {
                             href={l.href}
                             onClick={() => setOpen(false)}
                             data-testid={`nav-mobile-link-${l.label.toLowerCase()}`}
-                            className="block px-6 py-4 text-sm font-semibold text-neutral-200 hover:text-white hover:bg-white/5 uppercase tracking-widest border-b border-neutral-900 transition-colors duration-200"
+                            className="block px-6 py-4 text-sm font-semibold text-neutral-200 hover:text-cream hover:bg-cream/5 uppercase tracking-widest border-b border-neutral-900 transition-colors duration-200"
                         >
                             {l.label}
                         </a>

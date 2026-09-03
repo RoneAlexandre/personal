@@ -28,11 +28,11 @@ export const Pricing = () => {
                                 data-testid={`plan-tab-${f.id}`}
                                 onClick={() => setActive(f.id)}
                                 className={`py-4 px-2 font-display text-lg sm:text-2xl uppercase tracking-widest transition-colors duration-300 ${
-                                    active === f.id ? "bg-red-600 text-white" : "bg-[#141414] text-neutral-400 hover:text-white"
+                                    active === f.id ? "bg-terracota text-cream" : "bg-[#141414] text-neutral-400 hover:text-cream"
                                 }`}
                             >
                                 {f.label}
-                                <span className={`block font-body text-[10px] sm:text-xs tracking-[0.15em] mt-0.5 normal-case font-normal ${active === f.id ? "text-white/75" : "text-neutral-500"}`}>
+                                <span className={`block font-body text-[10px] sm:text-xs tracking-[0.15em] mt-0.5 normal-case font-normal ${active === f.id ? "text-cream/75" : "text-neutral-500"}`}>
                                     {f.note}
                                 </span>
                             </button>
@@ -51,7 +51,7 @@ export const Pricing = () => {
                         className="mt-8"
                     >
                         {current.perPerson && (
-                            <p className="text-center text-[#D4AF37] text-xs uppercase tracking-[0.2em] mb-5" data-testid={`per-person-${active}`}>
+                            <p className="text-center text-[#9C8674] text-xs uppercase tracking-[0.2em] mb-5" data-testid={`per-person-${active}`}>
                                 * Todos os valores desta tabela são por pessoa
                             </p>
                         )}
@@ -67,20 +67,20 @@ export const Pricing = () => {
                                     data-testid={`price-row-${active}-${i}`}
                                     className="grid md:grid-cols-[1fr_2.15fr] gap-3 md:gap-4 items-center border-b border-neutral-800 py-5 md:px-6"
                                 >
-                                    <span className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-white">{row.freq}</span>
+                                    <span className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-cream">{row.freq}</span>
                                     <div className="grid grid-cols-2 md:grid-cols-[1fr_1.15fr] gap-3 md:gap-4">
                                         <div className="border border-neutral-800 bg-[#141414] px-4 py-3">
                                             <span className="block text-[10px] uppercase tracking-[0.2em] text-neutral-500 md:hidden">Semanal</span>
-                                            <span className="font-display text-2xl sm:text-3xl text-white">{row.weekly}</span>
+                                            <span className="font-display text-2xl sm:text-3xl text-cream">{row.weekly}</span>
                                             {row.weeklyNote && <span className="block text-xs text-neutral-500 mt-0.5">{row.weeklyNote}</span>}
                                         </div>
-                                        <div className="relative border border-[#D4AF37] bg-[#D4AF37]/5 px-4 py-3">
-                                            <span className="absolute -top-2.5 right-2 bg-red-600 text-white text-[9px] font-bold uppercase tracking-[0.14em] px-2 py-0.5">
+                                        <div className="relative border border-[#9C8674] bg-[#9C8674]/5 px-4 py-3">
+                                            <span className="absolute -top-2.5 right-2 bg-terracota text-cream text-[9px] font-bold uppercase tracking-[0.14em] px-2 py-0.5">
                                                 Promoção
                                             </span>
-                                            <span className="block text-[10px] uppercase tracking-[0.2em] text-[#D4AF37]/80 md:hidden">Mensal</span>
-                                            <span className="font-display text-2xl sm:text-3xl text-[#D4AF37]">{row.monthly}</span>
-                                            {row.perClass && <span className="block text-xs text-[#D4AF37]/90 mt-0.5">{row.perClass}</span>}
+                                            <span className="block text-[10px] uppercase tracking-[0.2em] text-[#9C8674]/80 md:hidden">Mensal</span>
+                                            <span className="font-display text-2xl sm:text-3xl text-[#9C8674]">{row.monthly}</span>
+                                            {row.perClass && <span className="block text-xs text-[#9C8674]/90 mt-0.5">{row.perClass}</span>}
                                         </div>
                                     </div>
                                 </div>
@@ -91,7 +91,7 @@ export const Pricing = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             data-testid={`plan-cta-${active}`}
-                            className="mt-8 inline-flex w-full sm:w-auto justify-center bg-red-600 hover:bg-red-500 text-white font-display text-xl tracking-widest uppercase px-8 py-4 transition-[background-color,transform] duration-300 hover:-translate-y-0.5"
+                            className="mt-8 inline-flex w-full sm:w-auto justify-center bg-terracota hover:bg-terracota text-cream font-display text-xl tracking-widest uppercase px-8 py-4 transition-[background-color,transform] duration-300 hover:-translate-y-0.5"
                         >
                             {current.cta}
                         </a>
@@ -99,10 +99,10 @@ export const Pricing = () => {
                 </AnimatePresence>
 
                 <Reveal delay={0.1} className="mt-12">
-                    <div className="flex items-center gap-4 border border-[#D4AF37] bg-[#D4AF37]/[0.08] px-6 py-5" data-testid="payment-date-banner">
-                        <CalendarCheck size={28} strokeWidth={1.5} className="text-[#D4AF37] shrink-0" />
+                    <div className="flex items-center gap-4 border border-[#9C8674] bg-[#9C8674]/[0.08] px-6 py-5" data-testid="payment-date-banner">
+                        <CalendarCheck size={28} strokeWidth={1.5} className="text-[#9C8674] shrink-0" />
                         <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
-                            <strong className="text-[#D4AF37]">Você escolhe a data do pagamento.</strong>{" "}
+                            <strong className="text-[#9C8674]">Você escolhe a data do pagamento.</strong>{" "}
                             Fechou o plano? Combinamos juntos o melhor dia do mês para você pagar sem aperto.
                         </p>
                     </div>
@@ -110,17 +110,17 @@ export const Pricing = () => {
 
                 <Reveal delay={0.15} className="mt-12">
                     <div className="grid md:grid-cols-2 gap-px bg-neutral-800 border border-neutral-800" data-testid="pricing-extras">
-                        <h3 className="md:col-span-2 bg-[#0A0A0A] px-6 py-4 font-display text-2xl sm:text-3xl uppercase tracking-wide text-white flex items-center gap-3">
-                            <span className="w-7 h-0.5 bg-red-600 shrink-0" aria-hidden="true" />
+                        <h3 className="md:col-span-2 bg-[#0A0A0A] px-6 py-4 font-display text-2xl sm:text-3xl uppercase tracking-wide text-cream flex items-center gap-3">
+                            <span className="w-7 h-0.5 bg-terracota shrink-0" aria-hidden="true" />
                             {PRICING.extrasTitle}
                         </h3>
                         {PRICING.extras.map((ex) => {
                             const Icon = EXTRA_ICONS[ex.icon];
                             return (
                                 <div key={ex.text} className="bg-[#0A0A0A] px-6 py-5 flex items-start gap-3">
-                                    <Icon size={20} strokeWidth={1.5} className="text-[#D4AF37] mt-0.5 shrink-0" />
+                                    <Icon size={20} strokeWidth={1.5} className="text-[#9C8674] mt-0.5 shrink-0" />
                                     <p className="text-sm text-neutral-300">
-                                        {ex.text} <strong className="text-white">{ex.price}</strong>
+                                        {ex.text} <strong className="text-cream">{ex.price}</strong>
                                     </p>
                                 </div>
                             );

@@ -20,15 +20,15 @@ export default function OrbitalBenefits({ timelineData }) {
                         data-testid={`benefit-card-${item.id}`}
                         className={`
                             group flex flex-col gap-2.5 bg-[#141414] border border-neutral-800
-                            hover:border-[#D4AF37]/60 active:border-[#D4AF37]/60
+                            hover:border-[#9C8674]/60 active:border-[#9C8674]/60
                             p-4 sm:p-5 transition-colors duration-300
                             ${isOdd && isLast ? "col-span-2 sm:col-span-1" : ""}
                         `}
                     >
-                        <span className="w-10 h-10 shrink-0 flex items-center justify-center bg-red-600/15 border border-red-600/40 text-red-500 group-hover:border-[#D4AF37]/50 group-hover:text-[#D4AF37] transition-colors duration-300">
+                        <span className="w-10 h-10 shrink-0 flex items-center justify-center bg-terracota/15 border border-terracota/40 text-terracota group-hover:border-[#9C8674]/50 group-hover:text-[#9C8674] transition-colors duration-300">
                             <Icon size={18} />
                         </span>
-                        <h3 className="text-white font-semibold text-sm leading-tight">{item.title}</h3>
+                        <h3 className="text-cream font-semibold text-sm leading-tight">{item.title}</h3>
                         <p className="text-neutral-400 text-xs leading-relaxed">{item.content}</p>
                     </div>
                 );

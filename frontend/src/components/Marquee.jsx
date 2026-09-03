@@ -14,7 +14,7 @@ export const Marquee = () => (
                             <span className="font-display text-2xl sm:text-3xl uppercase tracking-widest text-neutral-500 px-6">
                                 {w}
                             </span>
-                            <span className="text-red-600 text-xl">✦</span>
+                            <span className="text-terracota text-xl">✦</span>
                         </span>
                     ))}
                 </div>

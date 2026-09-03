@@ -22,20 +22,20 @@ export const HomePack = () => (
                     <Reveal key={pack.name} delay={i * 0.1} className="h-full">
                         <article
                             data-testid={`homepack-card-${i}`}
-                            className="h-full flex flex-col border border-neutral-800 bg-[#141414] p-7 transition-[border-color,transform] duration-300 hover:border-[#D4AF37] hover:-translate-y-1"
+                            className="h-full flex flex-col border border-neutral-800 bg-[#141414] p-7 transition-[border-color,transform] duration-300 hover:border-[#9C8674] hover:-translate-y-1"
                         >
-                            <h3 className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-white">
+                            <h3 className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-cream">
                                 {pack.name}
                             </h3>
                             <p className="mt-5 flex items-baseline gap-1">
-                                <span className="font-display text-4xl text-[#D4AF37] leading-none">{pack.price}</span>
+                                <span className="font-display text-4xl text-[#9C8674] leading-none">{pack.price}</span>
                                 <span className="text-neutral-500 text-xs uppercase tracking-widest">/pdf</span>
                             </p>
                             <p className="mt-4 text-neutral-400 text-sm leading-relaxed">{pack.description}</p>
                             <ul className="mt-5 pt-5 border-t border-neutral-800 space-y-2 flex-1">
                                 {pack.includes.map((inc) => (
                                     <li key={inc} className="flex items-start gap-2.5 text-sm text-neutral-300">
-                                        <Check size={15} className="text-[#D4AF37] mt-0.5 shrink-0" strokeWidth={2.5} />
+                                        <Check size={15} className="text-[#9C8674] mt-0.5 shrink-0" strokeWidth={2.5} />
                                         {inc}
                                     </li>
                                 ))}
@@ -45,7 +45,7 @@ export const HomePack = () => (
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 data-testid={`homepack-buy-${i}`}
-                                className="mt-7 inline-flex justify-center bg-[#D4AF37] hover:bg-[#e5c453] text-black font-display text-lg tracking-widest uppercase px-6 py-3 transition-colors duration-300"
+                                className="mt-7 inline-flex justify-center bg-[#9C8674] hover:bg-terracota text-black font-display text-lg tracking-widest uppercase px-6 py-3 transition-colors duration-300"
                             >
                                 Comprar pack
                             </a>

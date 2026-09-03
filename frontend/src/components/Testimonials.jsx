@@ -6,7 +6,7 @@ import { TESTIMONIALS } from "../data/content";
 const Stars = () => (
     <div className="flex gap-1" aria-label="Avaliação 5 de 5 estrelas">
         {[...Array(5)].map((_, i) => (
-            <Star key={i} size={14} className="text-[#D4AF37]" fill="#D4AF37" strokeWidth={0} />
+            <Star key={i} size={14} className="text-[#9C8674]" fill="#9C8674" strokeWidth={0} />
         ))}
     </div>
 );
@@ -19,11 +19,11 @@ const QuoteCard = ({ t, i }) => (
         <Stars />
         <blockquote className="mt-4 flex-1 text-neutral-300 text-sm sm:text-base leading-relaxed">“{t.quote}”</blockquote>
         <figcaption className="mt-5 pt-4 border-t border-neutral-800 flex items-center gap-3">
-            <span className="w-10 h-10 shrink-0 flex items-center justify-center bg-red-600/15 border border-red-600/40 font-display text-base text-red-500">
+            <span className="w-10 h-10 shrink-0 flex items-center justify-center bg-terracota/15 border border-terracota/40 font-display text-base text-terracota">
                 {t.name.split(" ").map((w) => w[0]).join("").replace(".", "")}
             </span>
             <span>
-                <span className="block text-white font-semibold text-sm">{t.name}</span>
+                <span className="block text-cream font-semibold text-sm">{t.name}</span>
                 <span className="block text-neutral-500 text-xs uppercase tracking-widest mt-0.5">{t.role}</span>
             </span>
         </figcaption>
@@ -35,7 +35,7 @@ const ArrowButton = ({ direction, onClick, className = "" }) => (
         type="button"
         aria-label={direction === "prev" ? "Ver depoimento anterior" : "Ver próximo depoimento"}
         onClick={onClick}
-        className={`w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-[#0D0D0D]/90 border border-neutral-800 text-neutral-300 hover:border-[#D4AF37]/70 hover:text-[#D4AF37] active:border-[#D4AF37]/70 active:text-[#D4AF37] transition-colors duration-300 ${className}`}
+        className={`w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-[#0D0D0D]/90 border border-neutral-800 text-neutral-300 hover:border-[#9C8674]/70 hover:text-[#9C8674] active:border-[#9C8674]/70 active:text-[#9C8674] transition-colors duration-300 ${className}`}
     >
         {direction === "prev" ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
     </button>
@@ -104,7 +104,7 @@ export const Testimonials = () => {
                                 type="button"
                                 aria-label={`Ir para depoimento ${i + 1}`}
                                 onClick={() => goTo(i)}
-                                className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? "w-5 bg-[#D4AF37]" : "w-1.5 bg-neutral-700"}`}
+                                className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? "w-5 bg-[#9C8674]" : "w-1.5 bg-neutral-700"}`}
                             />
                         ))}
                     </div>
@@ -118,7 +118,7 @@ export const Testimonials = () => {
                             type="button"
                             aria-label={`Ir para depoimento ${i + 1}`}
                             onClick={() => goTo(i)}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? "w-6 bg-[#D4AF37]" : "w-1.5 bg-neutral-700"}`}
+                            className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? "w-6 bg-[#9C8674]" : "w-1.5 bg-neutral-700"}`}
                         />
                     ))}
                 </div>

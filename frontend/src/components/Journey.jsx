@@ -36,12 +36,12 @@ export const Journey = () => {
                                 data-testid={`journey-tab-${c.id}`}
                                 onClick={() => setCat(c.id)}
                                 className={`relative pb-1.5 text-xs font-semibold uppercase tracking-[0.2em] transition-colors duration-200 ${
-                                    cat === c.id ? "text-white" : "text-neutral-500 hover:text-neutral-300"
+                                    cat === c.id ? "text-cream" : "text-neutral-500 hover:text-neutral-300"
                                 }`}
                             >
                                 {c.label}
                                 {cat === c.id && (
-                                    <span className="absolute left-0 bottom-0 h-0.5 w-full bg-red-600" aria-hidden="true" />
+                                    <span className="absolute left-0 bottom-0 h-0.5 w-full bg-terracota" aria-hidden="true" />
                                 )}
                             </button>
                         ))}
@@ -74,7 +74,7 @@ export const Journey = () => {
                                     draggable={false}
                                     className="w-full h-full object-cover grayscale-[30%] transition-[transform,filter] duration-700 group-hover:scale-105 group-hover:grayscale-0"
                                 />
-                                <figcaption className="absolute bottom-0 inset-x-0 pt-10 pb-3 px-3 bg-gradient-to-t from-black/85 to-transparent text-[11px] uppercase tracking-[0.15em] text-white/90">
+                                <figcaption className="absolute bottom-0 inset-x-0 pt-10 pb-3 px-3 bg-gradient-to-t from-black/85 to-transparent text-[11px] uppercase tracking-[0.15em] text-cream/90">
                                     {img.caption}
                                 </figcaption>
                             </motion.figure>

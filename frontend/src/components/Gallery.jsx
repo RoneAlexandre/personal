@@ -26,9 +26,9 @@ export const Gallery = () => (
                                 className="h-full w-full object-cover grayscale-[35%] transition-[transform,filter] duration-700 group-hover:scale-105 group-hover:grayscale-0"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
-                            <span className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
-                            <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#D4AF37] opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
-                            <figcaption className="absolute bottom-3 left-3 text-white/90 text-xs uppercase tracking-widest">
+                            <span className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#9C8674] opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+                            <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#9C8674] opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+                            <figcaption className="absolute bottom-3 left-3 text-cream/90 text-xs uppercase tracking-widest">
                                 {img.alt}
                             </figcaption>
                         </figure>

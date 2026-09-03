@@ -28,8 +28,8 @@ export const Policy = () => (
                             }}
                             className="group bg-[#0D0D0D] hover:bg-[#141414] p-6 sm:p-8 transition-colors duration-300"
                         >
-                            <Icon size={36} strokeWidth={1.5} className="text-red-600 group-hover:text-[#D4AF37] transition-colors duration-300" />
-                            <h3 className="font-display text-xl sm:text-2xl uppercase tracking-wide text-white mt-5 mb-2 leading-tight">
+                            <Icon size={36} strokeWidth={1.5} className="text-terracota group-hover:text-[#9C8674] transition-colors duration-300" />
+                            <h3 className="font-display text-xl sm:text-2xl uppercase tracking-wide text-cream mt-5 mb-2 leading-tight">
                                 {p.title}
                             </h3>
                             <p className="text-neutral-400 text-sm leading-relaxed">{p.text}</p>

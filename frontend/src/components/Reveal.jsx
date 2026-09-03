@@ -80,10 +80,10 @@ export const Reveal = ({ children, delay = 0, y = 28, className = "" }) => (
 
 export const SectionHeader = ({ kicker, title, align = "left" }) => (
     <Reveal className={align === "center" ? "text-center" : ""}>
-        <p className="text-red-600 font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm mb-4">
+        <p className="text-terracota font-semibold tracking-[0.3em] uppercase text-xs sm:text-sm mb-4">
             {kicker}
         </p>
-        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] uppercase text-white">
+        <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-[0.95] uppercase text-cream">
             {title}
         </h2>
     </Reveal>

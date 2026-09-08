@@ -1,58 +1,56 @@
-import { Check } from "lucide-react";
+import { Check, Clock } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
 import { HOMEPACK } from "../data/content";
 
-// Para ativar a compra: preencha "buyUrl" de cada pack em src/data/content.js.
-// Enquanto buyUrl estiver vazio, o botão abre o WhatsApp.
+// Pack ainda não está à venda: o CTA leva para o WhatsApp para avisar o
+// aluno assim que o lançamento acontecer.
 export const HomePack = () => (
     <section id="treine-em-casa" data-testid="homepack-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
-        <div className="max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="max-w-2xl mx-auto px-5 sm:px-8">
             <div className="text-center">
-                <SectionHeader kicker="Treinos em PDF" title='Pack "Treine em Casa"' align="center" />
-                <Reveal delay={0.1}>
-                    <p className="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto mt-4">
-                        Treinos completos de Muaythai em PDF para fazer em casa, no seu ritmo:
-                        aquecimento, técnica, sequências de golpes e condicionamento — direto no seu celular.
-                    </p>
-                </Reveal>
+                <SectionHeader kicker="Treinos em PDF" title={HOMEPACK.title} align="center" />
             </div>
 
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
-                {HOMEPACK.packs.map((pack, i) => (
-                    <Reveal key={pack.name} delay={i * 0.1} className="h-full">
-                        <article
-                            data-testid={`homepack-card-${i}`}
-                            className="h-full flex flex-col border border-neutral-800 bg-[#141414] p-7 transition-[border-color,transform] duration-300 hover:border-[#9C8674] hover:-translate-y-1"
-                        >
-                            <h3 className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-cream">
-                                {pack.name}
-                            </h3>
-                            <p className="mt-5 flex items-baseline gap-1">
-                                <span className="font-display text-4xl text-[#9C8674] leading-none">{pack.price}</span>
-                                <span className="text-neutral-500 text-xs uppercase tracking-widest">/pdf</span>
-                            </p>
-                            <p className="mt-4 text-neutral-400 text-sm leading-relaxed">{pack.description}</p>
-                            <ul className="mt-5 pt-5 border-t border-neutral-800 space-y-2 flex-1">
-                                {pack.includes.map((inc) => (
-                                    <li key={inc} className="flex items-start gap-2.5 text-sm text-neutral-300">
-                                        <Check size={15} className="text-[#9C8674] mt-0.5 shrink-0" strokeWidth={2.5} />
-                                        {inc}
-                                    </li>
-                                ))}
-                            </ul>
-                            <a
-                                href={pack.buyUrl || HOMEPACK.waUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                data-testid={`homepack-buy-${i}`}
-                                className="mt-7 inline-flex justify-center bg-[#9C8674] hover:bg-terracota text-black font-display text-lg tracking-widest uppercase px-6 py-3 transition-colors duration-300"
-                            >
-                                Comprar pack
-                            </a>
-                        </article>
-                    </Reveal>
-                ))}
-            </div>
+            <Reveal delay={0.1}>
+                <article
+                    data-testid="homepack-card"
+                    className="relative mt-10 border border-[#9C8674]/40 bg-[#141414] p-8 sm:p-10 text-center overflow-hidden"
+                >
+                    <span
+                        data-testid="homepack-badge"
+                        className="absolute top-0 right-0 bg-terracota text-cream text-xs font-bold uppercase tracking-[0.14em] px-4 py-1.5"
+                    >
+                        Em breve
+                    </span>
+
+                    <span className="mx-auto w-14 h-14 flex items-center justify-center bg-[#9C8674]/10 border border-[#9C8674]/40 text-[#9C8674]">
+                        <Clock size={26} strokeWidth={1.5} />
+                    </span>
+
+                    <p className="mt-6 text-neutral-400 text-sm sm:text-base leading-relaxed max-w-md mx-auto">
+                        {HOMEPACK.description}
+                    </p>
+
+                    <ul className="mt-7 pt-7 border-t border-neutral-800 space-y-3 text-left max-w-sm mx-auto">
+                        {HOMEPACK.includes.map((inc) => (
+                            <li key={inc} className="flex items-start gap-2.5 text-sm text-neutral-300">
+                                <Check size={15} className="text-[#9C8674] mt-0.5 shrink-0" strokeWidth={2.5} />
+                                {inc}
+                            </li>
+                        ))}
+                    </ul>
+
+                    <a
+                        href={HOMEPACK.waUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid="homepack-notify-cta"
+                        className="mt-8 inline-flex justify-center w-full sm:w-auto bg-[#9C8674] hover:bg-terracota text-black font-display text-lg tracking-widest uppercase px-8 py-3.5 transition-colors duration-300"
+                    >
+                        Quero ser avisado do lançamento
+                    </a>
+                </article>
+            </Reveal>
         </div>
     </section>
 );

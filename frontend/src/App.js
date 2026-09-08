@@ -9,7 +9,6 @@ import { Journey } from "./components/Journey";
 import { Formats } from "./components/Formats";
 import { Benefits } from "./components/Benefits";
 import { Pricing } from "./components/Pricing";
-import { Policy } from "./components/Policy";
 import { HomePack } from "./components/HomePack";
 import { Testimonials } from "./components/Testimonials";
 import { Gallery } from "./components/Gallery";
@@ -43,7 +42,6 @@ function App() {
                 <Formats />
                 <Benefits />
                 <Pricing />
-                <Policy />
                 <HomePack />
                 <Testimonials />
                 <Gallery />

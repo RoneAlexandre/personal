@@ -1,4 +1,4 @@
-import { Instagram, MapPin } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { WHATSAPP_URL, INSTAGRAM_URL, INSTAGRAM_HANDLE } from "../data/content";
 
@@ -45,15 +45,14 @@ export const FinalCTA = () => (
             </Reveal>
         </div>
 
-        <footer className="relative mt-24 border-t border-cream/15">
-            <div className="max-w-7xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-cream/70 text-xs uppercase tracking-widest">
-                <span className="font-display text-lg text-cream tracking-wide">
+        <footer className="relative mt-14 sm:mt-16 border-t border-cream/15">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-cream/60 text-[11px] uppercase tracking-widest text-center">
+                <span className="font-display text-base text-cream/90 tracking-wide">
                     RONE<span className="text-black">BATISTA</span>
                 </span>
-                <span className="inline-flex items-center gap-2">
-                    <MapPin size={12} /> Aulas particulares de Muaythai · Itapeva-SP e região
+                <span>
+                    Aulas particulares de Muaythai · Itapeva-SP e região · © {new Date().getFullYear()}
                 </span>
-                <span>© {new Date().getFullYear()} Rone Batista</span>
             </div>
         </footer>
     </section>

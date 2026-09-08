@@ -11,15 +11,26 @@ export const Pricing = () => {
     const current = PRICING.formats.find((f) => f.id === active);
 
     return (
-        <section id="planos" data-testid="pricing-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
-            <div className="max-w-5xl mx-auto px-5 sm:px-8">
+        <section id="planos" data-testid="pricing-section" className="relative py-24 sm:py-32 bg-[#0A0A0A] overflow-hidden">
+            <div
+                className="pointer-events-none absolute inset-x-0 top-0 h-[560px] opacity-70"
+                style={{ background: "radial-gradient(60% 55% at 50% 0%, rgba(167,110,54,0.16) 0%, rgba(167,110,54,0) 70%)" }}
+                aria-hidden="true"
+            />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-terracota/70 to-transparent" aria-hidden="true" />
+
+            <div className="relative max-w-5xl mx-auto px-5 sm:px-8">
                 <SectionHeader kicker="Investimento" title="Planos e valores" align="center" />
                 <Reveal delay={0.1} className="text-center mt-4">
                     <p className="text-neutral-400 text-sm sm:text-base max-w-xl mx-auto">{PRICING.subtitle}</p>
                 </Reveal>
 
                 <Reveal delay={0.15}>
-                    <div className="mt-10 grid grid-cols-3 gap-px bg-neutral-800 border border-neutral-800" role="tablist">
+                    <div
+                        className="mt-10 border border-terracota/25 bg-[#0D0D0D]/80 p-3 sm:p-6"
+                        style={{ boxShadow: "0 0 0 1px rgba(167,110,54,0.06), 0 30px 60px -25px rgba(167,110,54,0.35)" }}
+                    >
+                    <div className="grid grid-cols-3 gap-px bg-neutral-800 border border-neutral-800" role="tablist">
                         {PRICING.formats.map((f) => (
                             <button
                                 key={f.id}
@@ -38,7 +49,6 @@ export const Pricing = () => {
                             </button>
                         ))}
                     </div>
-                </Reveal>
 
                 <AnimatePresence mode="wait">
                     <motion.div
@@ -97,6 +107,8 @@ export const Pricing = () => {
                         </a>
                     </motion.div>
                 </AnimatePresence>
+                    </div>
+                </Reveal>
 
                 <Reveal delay={0.1} className="mt-12">
                     <div className="flex items-center gap-4 border border-[#9C8674] bg-[#9C8674]/[0.08] px-6 py-5" data-testid="payment-date-banner">
@@ -108,18 +120,19 @@ export const Pricing = () => {
                     </div>
                 </Reveal>
 
-                <Reveal delay={0.15} className="mt-12">
-                    <div className="grid md:grid-cols-2 gap-px bg-neutral-800 border border-neutral-800" data-testid="pricing-extras">
-                        <h3 className="md:col-span-2 bg-[#0A0A0A] px-6 py-4 font-display text-2xl sm:text-3xl uppercase tracking-wide text-cream flex items-center gap-3">
-                            <span className="w-7 h-0.5 bg-terracota shrink-0" aria-hidden="true" />
-                            {PRICING.extrasTitle}
-                        </h3>
+                <Reveal delay={0.15} className="mt-14">
+                    <h3 className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-cream mb-8">
+                        {PRICING.extrasTitle}
+                    </h3>
+                    <div className="grid sm:grid-cols-2 gap-6 sm:gap-x-10 sm:gap-y-7" data-testid="pricing-extras">
                         {PRICING.extras.map((ex) => {
                             const Icon = EXTRA_ICONS[ex.icon];
                             return (
-                                <div key={ex.text} className="bg-[#0A0A0A] px-6 py-5 flex items-start gap-3">
-                                    <Icon size={20} strokeWidth={1.5} className="text-[#9C8674] mt-0.5 shrink-0" />
-                                    <p className="text-sm text-neutral-300">
+                                <div key={ex.text} className="flex items-center gap-4 border-b border-neutral-800 pb-6 sm:border-b-0 sm:pb-0">
+                                    <span className="w-12 h-12 shrink-0 flex items-center justify-center bg-[#9C8674]/10 border border-[#9C8674]/30 text-[#9C8674]">
+                                        <Icon size={20} strokeWidth={1.5} />
+                                    </span>
+                                    <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
                                         {ex.text} <strong className="text-cream">{ex.price}</strong>
                                     </p>
                                 </div>

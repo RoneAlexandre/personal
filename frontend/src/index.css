@@ -55,6 +55,10 @@
         font-family: "Poppins", sans-serif;
         font-weight: 300;
     }
+    .font-caps-display {
+        font-family: "Cinzel", serif;
+        font-weight: 500;
+    }
     .grain::after {
         content: "";
         position: absolute;

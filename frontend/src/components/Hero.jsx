@@ -39,7 +39,10 @@ export const Hero = () => {
                 style={{ opacity: fade }}
                 className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-5 sm:px-8 pt-16 pb-12 sm:pt-28 sm:pb-16"
             >
-                <MaskedLine delay={0.15} className="font-light-display text-3xl sm:text-5xl text-brown-light mb-6">
+                <MaskedLine
+                    delay={0.15}
+                    className="font-caps-display uppercase whitespace-nowrap tracking-[0.1em] text-[clamp(1rem,4.4vw,2.5rem)] text-brown-light mb-6"
+                >
                     Propósito gera excelência
                 </MaskedLine>
 

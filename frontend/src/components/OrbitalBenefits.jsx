@@ -1,29 +1,24 @@
-import { Activity, Shield, Flame, Brain, HeartPulse } from "lucide-react";
+import { Activity, Shield, Flame, Brain, HeartPulse, Sparkles } from "lucide-react";
 
-const ICONS = { Activity, Shield, Flame, Brain, HeartPulse };
+const ICONS = { Activity, Shield, Flame, Brain, HeartPulse, Sparkles };
 
 // Grid estático de benefícios — leve e imediato: nada para animar
 // continuamente, nada para travar. Todo o conteúdo já fica visível de
 // cara, o que é melhor para a maioria dos visitantes, que estão no
 // celular e querem escanear a informação rápido, sem precisar tocar
 // em nada para "descobrir" o benefício.
+// 6 itens dividem igual em 2 colunas (mobile) e 3 colunas (tablet/desktop),
+// então nenhum bloco precisa esticar para preencher a última linha.
 export default function OrbitalBenefits({ timelineData }) {
     return (
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-4" data-testid="benefits-grid">
-            {timelineData.map((item, index) => {
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4" data-testid="benefits-grid">
+            {timelineData.map((item) => {
                 const Icon = ICONS[item.icon];
-                const isLast = index === timelineData.length - 1;
-                const isOdd = timelineData.length % 2 === 1;
                 return (
                     <div
                         key={item.id}
                         data-testid={`benefit-card-${item.id}`}
-                        className={`
-                            group flex flex-col gap-2.5 bg-[#141414] border border-neutral-800
-                            hover:border-[#9C8674]/60 active:border-[#9C8674]/60
-                            p-4 sm:p-5 transition-colors duration-300
-                            ${isOdd && isLast ? "col-span-2 sm:col-span-1" : ""}
-                        `}
+                        className="group flex flex-col gap-2.5 bg-[#141414] border border-neutral-800 hover:border-[#9C8674]/60 active:border-[#9C8674]/60 p-4 sm:p-5 transition-colors duration-300"
                     >
                         <span className="w-10 h-10 shrink-0 flex items-center justify-center bg-terracota/15 border border-terracota/40 text-terracota group-hover:border-[#9C8674]/50 group-hover:text-[#9C8674] transition-colors duration-300">
                             <Icon size={18} />

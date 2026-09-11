@@ -11,13 +11,19 @@ export const Pricing = () => {
     const current = PRICING.formats.find((f) => f.id === active);
 
     return (
-        <section id="planos" data-testid="pricing-section" className="relative py-24 sm:py-32 bg-[#0A0A0A] overflow-hidden">
+        <section id="planos" data-testid="pricing-section" className="relative py-24 sm:py-32 bg-[#140D07] overflow-hidden">
             <div
-                className="pointer-events-none absolute inset-x-0 top-0 h-[560px] opacity-70"
-                style={{ background: "radial-gradient(60% 55% at 50% 0%, rgba(167,110,54,0.16) 0%, rgba(167,110,54,0) 70%)" }}
+                className="pointer-events-none absolute inset-x-0 top-0 h-[700px]"
+                style={{ background: "radial-gradient(65% 60% at 50% 0%, rgba(167,110,54,0.38) 0%, rgba(167,110,54,0) 72%)" }}
                 aria-hidden="true"
             />
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-terracota/70 to-transparent" aria-hidden="true" />
+            <div
+                className="pointer-events-none absolute inset-x-0 bottom-0 h-[420px]"
+                style={{ background: "radial-gradient(55% 50% at 50% 100%, rgba(167,110,54,0.2) 0%, rgba(167,110,54,0) 70%)" }}
+                aria-hidden="true"
+            />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-[3px] bg-gradient-to-r from-transparent via-terracota to-transparent" aria-hidden="true" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[3px] bg-gradient-to-r from-transparent via-terracota to-transparent" aria-hidden="true" />
 
             <div className="relative max-w-5xl mx-auto px-5 sm:px-8">
                 <SectionHeader kicker="Investimento" title="Planos e valores" align="center" />
@@ -27,8 +33,8 @@ export const Pricing = () => {
 
                 <Reveal delay={0.15}>
                     <div
-                        className="mt-10 border border-terracota/25 bg-[#0D0D0D]/80 p-3 sm:p-6"
-                        style={{ boxShadow: "0 0 0 1px rgba(167,110,54,0.06), 0 30px 60px -25px rgba(167,110,54,0.35)" }}
+                        className="mt-10 border border-terracota/50 bg-[#0A0602]/90 p-3 sm:p-6"
+                        style={{ boxShadow: "0 0 0 1px rgba(167,110,54,0.15), 0 0 60px 0 rgba(167,110,54,0.18), 0 40px 70px -25px rgba(0,0,0,0.6)" }}
                     >
                     <div className="grid grid-cols-3 gap-px bg-neutral-800 border border-neutral-800" role="tablist">
                         {PRICING.formats.map((f) => (

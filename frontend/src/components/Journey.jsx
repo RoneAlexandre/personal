@@ -4,16 +4,15 @@ import { Reveal, SectionHeader } from "./Reveal";
 import { IMAGES } from "../data/content";
 
 const CATS = [
-    { id: "tudo", label: "Tudo" },
     { id: "lutas", label: "Lutas" },
     { id: "seminarios", label: "Seminários" },
-    { id: "aulas", label: "Aulas" },
+    { id: "treinos", label: "Treinos" },
 ];
 
 export const Journey = () => {
     const wrapRef = useRef(null);
-    const [cat, setCat] = useState("tudo");
-    const items = cat === "tudo" ? IMAGES.journey : IMAGES.journey.filter((i) => i.cat === cat);
+    const [cat, setCat] = useState("lutas");
+    const items = IMAGES.journey.filter((i) => i.cat === cat);
 
     return (
         <section id="trajetoria" data-testid="journey-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800 overflow-hidden">
@@ -22,7 +21,7 @@ export const Journey = () => {
                     <SectionHeader kicker="Trajetória" title="Minha história no esporte" />
                     <Reveal delay={0.2}>
                         <p className="text-neutral-400 text-sm sm:text-base max-w-sm md:text-right">
-                            Lutas, seminários e aulas — filtre por momento e arraste para o lado.
+                            Lutas, seminários e treinos — filtre por momento e arraste para o lado.
                         </p>
                     </Reveal>
                 </div>
@@ -74,8 +73,15 @@ export const Journey = () => {
                                     draggable={false}
                                     className="w-full h-full object-cover grayscale-[30%] transition-[transform,filter] duration-700 group-hover:scale-105 group-hover:grayscale-0"
                                 />
-                                <figcaption className="absolute bottom-0 inset-x-0 pt-10 pb-3 px-3 bg-gradient-to-t from-black/85 to-transparent text-[11px] uppercase tracking-[0.15em] text-cream/90">
-                                    {img.caption}
+                                <figcaption className="absolute bottom-0 inset-x-0 pt-16 pb-4 px-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
+                                    <span className="block text-[11px] uppercase tracking-[0.15em] text-cream font-semibold">
+                                        {img.caption}
+                                    </span>
+                                    {img.description && (
+                                        <span className="block text-xs text-neutral-300 normal-case leading-relaxed mt-1">
+                                            {img.description}
+                                        </span>
+                                    )}
                                 </figcaption>
                             </motion.figure>
                         ))}

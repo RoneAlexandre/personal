@@ -10,12 +10,12 @@ export const IMAGES = {
     hero: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=1920&auto=format&fit=crop",
     about: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=1200&auto=format&fit=crop",
     journey: [
-        { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores", cat: "aulas" },
-        { url: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=800&auto=format&fit=crop", caption: "Dia de luta", cat: "lutas" },
-        { url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=800&auto=format&fit=crop", caption: "Seminários e cursos", cat: "seminarios" },
-        { url: "https://images.unsplash.com/photo-1737381508529-a110d717d5a7?q=80&w=800&auto=format&fit=crop", caption: "Preparação no ringue", cat: "lutas" },
-        { url: "https://images.unsplash.com/photo-1558366972-9db89881cbdb?q=80&w=800&auto=format&fit=crop", caption: "Competição", cat: "lutas" },
-        { url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=800&auto=format&fit=crop", caption: "Aulas em Itapeva", cat: "aulas" },
+        { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores", description: "[Sua descrição aqui]", cat: "treinos" },
+        { url: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=800&auto=format&fit=crop", caption: "Dia de luta", description: "[Sua descrição aqui]", cat: "lutas" },
+        { url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=800&auto=format&fit=crop", caption: "Seminários e cursos", description: "[Sua descrição aqui]", cat: "seminarios" },
+        { url: "https://images.unsplash.com/photo-1737381508529-a110d717d5a7?q=80&w=800&auto=format&fit=crop", caption: "Preparação no ringue", description: "[Sua descrição aqui]", cat: "lutas" },
+        { url: "https://images.unsplash.com/photo-1558366972-9db89881cbdb?q=80&w=800&auto=format&fit=crop", caption: "Competição", description: "[Sua descrição aqui]", cat: "lutas" },
+        { url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=800&auto=format&fit=crop", caption: "Aulas em Itapeva", description: "[Sua descrição aqui]", cat: "treinos" },
     ],
     gallery: [
         {
@@ -72,6 +72,7 @@ export const ORBITAL_BENEFITS = [
     { id: 3, title: "Queima de Gordura", date: "corpo", content: "Até 1200 calorias por treino de alta intensidade, com resultados visíveis no espelho.", category: "Intenso", icon: "Flame", relatedIds: [1, 4], status: "in-progress", energy: 100 },
     { id: 4, title: "Disciplina Mental", date: "mente", content: "Foco, constância e controle emocional que você leva para dentro e fora do tatame.", category: "Intenso", icon: "Brain", relatedIds: [3, 5], status: "in-progress", energy: 85 },
     { id: 5, title: "Menos Estresse", date: "mente", content: "Descarregue a tensão do dia a dia em cada golpe e termine a aula mais leve.", category: "Bônus", icon: "HeartPulse", relatedIds: [2, 4], status: "pending", energy: 80 },
+    { id: 6, title: "Autoconfiança", date: "mente", content: "Evolua a cada aula e leve pra vida a segurança de quem conhece os próprios limites.", category: "Bônus", icon: "Sparkles", relatedIds: [2, 4], status: "pending", energy: 88 },
 ];
 
 export const PRICING = {

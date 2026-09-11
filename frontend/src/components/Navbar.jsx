@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { WHATSAPP_URL } from "../data/content";
+import { handleAnchorClick } from "../lib/utils";
 
 const LINKS = [
     { href: "#sobre", label: "Sobre" },
@@ -27,15 +28,16 @@ export const Navbar = () => {
                 scrolled || open ? "bg-black/85 backdrop-blur-md border-neutral-800" : "bg-transparent border-transparent"
             }`}
         >
-            <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between">
-                <a href="#topo" data-testid="nav-logo" className="font-display text-2xl tracking-wide text-cream" onClick={() => setOpen(false)}>
-                    RONE<span className="text-terracota">BATISTA</span>
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-3">
+                <a href="#topo" data-testid="nav-logo" className="font-display whitespace-nowrap text-[clamp(0.95rem,4.8vw,1.5rem)] tracking-wide text-cream" onClick={() => setOpen(false)}>
+                    RONE <span className="text-terracota">BATISTA</span>
                 </a>
                 <nav className="hidden md:flex items-center gap-8">
                     {LINKS.map((l) => (
                         <a
                             key={l.href}
                             href={l.href}
+                            onClick={(e) => handleAnchorClick(e, l.href)}
                             data-testid={`nav-link-${l.label.toLowerCase()}`}
                             className="text-sm font-medium text-neutral-300 hover:text-cream transition-colors duration-200 uppercase tracking-widest"
                         >
@@ -43,7 +45,7 @@ export const Navbar = () => {
                         </a>
                     ))}
                 </nav>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 shrink-0">
                     <a
                         href={WHATSAPP_URL}
                         target="_blank"
@@ -71,7 +73,7 @@ export const Navbar = () => {
                         <a
                             key={l.href}
                             href={l.href}
-                            onClick={() => setOpen(false)}
+                            onClick={(e) => { setOpen(false); handleAnchorClick(e, l.href); }}
                             data-testid={`nav-mobile-link-${l.label.toLowerCase()}`}
                             className="block px-6 py-4 text-sm font-semibold text-neutral-200 hover:text-cream hover:bg-cream/5 uppercase tracking-widest border-b border-neutral-900 transition-colors duration-200"
                         >

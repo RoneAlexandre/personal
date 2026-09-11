@@ -45,8 +45,8 @@ export const FinalCTA = () => (
             </Reveal>
         </div>
 
-        <footer className="relative mt-14 sm:mt-16 border-t border-cream/15">
-            <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-cream/60 text-[11px] uppercase tracking-widest text-center">
+        <footer className="relative mt-8 sm:mt-10 border-t border-cream/15">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-cream/60 text-[11px] uppercase tracking-widest text-center">
                 <span className="font-display text-base text-cream/90 tracking-wide">
                     RONE<span className="text-black">BATISTA</span>
                 </span>

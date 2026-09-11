@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { IMAGES, WHATSAPP_URL } from "../data/content";
+import { handleAnchorClick } from "../lib/utils";
 import logo from "../assets/logo-horizontal.png";
 
 const MaskedLine = ({ children, delay, className = "" }) => (
@@ -92,6 +93,7 @@ export const Hero = () => {
                     </a>
                     <a
                         href="#aulas"
+                        onClick={(e) => handleAnchorClick(e, "#aulas")}
                         data-testid="hero-secondary-cta"
                         className="inline-flex items-center justify-center border border-neutral-600 hover:border-brown-light hover:text-brown-light text-neutral-200 font-semibold px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300"
                     >

@@ -76,7 +76,7 @@ export const ORBITAL_BENEFITS = [
 ];
 
 export const PRICING = {
-    subtitle: "Planos semanais ou mensais · Individual, Dupla ou Grupos",
+    subtitle: "Planos mensais · Individual, Dupla ou Grupos",
     formats: [
         {
             id: "individual",
@@ -86,9 +86,9 @@ export const PRICING = {
             cta: "Quero treinar individual",
             waUrl: waLink("Olá, Rone! Quero montar meu plano individual de Muaythai."),
             rows: [
-                { freq: "1x por semana", weekly: "R$ 60", monthly: "R$ 200", perClass: "R$ 50 por aula" },
-                { freq: "2x por semana", weekly: "R$ 100", weeklyNote: "R$ 50 por aula", monthly: "R$ 360", perClass: "R$ 45 por aula" },
-                { freq: "3x por semana", weekly: "R$ 135", weeklyNote: "R$ 45 por aula", monthly: "R$ 480", perClass: "R$ 40 por aula" },
+                { freq: "1x por semana", price: "R$ 240", perClass: "R$ 60 por aula" },
+                { freq: "2x por semana", price: "R$ 440", perClass: "R$ 55 por aula" },
+                { freq: "3x por semana", price: "R$ 600", perClass: "R$ 50 por aula" },
             ],
         },
         {
@@ -99,9 +99,9 @@ export const PRICING = {
             cta: "Quero treinar em dupla",
             waUrl: waLink("Olá, Rone! Quero montar um plano em dupla de Muaythai."),
             rows: [
-                { freq: "1x por semana", weekly: "R$ 45", monthly: "R$ 160", perClass: "R$ 40 por aula" },
-                { freq: "2x por semana", weekly: "R$ 80", weeklyNote: "R$ 40 por aula", monthly: "R$ 290", perClass: "R$ 36,25 por aula" },
-                { freq: "3x por semana", weekly: "R$ 105", weeklyNote: "R$ 35 por aula", monthly: "R$ 380", perClass: "R$ 31,66 por aula" },
+                { freq: "1x por semana", price: "R$ 180", perClass: "R$ 45 por aula" },
+                { freq: "2x por semana", price: "R$ 320", perClass: "R$ 40 por aula" },
+                { freq: "3x por semana", price: "R$ 420", perClass: "R$ 35 por aula" },
             ],
         },
         {
@@ -112,12 +112,13 @@ export const PRICING = {
             cta: "Quero treinar em grupo",
             waUrl: waLink("Olá, Rone! Quero montar um plano em grupo de Muaythai."),
             rows: [
-                { freq: "1x por semana", weekly: "R$ 35", monthly: "R$ 125" },
-                { freq: "2x por semana", weekly: "R$ 30", monthly: "R$ 215" },
-                { freq: "3x por semana", weekly: "R$ 25", monthly: "R$ 270" },
+                { freq: "1x por semana", price: "R$ 130", perClass: "R$ 32,50 por aula" },
+                { freq: "2x por semana", price: "R$ 220", perClass: "R$ 27,50 por aula" },
+                { freq: "3x por semana", price: "R$ 280", perClass: "R$ 23,33 por aula" },
             ],
         },
     ],
+    dropIn: "R$ 70",
     extrasTitle: "Valores Adicionais",
     extras: [
         { icon: "Home", text: "Aulas a domicílio ou em espaços públicos:", price: "R$ 20 por aula" },

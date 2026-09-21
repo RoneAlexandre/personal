@@ -71,33 +71,17 @@ export const Pricing = () => {
                                 * Todos os valores desta tabela são por pessoa
                             </p>
                         )}
-                        <div className="hidden md:grid grid-cols-[1fr_1fr_1.15fr] gap-4 px-6 pb-3 text-xs uppercase tracking-[0.2em] text-neutral-500">
-                            <span>Frequência</span>
-                            <span>Semanal</span>
-                            <span>Mensal</span>
-                        </div>
                         <div className="border-t border-neutral-800">
                             {current.rows.map((row, i) => (
                                 <div
                                     key={row.freq}
                                     data-testid={`price-row-${active}-${i}`}
-                                    className="grid md:grid-cols-[1fr_2.15fr] gap-3 md:gap-4 items-center border-b border-neutral-800 py-5 md:px-6"
+                                    className="flex items-center justify-between gap-4 border-b border-neutral-800 py-5 md:px-6"
                                 >
-                                    <span className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-cream">{row.freq}</span>
-                                    <div className="grid grid-cols-2 md:grid-cols-[1fr_1.15fr] gap-3 md:gap-4">
-                                        <div className="border border-neutral-800 bg-[#141414] px-4 py-3">
-                                            <span className="block text-[10px] uppercase tracking-[0.2em] text-neutral-500 md:hidden">Semanal</span>
-                                            <span className="font-display text-2xl sm:text-3xl text-cream">{row.weekly}</span>
-                                            {row.weeklyNote && <span className="block text-xs text-neutral-500 mt-0.5">{row.weeklyNote}</span>}
-                                        </div>
-                                        <div className="relative border border-[#9C8674] bg-[#9C8674]/5 px-4 py-3">
-                                            <span className="absolute -top-2.5 right-2 bg-terracota text-cream text-[9px] font-bold uppercase tracking-[0.14em] px-2 py-0.5">
-                                                Promoção
-                                            </span>
-                                            <span className="block text-[10px] uppercase tracking-[0.2em] text-[#9C8674]/80 md:hidden">Mensal</span>
-                                            <span className="font-display text-2xl sm:text-3xl text-[#9C8674]">{row.monthly}</span>
-                                            {row.perClass && <span className="block text-xs text-[#9C8674]/90 mt-0.5">{row.perClass}</span>}
-                                        </div>
+                                    <span className="font-display text-xl sm:text-2xl uppercase tracking-wide text-cream">{row.freq}</span>
+                                    <div className="text-right">
+                                        <span className="font-display text-2xl sm:text-3xl text-[#9C8674]">{row.price}</span>
+                                        {row.perClass && <span className="block text-xs text-neutral-400 mt-0.5">{row.perClass}</span>}
                                     </div>
                                 </div>
                             ))}
@@ -113,6 +97,12 @@ export const Pricing = () => {
                         </a>
                     </motion.div>
                 </AnimatePresence>
+
+                <div className="mt-6 flex justify-center" data-testid="drop-in-badge">
+                    <span className="inline-flex items-center gap-2 border border-terracota/50 bg-terracota/10 text-cream font-display text-sm sm:text-base tracking-widest uppercase px-5 py-2.5">
+                        Aula avulsa: <span className="text-[#9C8674]">{PRICING.dropIn}</span>
+                    </span>
+                </div>
                     </div>
                 </Reveal>
 

@@ -44,7 +44,7 @@ export const Hero = () => {
                     delay={0.15}
                     className="font-caps-display uppercase whitespace-nowrap tracking-[0.1em] text-[clamp(1rem,4.4vw,2.5rem)] text-brown-light mb-6"
                 >
-                    Propósito gera excelência
+                    PROPÓSITO GERA EXCELÊNCIA
                 </MaskedLine>
 
                 <motion.div
@@ -72,7 +72,7 @@ export const Hero = () => {
                 </motion.div>
 
                 <MaskedLine delay={0.75} className="mt-4 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
-                    Transforme seu corpo e sua mente com treinos feitos de acordo com seu objetivo.
+                    AULAS PARTICULARES DESENVOLVIDAS PARA O SEU OBJETIVO. TRANSFORME SEU CORPO E SUA MENTE COM UM PROPÓSITO ALINHADO PARA VOCÊ ALCANÇAR A EXCELÊNCIA.
                 </MaskedLine>
 
                 <motion.div
@@ -97,7 +97,7 @@ export const Hero = () => {
                         data-testid="hero-secondary-cta"
                         className="inline-flex items-center justify-center border border-neutral-600 hover:border-brown-light hover:text-brown-light text-neutral-200 font-semibold px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300"
                     >
-                        Conheça os formatos
+                        Conheça os planos
                     </a>
                 </motion.div>
 

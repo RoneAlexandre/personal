@@ -9,8 +9,9 @@ export const Formats = () => (
                 <SectionHeader kicker="Aulas Particulares" title="Escolha onde treinar" />
                 <Reveal delay={0.2}>
                     <p className="text-neutral-400 text-sm sm:text-base max-w-sm md:text-right">
-                        Aulas no conforto de sua casa ou no espaço estruturado da academia,
-                        escolha o formato que mais combina com seu objetivo e rotina.
+                        O treino no seu tempo e no seu espaço. Aulas no conforto da sua residência, em locais
+                        públicos ou no espaço estruturado da academia. Escolha o formato que melhor se adapta
+                        à sua rotina e aos seus objetivos.
                     </p>
                 </Reveal>
             </div>

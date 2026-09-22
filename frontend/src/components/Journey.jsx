@@ -19,11 +19,6 @@ export const Journey = () => {
             <div className="max-w-7xl mx-auto px-5 sm:px-8">
                 <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
                     <SectionHeader kicker="Trajetória" title="Minha história no esporte" />
-                    <Reveal delay={0.2}>
-                        <p className="text-neutral-400 text-sm sm:text-base max-w-sm md:text-right">
-                            Lutas, seminários e treinos — filtre por momento e arraste para o lado.
-                        </p>
-                    </Reveal>
                 </div>
                 <Reveal delay={0.25}>
                     <div className="flex flex-wrap gap-x-6 gap-y-2 mb-8" role="tablist">

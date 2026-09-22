@@ -1,4 +1,4 @@
-const WORDS = ["Disciplina", "Respeito", "Força", "Tradição", "Muaythai", "Kickboxing", "Boxe", "Foco", "Coragem", "Evolução"];
+const WORDS = ["Disciplina", "Respeito", "Força", "Tradição", "Muaythai", "Kickboxing", "Boxe", "Foco", "Coragem", "Evolução", "Constância", "Propósito", "Excelência", "Alta Performance", "Domínio Próprio"];
 
 export const Marquee = () => (
     <div

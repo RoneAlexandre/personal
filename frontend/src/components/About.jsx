@@ -5,18 +5,18 @@ import { IMAGES } from "../data/content";
 const CHAPTERS = [
     {
         n: "01",
-        title: "Formação",
-        text: "Praticante e estudioso da arte das oito armas, com graduação em Muaythai e formação continuada em metodologia de treino, preparação física e regras de combate.",
+        title: "Qualificação",
+        text: "Sou praticante e estudo constantemente o cenário atual e as evoluções do esporte, me mantendo atualizado, testando e comprovando todos os detalhes antes de compartilhar com os meus alunos. Primeiro aprendo, coloco em prática, para depois ensinar.",
     },
     {
         n: "02",
         title: "Experiência",
-        text: "Mais de uma década dedicada ao Muaythai, entre treinos, competições e anos de ensino individual — do primeiro soco de um iniciante ao refinamento de atletas avançados.",
+        text: "Com uma década de dedicação à arte marcial, pude obter experiência em diversas modalidades. Além dos treinos, também competi por alguns anos — em 2023 ganhei o campeonato Brasileiro de Kickboxing. Hoje trabalho com todas as classes de alunos, do primeiro soco de um iniciante ao refinamento de atletas avançados.",
     },
     {
         n: "03",
-        title: "Filosofia",
-        text: "Ninguém evolui em treino genérico. Cada aula é planejada para o seu corpo, seu objetivo e seu limite do dia — com disciplina, respeito e cobrança na medida certa.",
+        title: "Propósito",
+        text: "Meu propósito principal é te auxiliar a alcançar excelência em seus objetivos, direcionando o melhor caminho de acordo com a sua realidade e traçando o planejamento correto para você alcançar a alta performance.",
     },
 ];
 
@@ -47,10 +47,9 @@ export const About = () => (
                 <SectionHeader kicker="O Professor" title="Quem é Rone Batista" />
                 <Reveal delay={0.15} className="mt-6">
                     <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-2xl">
-                        Mais do que um professor de luta, Rone é um treinador de pessoas. Sua história no
-                        Muaythai começou como aluno e virou uma missão: provar que qualquer pessoa de qualquer
-                        idade ou condicionamento é capaz de aprender e evoluir em uma arte marcial treinando com o
-                        método certo.
+                        Minha história no Muay Thai e Kickboxing começou há 10 anos como aluno e virou uma
+                        missão: provar que qualquer pessoa é capaz de aprender, evoluir e alcançar a alta
+                        performance treinando com o propósito certo.
                     </p>
                 </Reveal>
                 <div className="mt-10 space-y-0 border-t border-neutral-800">
@@ -79,8 +78,9 @@ export const About = () => (
                                 Formação de Atletas
                             </h3>
                             <p className="text-neutral-300 text-sm sm:text-base leading-relaxed">
-                                Além das aulas particulares, Rone prepara alunos para competições: treino específico,
-                                estratégia de luta e acompanhamento completo até o dia do combate.
+                                Realizo preparação de alunos que desejam se tornar atletas e participar de
+                                competições: treinos específicos, estratégias de luta, estudo do adversário e
+                                acompanhamento completo até o dia do combate.
                             </p>
                         </div>
                     </div>

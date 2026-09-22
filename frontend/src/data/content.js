@@ -44,17 +44,17 @@ export const IMAGES = {
 export const FORMATS = [
     {
         number: "01",
-        title: "Presencial na Academia",
+        title: "Academia",
         description:
-            "Treino individual em espaço estruturado em Itapeva-SP, com todo o material disponível: luvas, aparadores, saco de pancada e ringue.",
-        includes: ["Aulas de 60 minutos", "Material de treino incluso", "Acompanhamento individual"],
+            "Treinamento em um espaço preparado com estrutura completa. Variedade de estímulos em um ambiente dinâmico focado no seu desenvolvimento físico e técnico.",
+        includes: ["Aulas de 60 minutos", "Estrutura completa", "Treino dinâmico e focado em seu objetivo"],
     },
     {
         number: "02",
-        title: "Presencial em Domicílio",
+        title: "Domicílio ou Local Público",
         description:
-            "O treino vai até você. Atendimento na sua casa, condomínio ou espaço preferido, em Itapeva e região, com equipamentos levados pelo professor.",
-        includes: ["Aulas de 60 minutos", "Equipamentos levados pelo professor", "Horários flexíveis"],
+            "Atendimento exclusivo com máxima comodidade. Levo a experiência do Muay Thai até a sua residência, condomínio, parque ou local de preferência, sem que precise se preocupar com transporte.",
+        includes: ["Aulas de 60 minutos", "Locais flexíveis", "Treino dinâmico e focado em seu objetivo"],
     },
 ];
 

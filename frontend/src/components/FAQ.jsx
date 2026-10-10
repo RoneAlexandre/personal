@@ -39,8 +39,7 @@ export const FAQ = () => (
                         className="text-terracota hover:text-terracota font-semibold transition-colors duration-200"
                     >
                         Chame no WhatsApp
-                    </a>{" "}
-                    que eu respondo pessoalmente.
+                    </a>
                 </p>
             </Reveal>
         </div>

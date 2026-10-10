@@ -11,7 +11,7 @@ const CHAPTERS = [
     {
         n: "02",
         title: "Experiência",
-        text: "Com uma década de dedicação à arte marcial, pude obter experiência em diversas modalidades. Além dos treinos, também competi por alguns anos — em 2023 ganhei o campeonato Brasileiro de Kickboxing. Hoje trabalho com todas as classes de alunos, do primeiro soco de um iniciante ao refinamento de atletas avançados.",
+        text: "Com uma década de dedicação à arte marcial, pude obter experiência em diversas modalidades. Além dos treinos, também competi por alguns anos — em 2023 ganhei o Campeonato Brasileiro de Kickboxing. Hoje trabalho com todas as classes de alunos, do primeiro soco de um iniciante ao refinamento de atletas avançados.",
     },
     {
         n: "03",
@@ -44,7 +44,7 @@ export const About = () => (
             </div>
 
             <div className="md:col-span-7 md:pl-6">
-                <SectionHeader kicker="O Professor" title="Quem é Rone Batista" />
+                <SectionHeader kicker="O Professor" title="Quem é Rone Batista?" />
                 <Reveal delay={0.15} className="mt-6">
                     <p className="text-neutral-300 text-base sm:text-lg leading-relaxed max-w-2xl">
                         Minha história no Muay Thai e Kickboxing começou há 10 anos como aluno e virou uma

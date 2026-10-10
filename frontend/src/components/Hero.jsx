@@ -28,7 +28,7 @@ export const Hero = () => {
             <motion.div className="absolute inset-0" style={{ y: bgY }}>
                 <img
                     src={IMAGES.hero}
-                    alt="Lutador de Muaythai em ação"
+                    alt="Lutador de Muay Thai em ação"
                     className="w-full h-[120%] object-cover object-center"
                     loading="eager"
                 />
@@ -67,12 +67,12 @@ export const Hero = () => {
                     className="flex items-center gap-3 mt-5 mb-1"
                 >
                     <span className="font-light-display tracking-[0.2em] uppercase text-base sm:text-lg text-terracota">
-                        Muaythai · Kickboxing
+                        Muay Thai · Kickboxing
                     </span>
                 </motion.div>
 
                 <MaskedLine delay={0.75} className="mt-4 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
-                    AULAS PARTICULARES DESENVOLVIDAS PARA O SEU OBJETIVO. TRANSFORME SEU CORPO E SUA MENTE COM UM PROPÓSITO ALINHADO PARA VOCÊ ALCANÇAR A EXCELÊNCIA.
+                    Aulas particulares desenvolvidas para o seu objetivo. Transforme seu corpo e sua mente com um propósito alinhado para você alcançar a excelência.
                 </MaskedLine>
 
                 <motion.div
@@ -99,25 +99,6 @@ export const Hero = () => {
                     >
                         Conheça os planos
                     </a>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 1.3, duration: 0.8 }}
-                    className="mt-10 sm:mt-14 grid grid-cols-3 max-w-lg gap-4 sm:gap-6 border-t border-neutral-800 pt-5 sm:pt-6"
-                    data-testid="hero-stats"
-                >
-                    {[
-                        ["+10", "anos de experiência"],
-                        ["02", "modalidades"],
-                        ["100%", "treino exclusivo"],
-                    ].map(([n, label]) => (
-                        <div key={label}>
-                            <p className="font-display text-3xl sm:text-4xl text-brown-light">{n}</p>
-                            <p className="text-xs sm:text-sm text-neutral-400 uppercase tracking-widest mt-1">{label}</p>
-                        </div>
-                    ))}
                 </motion.div>
             </motion.div>
         </section>

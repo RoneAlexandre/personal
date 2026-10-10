@@ -5,10 +5,10 @@ export const Gallery = () => (
     <section id="galeria" data-testid="gallery-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-5 sm:px-8">
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
-                <SectionHeader kicker="Dentro do treino" title="A arte em movimento" />
+                <SectionHeader kicker="Dentro do treino" title="Estrutura das aulas" />
                 <Reveal delay={0.2}>
                     <p className="text-neutral-400 text-sm sm:text-base max-w-sm md:text-right">
-                        Treinos, técnicas e os diferentes formatos de aula.
+                        Normalmente, nossas aulas são divididas em 5 etapas:
                     </p>
                 </Reveal>
             </div>

@@ -3,7 +3,6 @@ import Lenis from "lenis";
 import "@/App.css";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
-import { Marquee } from "./components/Marquee";
 import { About } from "./components/About";
 import { Journey } from "./components/Journey";
 import { Formats } from "./components/Formats";
@@ -36,7 +35,6 @@ function App() {
             <Navbar />
             <main>
                 <Hero />
-                <Marquee />
                 <About />
                 <Journey />
                 <Formats />

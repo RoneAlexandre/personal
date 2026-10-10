@@ -3,7 +3,7 @@ export const INSTAGRAM_HANDLE = "ronebatista.muaythai";
 
 const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
-export const WHATSAPP_URL = waLink("Olá, Rone! Vi seu site e quero agendar uma aula particular de Muaythai.");
+export const WHATSAPP_URL = waLink("Olá, Rone! Vi seu site e quero agendar uma aula particular de Muay Thai.");
 export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 export const IMAGES = {
@@ -67,12 +67,12 @@ export const BENEFITS = [
 ];
 
 export const ORBITAL_BENEFITS = [
-    { id: 1, title: "Condicionamento", date: "corpo", content: "Treinos intensos que elevam fôlego, força e resistência desde a primeira semana.", category: "Base", icon: "Activity", relatedIds: [2, 3], status: "completed", energy: 95 },
-    { id: 2, title: "Autodefesa", date: "técnica", content: "Golpes eficientes da arte das oito armas e confiança para se proteger em qualquer situação.", category: "Essencial", icon: "Shield", relatedIds: [1, 5], status: "completed", energy: 90 },
-    { id: 3, title: "Queima de Gordura", date: "corpo", content: "Até 1200 calorias por treino de alta intensidade, com resultados visíveis no espelho.", category: "Intenso", icon: "Flame", relatedIds: [1, 4], status: "in-progress", energy: 100 },
-    { id: 4, title: "Disciplina Mental", date: "mente", content: "Foco, constância e controle emocional que você leva para dentro e fora do tatame.", category: "Intenso", icon: "Brain", relatedIds: [3, 5], status: "in-progress", energy: 85 },
+    { id: 1, title: "Condicionamento", date: "corpo", content: "Treinos que elevam fôlego, força e resistência.", category: "Base", icon: "Activity", relatedIds: [2, 3], status: "completed", energy: 95 },
+    { id: 2, title: "Defesa pessoal", date: "técnica", content: "Golpes para se proteger em diversas situações.", category: "Essencial", icon: "Shield", relatedIds: [1, 5], status: "completed", energy: 90 },
+    { id: 3, title: "Queima de Gordura", date: "corpo", content: "Até 1000 calorias por treino de alta intensidade, com resultados visíveis.", category: "Intenso", icon: "Flame", relatedIds: [1, 4], status: "in-progress", energy: 100 },
+    { id: 4, title: "Saúde Mental", date: "mente", content: "Foco, constância e autocontrole que você leva para dentro e fora do tatame.", category: "Intenso", icon: "Brain", relatedIds: [3, 5], status: "in-progress", energy: 85 },
     { id: 5, title: "Menos Estresse", date: "mente", content: "Descarregue a tensão do dia a dia em cada golpe e termine a aula mais leve.", category: "Bônus", icon: "HeartPulse", relatedIds: [2, 4], status: "pending", energy: 80 },
-    { id: 6, title: "Autoconfiança", date: "mente", content: "Evolua a cada aula e leve pra vida a segurança de quem conhece os próprios limites.", category: "Bônus", icon: "Sparkles", relatedIds: [2, 4], status: "pending", energy: 88 },
+    { id: 6, title: "Autoconfiança", date: "mente", content: "Conheça e supere os seus próprios limites.", category: "Bônus", icon: "Sparkles", relatedIds: [2, 4], status: "pending", energy: 88 },
 ];
 
 export const PRICING = {
@@ -84,7 +84,7 @@ export const PRICING = {
             note: "100% focado em você",
             perPerson: false,
             cta: "Quero treinar individual",
-            waUrl: waLink("Olá, Rone! Quero montar meu plano individual de Muaythai."),
+            waUrl: waLink("Olá, Rone! Quero montar meu plano individual de Muay Thai."),
             rows: [
                 { freq: "1x por semana", price: "R$ 240", perClass: "R$ 60 por aula" },
                 { freq: "2x por semana", price: "R$ 440", perClass: "R$ 55 por aula" },
@@ -94,10 +94,10 @@ export const PRICING = {
         {
             id: "dupla",
             label: "Dupla",
-            note: "valor por pessoa",
+            note: "Valor por pessoa",
             perPerson: true,
             cta: "Quero treinar em dupla",
-            waUrl: waLink("Olá, Rone! Quero montar um plano em dupla de Muaythai."),
+            waUrl: waLink("Olá, Rone! Quero montar um plano em dupla de Muay Thai."),
             rows: [
                 { freq: "1x por semana", price: "R$ 180", perClass: "R$ 45 por aula" },
                 { freq: "2x por semana", price: "R$ 320", perClass: "R$ 40 por aula" },
@@ -107,10 +107,10 @@ export const PRICING = {
         {
             id: "grupo",
             label: "Grupo 4–8",
-            note: "valor por pessoa",
+            note: "Valor por pessoa",
             perPerson: true,
             cta: "Quero treinar em grupo",
-            waUrl: waLink("Olá, Rone! Quero montar um plano em grupo de Muaythai."),
+            waUrl: waLink("Olá, Rone! Quero montar um plano em grupo de Muay Thai."),
             rows: [
                 { freq: "1x por semana", price: "R$ 130", perClass: "R$ 32,50 por aula" },
                 { freq: "2x por semana", price: "R$ 220", perClass: "R$ 27,50 por aula" },
@@ -137,7 +137,7 @@ export const HOMEPACK = {
     waUrl: waLink("Olá, Rone! Quero ser avisado do lançamento do Pack Treine em Casa."),
     title: 'Pack "Treine em Casa"',
     description:
-        "Treinos completos de Muaythai em PDF para fazer em casa, no seu ritmo: aquecimento, técnica, sequências de golpes e condicionamento — direto no seu celular.",
+        "Treinos completos de Muay Thai em PDF para fazer em casa, no seu ritmo: aquecimento, técnica, sequências de golpes e condicionamento — direto no seu celular.",
     includes: [
         "Fundamentos: postura, guarda, socos e chutes",
         "Condicionamento físico sem equipamento",
@@ -159,7 +159,7 @@ export const TESTIMONIALS = [
     {
         name: "Jamil",
         role: "Aulas em domicílio",
-        quote: "Treino em casa com horário flexível. A disciplina que aprendi no Muaythai mudou minha rotina.",
+        quote: "Treino em casa com horário flexível. A disciplina que aprendi no Muay Thai mudou minha rotina.",
     },
     {
         name: "André",
@@ -171,7 +171,7 @@ export const TESTIMONIALS = [
 export const FAQ_ITEMS = [
     {
         q: "Preciso ter experiência prévia em luta?",
-        a: "Não. As aulas particulares atendem do iniciante absoluto ao avançado. O treino é montado de acordo com o seu nível e evolui no seu ritmo, com progressão segura de técnica e intensidade.",
+        a: "Não. As aulas particulares atendem do iniciante ao avançado. O treino é montado de acordo com o seu nível e evolui no seu ritmo, com progressão de técnica e intensidade.",
     },
     {
         q: "Como funcionam as aulas online?",
@@ -179,11 +179,11 @@ export const FAQ_ITEMS = [
     },
     {
         q: "Você atende em domicílio em toda Itapeva?",
-        a: "Sim, atendo em todos os bairros de Itapeva-SP e também em cidades vizinhas da região, mediante agendamento. Entre em contato pelo WhatsApp para confirmar a disponibilidade para o seu endereço.",
+        a: "Sim, atendo em todos os bairros de Itapeva, mediante agendamento. Entre em contato para confirmar a disponibilidade de dias e horários.",
     },
     {
         q: "O que preciso levar para a primeira aula?",
-        a: "Apenas roupas confortáveis, água e vontade de treinar. Nas aulas presenciais na academia, todo o equipamento (luvas, caneleiras e aparadores) está disponível. Nas aulas em domicílio, o professor leva o material.",
+        a: "Apenas roupas confortáveis e garrafa de água. Nas aulas na academia, contamos com equipamentos de uso compartilhado (luvas e caneleiras). Nas aulas em domicílio, é cobrada uma taxa referente ao aluguel dos equipamentos (luvas, bandagem e caneleiras de uso pessoal e higienizados).",
     },
     {
         q: "Com quantas aulas por semana eu vejo resultado?",

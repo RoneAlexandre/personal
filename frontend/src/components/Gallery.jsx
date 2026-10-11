@@ -1,5 +1,5 @@
 import { Reveal, SectionHeader } from "./Reveal";
-import { CLASS_STEPS } from "../data/content";
+import { IMAGES } from "../data/content";
 
 export const Gallery = () => (
     <section id="galeria" data-testid="gallery-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
@@ -12,20 +12,27 @@ export const Gallery = () => (
                     </p>
                 </Reveal>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-5 gap-3 sm:gap-4" data-testid="class-steps">
-                {CLASS_STEPS.map((step, i) => (
-                    <Reveal key={step} delay={i * 0.08} className="h-full">
-                        <div
-                            data-testid={`class-step-${i + 1}`}
-                            className="group h-full flex items-center gap-5 lg:flex-col lg:items-start lg:gap-6 bg-[#141414] border border-neutral-800 hover:border-brown-light/60 transition-colors duration-300 px-5 py-5 lg:px-6 lg:py-8"
+            <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[220px] md:auto-rows-[240px] gap-4">
+                {IMAGES.gallery.map((img, i) => (
+                    <Reveal key={img.url} delay={i * 0.08} className={img.span}>
+                        <figure
+                            data-testid={`gallery-item-${i}`}
+                            className="relative h-full w-full overflow-hidden group border border-neutral-800"
                         >
-                            <span className="font-display text-5xl lg:text-6xl leading-none text-terracota/80 group-hover:text-terracota transition-colors duration-300">
-                                {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <span className="font-display text-2xl sm:text-3xl uppercase tracking-wide text-cream leading-tight">
-                                {step}
-                            </span>
-                        </div>
+                            <img
+                                src={img.url}
+                                alt={img.alt}
+                                loading="lazy"
+                                className="h-full w-full object-cover grayscale-[35%] transition-[transform,filter] duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+                            <span className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#9C8674] opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+                            <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#9C8674] opacity-0 group-hover:opacity-100 transition-opacity duration-300" aria-hidden="true" />
+                            <figcaption className="absolute inset-x-0 bottom-0 pt-14 pb-4 px-4 bg-gradient-to-t from-black/90 via-black/55 to-transparent flex items-end gap-3">
+                                <span className="font-display text-3xl leading-none text-terracota">{String(i + 1).padStart(2, "0")}</span>
+                                <span className="font-display text-2xl sm:text-3xl leading-none uppercase tracking-wide text-cream">{img.step}</span>
+                            </figcaption>
+                        </figure>
                     </Reveal>
                 ))}
             </div>

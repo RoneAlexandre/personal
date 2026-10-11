@@ -20,23 +20,33 @@ export const IMAGES = {
     gallery: [
         {
             url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=1200&auto=format&fit=crop",
-            alt: "Luvas de boxe vermelhas em detalhe",
+            alt: "Luvas de boxe em detalhe",
+            step: "Aquecimento",
             span: "md:col-span-2 md:row-span-2",
         },
         {
             url: "https://images.unsplash.com/photo-1737381508529-a110d717d5a7?q=80&w=900&auto=format&fit=crop",
             alt: "Lutador no ringue em luz dramática",
+            step: "Alongamento",
             span: "",
         },
         {
             url: "https://images.unsplash.com/photo-1558366972-9db89881cbdb?q=80&w=900&auto=format&fit=crop",
             alt: "Combate de boxe em preto e branco",
+            step: "Aquecimento técnico",
             span: "",
         },
         {
-            url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=1200&auto=format&fit=crop",
+            url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=900&auto=format&fit=crop",
             alt: "Dois lutadores treinando no ringue",
-            span: "md:col-span-2",
+            step: "Técnica",
+            span: "",
+        },
+        {
+            url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=900&auto=format&fit=crop",
+            alt: "Treino com aparadores",
+            step: "Sparring",
+            span: "",
         },
     ],
 };
@@ -181,12 +191,4 @@ export const FAQ_ITEMS = [
         q: "O que preciso levar para a primeira aula?",
         a: "Apenas roupas confortáveis e garrafa de água. Nas aulas na academia, contamos com equipamentos de uso compartilhado (luvas e caneleiras). Nas aulas em domicílio, é cobrada uma taxa referente ao aluguel dos equipamentos (luvas, bandagem e caneleiras de uso pessoal e higienizados).",
     },
-];
-
-export const CLASS_STEPS = [
-    "Aquecimento",
-    "Alongamento",
-    "Aquecimento técnico",
-    "Técnica",
-    "Sparring",
 ];

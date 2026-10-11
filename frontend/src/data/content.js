@@ -174,10 +174,6 @@ export const FAQ_ITEMS = [
         a: "Não. As aulas particulares atendem do iniciante ao avançado. O treino é montado de acordo com o seu nível e evolui no seu ritmo, com progressão de técnica e intensidade.",
     },
     {
-        q: "Como funcionam as aulas online?",
-        a: "As aulas online acontecem ao vivo por videochamada (Google Meet ou WhatsApp). Você precisa apenas de um espaço pequeno, celular ou notebook posicionado e, se tiver, luvas. A correção técnica é feita em tempo real.",
-    },
-    {
         q: "Você atende em domicílio em toda Itapeva?",
         a: "Sim, atendo em todos os bairros de Itapeva, mediante agendamento. Entre em contato para confirmar a disponibilidade de dias e horários.",
     },
@@ -185,8 +181,12 @@ export const FAQ_ITEMS = [
         q: "O que preciso levar para a primeira aula?",
         a: "Apenas roupas confortáveis e garrafa de água. Nas aulas na academia, contamos com equipamentos de uso compartilhado (luvas e caneleiras). Nas aulas em domicílio, é cobrada uma taxa referente ao aluguel dos equipamentos (luvas, bandagem e caneleiras de uso pessoal e higienizados).",
     },
-    {
-        q: "Com quantas aulas por semana eu vejo resultado?",
-        a: "Com 2 a 3 sessões semanais, a maioria dos alunos sente diferença no condicionamento e na disposição já no primeiro mês. Resultados de técnica e composição corporal aparecem de forma consistente a partir de 8 a 12 semanas.",
-    },
+];
+
+export const CLASS_STEPS = [
+    "Aquecimento",
+    "Alongamento",
+    "Aquecimento técnico",
+    "Técnica",
+    "Sparring",
 ];

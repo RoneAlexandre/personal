@@ -92,8 +92,8 @@ export const Hero = () => {
                         <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
                     </a>
                     <a
-                        href="#aulas"
-                        onClick={(e) => handleAnchorClick(e, "#aulas")}
+                        href="#planos"
+                        onClick={(e) => handleAnchorClick(e, "#planos")}
                         data-testid="hero-secondary-cta"
                         className="inline-flex items-center justify-center border border-neutral-600 hover:border-brown-light hover:text-brown-light text-neutral-200 font-semibold px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300"
                     >

@@ -8,7 +8,7 @@ export const HomePack = () => (
     <section id="treine-em-casa" data-testid="homepack-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
         <div className="max-w-2xl mx-auto px-5 sm:px-8">
             <div className="text-center">
-                <SectionHeader kicker="Treinos em PDF" title={HOMEPACK.title} align="center" />
+                <SectionHeader kicker="E-book de treinos" title={HOMEPACK.title} align="center" />
             </div>
 
             <Reveal delay={0.1}>

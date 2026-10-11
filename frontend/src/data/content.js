@@ -147,11 +147,13 @@ export const HOMEPACK = {
     waUrl: waLink("Olá, Rone! Quero ser avisado do lançamento do Pack Treine em Casa."),
     title: 'Pack "Treine em Casa"',
     description:
-        "Treinos completos de Muay Thai em PDF para fazer em casa, no seu ritmo: aquecimento, técnica, sequências de golpes e condicionamento — direto no seu celular.",
+        "Um E-book de treinos físicos completos para fazer em casa, no seu ritmo e para o seu nível.",
     includes: [
-        "Fundamentos: postura, guarda, socos e chutes",
+        "Exercícios para realizar em qualquer lugar",
         "Condicionamento físico sem equipamento",
-        "Sequências de golpes com progressão semanal",
+        "Sequências de treinos com progressão diária",
+        "Treino físico para auxiliar seu treino de luta",
+        "Movimentos de luta junto aos exercícios",
     ],
 };
 

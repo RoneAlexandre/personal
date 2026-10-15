@@ -1,5 +1,7 @@
+import fotoAbout from '../assets/foto01.JPEG';
+
 export const WHATSAPP_NUMBER = "5515996984251";
-export const INSTAGRAM_HANDLE = "ronebatista.muaythai";
+export const INSTAGRAM_HANDLE = "@treinador_rone";
 
 const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
@@ -8,7 +10,7 @@ export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 export const IMAGES = {
     hero: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=1920&auto=format&fit=crop",
-    about: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=1200&auto=format&fit=crop",
+    about: fotoAbout,
     journey: [
         { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores", description: "[Sua descrição aqui]", cat: "treinos" },
         { url: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=800&auto=format&fit=crop", caption: "Dia de luta", description: "[Sua descrição aqui]", cat: "lutas" },

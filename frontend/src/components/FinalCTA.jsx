@@ -39,10 +39,10 @@ export const FinalCTA = () => (
         <footer className="relative mt-8 sm:mt-10 border-t border-cream/15">
             <div className="max-w-7xl mx-auto px-5 sm:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-cream/60 text-[11px] uppercase tracking-widest text-center">
                 <span className="font-display text-base text-cream/90 tracking-wide">
-                    RONE<span className="text-black">BATISTA</span>
+                    PERSONAL<span className="text-black">FIGHT</span>
                 </span>
                 <span>
-                    Aulas particulares de Muay Thai · Itapeva-SP e região · © {new Date().getFullYear()}
+                    Desenvolvido por Rone Batista · © {new Date().getFullYear()}
                 </span>
             </div>
         </footer>

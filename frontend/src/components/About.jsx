@@ -11,7 +11,7 @@ const CHAPTERS = [
     {
         n: "02",
         title: "Experiência",
-        text: "Com uma década de dedicação à arte marcial, pude obter experiência em diversas modalidades. Além dos treinos, também competi por alguns anos — em 2023 ganhei o Campeonato Brasileiro de Kickboxing. Hoje trabalho com todas as classes de alunos, do primeiro soco de um iniciante ao refinamento de atletas avançados.",
+        text: "Com uma década de dedicação à arte marcial, pude obter experiência em diversas modalidades. Além dos treinos, também competi por alguns anos, em 2023 ganhei o Campeonato Brasileiro de Kickboxing. Hoje trabalho com todas as classes de alunos, do primeiro soco de um iniciante ao refinamento de atletas avançados.",
     },
     {
         n: "03",

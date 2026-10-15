@@ -78,22 +78,12 @@ export const BENEFITS = [
     { icon: "HeartPulse", title: "Redução de Estresse", text: "Descarregue a tensão do dia a dia em cada golpe." },
 ];
 
-export const ORBITAL_BENEFITS = [
-    { id: 1, title: "Condicionamento", date: "corpo", content: "Treinos que elevam fôlego, força e resistência.", category: "Base", icon: "Activity", relatedIds: [2, 3], status: "completed", energy: 95 },
-    { id: 2, title: "Defesa pessoal", date: "técnica", content: "Golpes para se proteger em diversas situações.", category: "Essencial", icon: "Shield", relatedIds: [1, 5], status: "completed", energy: 90 },
-    { id: 3, title: "Queima de Gordura", date: "corpo", content: "Até 1000 calorias por treino de alta intensidade, com resultados visíveis.", category: "Intenso", icon: "Flame", relatedIds: [1, 4], status: "in-progress", energy: 100 },
-    { id: 4, title: "Saúde Mental", date: "mente", content: "Foco, constância e autocontrole que você leva para dentro e fora do tatame.", category: "Intenso", icon: "Brain", relatedIds: [3, 5], status: "in-progress", energy: 85 },
-    { id: 5, title: "Menos Estresse", date: "mente", content: "Descarregue a tensão do dia a dia em cada golpe e termine a aula mais leve.", category: "Bônus", icon: "HeartPulse", relatedIds: [2, 4], status: "pending", energy: 80 },
-    { id: 6, title: "Autoconfiança", date: "mente", content: "Conheça e supere os seus próprios limites.", category: "Bônus", icon: "Sparkles", relatedIds: [2, 4], status: "pending", energy: 88 },
-];
-
 export const PRICING = {
     subtitle: "Planos mensais · Individual, Dupla ou Grupos",
     formats: [
         {
             id: "individual",
             label: "Individual",
-            note: "100% focado em você",
             perPerson: false,
             cta: "Quero treinar individual",
             waUrl: waLink("Olá, Rone! Quero montar meu plano individual de Muay Thai."),
@@ -106,7 +96,6 @@ export const PRICING = {
         {
             id: "dupla",
             label: "Dupla",
-            note: "Valor por pessoa",
             perPerson: true,
             cta: "Quero treinar em dupla",
             waUrl: waLink("Olá, Rone! Quero montar um plano em dupla de Muay Thai."),
@@ -119,7 +108,6 @@ export const PRICING = {
         {
             id: "grupo",
             label: "Grupo 4–8",
-            note: "Valor por pessoa",
             perPerson: true,
             cta: "Quero treinar em grupo",
             waUrl: waLink("Olá, Rone! Quero montar um plano em grupo de Muay Thai."),
@@ -138,47 +126,94 @@ export const PRICING = {
     ],
 };
 
-export const POLICY = [
-    { icon: "Clock", title: "Avise com antecedência", text: "Para desmarcar, avise pelo WhatsApp com pelo menos 12 horas de antecedência." },
-    { icon: "CalendarCheck", title: "Remarcação sem custo", text: "Aulas desmarcadas no prazo podem ser remarcadas sem custo dentro do mesmo mês." },
-    { icon: "AlertTriangle", title: "Falta sem aviso", text: "A aula que não for desmarcada no prazo é computada como realizada no plano." },
-    { icon: "Timer", title: "Atrasos", text: "Tolerância de 15 minutos. Após esse período, a aula pode ser encurtada ou remarcada." },
+export const HOME_PACKS = [
+    {
+        waUrl: waLink("Olá, Rone! Quero ser avisado do lançamento do Pack Treine em Casa."),
+        title: 'Pack: Treine em Casa',
+        description:
+            "Um E-book de treinos físicos completos para fazer em casa, no seu ritmo e para o seu nível.",
+        includes: [
+            "Exercícios para realizar em qualquer lugar",
+            "Condicionamento físico sem equipamento",
+            "Sequências de treinos com progressão diária",
+            "Treino físico para auxiliar seu treino de luta",
+            "Movimentos de luta junto aos exercícios",
+        ],
+    },
+    {
+        waUrl: waLink("Olá, Rone! Quero ser avisado do lançamento do Pack Muay Thai do Zero."),
+        title: 'Pack: Muay Thai do Zero',
+        description:
+            "Video aulas para você aprender muay thai, do primeiro contato ao nível avançado sem sair de casa.",
+        includes: [
+            "Primeiro benefício do novo programa",
+            "Segundo ponto de destaque",
+            "Terceiro tópico importante",
+            "Quarto item do programa",
+            "Quinto benefício",
+        ],
+    }
 ];
-
-export const HOMEPACK = {
-    waUrl: waLink("Olá, Rone! Quero ser avisado do lançamento do Pack Treine em Casa."),
-    title: 'Pack "Treine em Casa"',
-    description:
-        "Um E-book de treinos físicos completos para fazer em casa, no seu ritmo e para o seu nível.",
-    includes: [
-        "Exercícios para realizar em qualquer lugar",
-        "Condicionamento físico sem equipamento",
-        "Sequências de treinos com progressão diária",
-        "Treino físico para auxiliar seu treino de luta",
-        "Movimentos de luta junto aos exercícios",
-    ],
-};
-
 export const TESTIMONIALS = [
+     {
+        name: "Nome",
+        role: "Subtítulo",
+        quote: "Depoimento",
+    },    
     {
         name: "Gabriel M.",
         role: "Aluno há 6 anos",
-        quote: "Comecei do zero e o Rone me deu base, confiança e condicionamento. Melhor decisão que tomei.",
+        quote: "###",
     },
     {
         name: "Diogo A.",
-        role: "Aluno online",
-        quote: "Mesmo online, a correção de técnica é impressionante. Perdi 8kg em quatro meses de treino.",
+        role: "Aluno há 4 anos ",
+        quote: "###",
     },
     {
-        name: "Jamil",
-        role: "Aulas em domicílio",
-        quote: "Treino em casa com horário flexível. A disciplina que aprendi no Muay Thai mudou minha rotina.",
+        name: "Gustavo",
+        role: "Aluno há 6 anos",
+        quote: "###",
+    },
+    {
+        name: "Talia",
+        role: "Aluna há 2 anos",
+        quote: "###",
+    },
+    {
+        name: "Vasti + Alicia",
+        role: "Aulas em dupla",
+        quote: "###.",
     },
     {
         name: "André",
-        role: "Aluno na academia",
-        quote: "Ambiente respeitoso e treino desafiador. O Rone cobra na medida certa e celebra cada evolução.",
+        role: "Aulas em domicílio",
+        quote: "###",
+    },
+     {
+        name: "Vitor",
+        role: "Aulo há 2 meses",
+        quote: "###",
+    },
+     {
+        name: "Mariana",
+        role: "Aula em domicílio",
+        quote: "###",
+    },
+     {
+        name: "Rosilma",
+        role: "Atleta de competição",
+        quote: "###",
+    },
+     {
+        name: "Giovani",
+        role: "Atleta de competição",
+        quote: "###",
+    },
+     {
+        name: "Matheus",
+        role: "Projeto social",
+        quote: "###",
     },
 ];
 

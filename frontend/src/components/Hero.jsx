@@ -98,13 +98,12 @@ export const Hero = () => {
                     </a>
                 </motion.div>
 
-                {/* FRASE REPOSICIONADA ABAIXO DOS BOTÕES */}
-                <MaskedLine
-                    delay={0.95}
-                    className="font-caps-display uppercase whitespace-nowrap tracking-[0.1em] text-[clamp(0.9rem,2.5vw,1.5rem)] text-brown-light mt-8"
-                >
-                    PROPÓSITO GERA EXCELÊNCIA
-                </MaskedLine>
+                        <MaskedLine
+                        delay={0.95}
+                        className="font-black uppercase tracking-[0.12em] text-[clamp(1.3rem,4.5vw,2rem)] text-transparent bg-clip-text bg-gradient-to-r from-[#E2A25D] via-[#C88A4B] to-[#99602B] drop-shadow-md mt-10 text-center"
+                        >
+                        PROPÓSITO GERA EXCELÊNCIA
+                        </MaskedLine>   
             </motion.div>
         </section>
     );

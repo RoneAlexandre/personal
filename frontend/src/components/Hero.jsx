@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { IMAGES, WHATSAPP_URL } from "../data/content";
 import { handleAnchorClick } from "../lib/utils";
-import logo from "../assets/logo-horizontal.png";
+import logo from "../assets/logov2.png";
 
 const MaskedLine = ({ children, delay, className = "" }) => (
     <span className="block overflow-hidden">
@@ -40,17 +40,11 @@ export const Hero = () => {
                 style={{ opacity: fade }}
                 className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-5 sm:px-8 pt-16 pb-12 sm:pt-28 sm:pb-16"
             >
-                <MaskedLine
-                    delay={0.15}
-                    className="font-caps-display uppercase whitespace-nowrap tracking-[0.1em] text-[clamp(1rem,4.4vw,2.5rem)] text-brown-light mb-6"
-                >
-                    PROPÓSITO GERA EXCELÊNCIA
-                </MaskedLine>
-
+                {/* LOGO */}
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.35, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     data-testid="hero-logo"
                 >
                     <img
@@ -60,10 +54,11 @@ export const Hero = () => {
                     />
                 </motion.div>
 
+                {/* MODALIDADES */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
                     className="flex items-center gap-3 mt-5 mb-1"
                 >
                     <span className="font-light-display tracking-[0.2em] uppercase text-base sm:text-lg text-terracota">
@@ -71,14 +66,16 @@ export const Hero = () => {
                     </span>
                 </motion.div>
 
-                <MaskedLine delay={0.75} className="mt-4 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
+                {/* DESCRIÇÃO */}
+                <MaskedLine delay={0.55} className="mt-4 max-w-xl text-base sm:text-lg text-neutral-300 leading-relaxed normal-case">
                     Aulas particulares desenvolvidas para o seu objetivo. Transforme seu corpo e sua mente com um propósito alinhado para você alcançar a excelência.
                 </MaskedLine>
 
+                {/* BOTÕES DE AÇÃO */}
                 <motion.div
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 1.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ delay: 0.75, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
                     className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4"
                 >
                     <a
@@ -100,6 +97,14 @@ export const Hero = () => {
                         Conheça os planos
                     </a>
                 </motion.div>
+
+                {/* FRASE REPOSICIONADA ABAIXO DOS BOTÕES */}
+                <MaskedLine
+                    delay={0.95}
+                    className="font-caps-display uppercase whitespace-nowrap tracking-[0.1em] text-[clamp(0.9rem,2.5vw,1.5rem)] text-brown-light mt-8"
+                >
+                    PROPÓSITO GERA EXCELÊNCIA
+                </MaskedLine>
             </motion.div>
         </section>
     );

@@ -24,7 +24,7 @@ export default function OrbitalBenefits({ timelineData }) {
                             <Icon size={18} />
                         </span>
                         <h3 className="text-cream font-semibold text-sm leading-tight">{item.title}</h3>
-                        <p className="text-neutral-400 text-xs leading-relaxed">{item.content}</p>
+                        <p className="text-neutral-400 text-xs leading-relaxed">{item.text}</p>
                     </div>
                 );
             })}

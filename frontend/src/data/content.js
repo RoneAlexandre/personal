@@ -76,6 +76,7 @@ export const BENEFITS = [
     { icon: "Flame", title: "Queima de Gordura", text: "Até 1200 calorias por treino de alta intensidade." },
     { icon: "Brain", title: "Disciplina Mental", text: "Foco, constância e controle emocional dentro e fora do tatâme." },
     { icon: "HeartPulse", title: "Redução de Estresse", text: "Descarregue a tensão do dia a dia em cada golpe." },
+    { icon: "Sparkles", title: "Autoconfiança", text: "Conheça e supere os seus próprios limites." },
 ];
 
 export const PRICING = {
@@ -146,14 +147,18 @@ export const HOME_PACKS = [
         description:
             "Video aulas para você aprender muay thai, do primeiro contato ao nível avançado sem sair de casa.",
         includes: [
-            "Primeiro benefício do novo programa",
-            "Segundo ponto de destaque",
-            "Terceiro tópico importante",
-            "Quarto item do programa",
-            "Quinto benefício",
+            "Base e postura de luta corrigidas passo a passo",
+            "Golpes fundamentais (socos, chutes e joelhadas)",
+            "Sequências técnicas para praticar sozinho",
+            "Trabalho de movimentação e agilidade",
+            "Fundamentos para elevar seu nível técnico",
         ],
     }
 ];
+
+// Compatibilidade para componentes antigos que ainda buscam por HOMEPACK
+export const HOMEPACK = HOME_PACKS[0];
+
 export const TESTIMONIALS = [
      {
         name: "Nome",
@@ -192,7 +197,7 @@ export const TESTIMONIALS = [
     },
      {
         name: "Vitor",
-        role: "Aulo há 2 meses",
+        role: "Aluno há 2 meses",
         quote: "###",
     },
      {

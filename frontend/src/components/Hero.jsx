@@ -25,17 +25,21 @@ export const Hero = () => {
 
     return (
         <section id="topo" ref={ref} data-testid="hero-section" className="relative min-h-0 sm:min-h-[100svh] flex flex-col overflow-hidden grain">
+            {/* BACKGROUND COM PARALLAX E AJUSTE DE FOCO DA IMAGEM */}
             <motion.div className="absolute inset-0" style={{ y: bgY }}>
                 <img
                     src={IMAGES.hero}
-                    alt="Lutador de Muay Thai em ação"
-                    className="w-full h-[120%] object-cover object-center"
+                    alt="Rone Batista — Personal Fight"
+                    className="w-full h-[115%] object-cover object-top sm:object-center opacity-70"
                     loading="eager"
                 />
             </motion.div>
-            <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black/40" />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-black/60" />
 
+            {/* GRADIENTES DE SOBREPOSIÇÃO (Equilíbrio entre contraste de texto e visibilidade da foto) */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/30 sm:from-black/80 sm:via-black/50" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-black/70" />
+
+            {/* CONTEÚDO */}
             <motion.div
                 style={{ opacity: fade }}
                 className="relative z-10 flex-1 flex flex-col justify-center max-w-7xl mx-auto w-full px-5 sm:px-8 pt-16 pb-12 sm:pt-28 sm:pb-16"
@@ -98,12 +102,13 @@ export const Hero = () => {
                     </a>
                 </motion.div>
 
-                        <MaskedLine
-                        delay={0.95}
-                        className="font-black uppercase tracking-[0.12em] text-[clamp(1.3rem,4.5vw,2rem)] text-transparent bg-clip-text bg-gradient-to-r from-[#E2A25D] via-[#C88A4B] to-[#99602B] drop-shadow-md mt-10 text-center"
-                        >
-                        PROPÓSITO GERA EXCELÊNCIA
-                        </MaskedLine>   
+                {/* SLOGAN */}
+                <MaskedLine
+                    delay={0.95}
+                    className="font-black uppercase tracking-[0.12em] text-[clamp(1.3rem,4.5vw,2rem)] text-transparent bg-clip-text bg-gradient-to-r from-[#E2A25D] via-[#C88A4B] to-[#99602B] drop-shadow-md mt-10 text-center"
+                >
+                    PROPÓSITO GERA EXCELÊNCIA
+                </MaskedLine>   
             </motion.div>
         </section>
     );

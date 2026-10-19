@@ -1,4 +1,5 @@
 import fotoAbout from '../assets/foto01.JPEG';
+import fotoHero from '../assets/back5.jpg';
 
 export const WHATSAPP_NUMBER = "5515996984251";
 export const INSTAGRAM_HANDLE = "@treinador_rone";
@@ -9,7 +10,7 @@ export const WHATSAPP_URL = waLink("Olá, Rone! Vi seu site e quero agendar uma 
 export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 export const IMAGES = {
-    hero: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=1920&auto=format&fit=crop",
+    hero: fotoHero,
     about: fotoAbout,
     journey: [
         { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores", description: "[Sua descrição aqui]", cat: "treinos" },

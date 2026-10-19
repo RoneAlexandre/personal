@@ -6,7 +6,7 @@ export const HomePack = () => (
     <section id="treine-em-casa" data-testid="homepack-section" className="py-24 sm:py-32 bg-[#0A0A0A]">
         <div className="max-w-5xl mx-auto px-5 sm:px-8">
             <div className="text-center">
-                <SectionHeader kicker="E-book de treinos" title="Packs & Materiais" align="center" />
+                <SectionHeader kicker="Treinos digitais" title="Packs de Treino" align="center" />
             </div>
 
             <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">

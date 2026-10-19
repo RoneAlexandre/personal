@@ -24,28 +24,28 @@ export const Hero = () => {
     const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        <section id="topo" ref={ref} data-testid="hero-section" className="relative min-h-[100svh] flex flex-col justify-start overflow-hidden bg-[#0A0A0A] grain pt-12 sm:pt-16 pb-12">
+        <section id="topo" ref={ref} data-testid="hero-section" className="relative flex flex-col justify-start overflow-hidden bg-[#0A0A0A] grain pt-20 sm:pt-24 pb-12 sm:pb-16">
             
             {/* LUZ AMBIENTAL DE FUNDO */}
-            <div className="absolute top-1/4 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] bg-terracota/10 rounded-full blur-[140px] pointer-events-none"></div>
+            <div className="absolute top-1/3 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] bg-terracota/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-            {/* CONTEÚDO ALINHADO À ESQUERDA E PUXADO PARA CIMA */}
+            {/* CONTEÚDO ALINHADO À ESQUERDA */}
             <motion.div
                 style={{ opacity: fade }}
                 className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 flex flex-col items-start text-left"
             >
-                {/* LOGO BEM MAIS PRÓXIMA DO TOPO */}
+                {/* LOGO COM ESPAÇAMENTO EQUILIBRADO NO TOPO */}
                 <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     data-testid="hero-logo"
-                    className="w-full flex justify-start mb-3 mt-1 sm:mt-2"
+                    className="w-full flex justify-start mb-4 mt-2 sm:mt-4"
                 >
                     <img
                         src={logo}
                         alt="Rone Batista — Personal Fight"
-                        className="w-full max-w-[300px] sm:max-w-md md:max-w-lg h-auto -ml-1"
+                        className="w-full max-w-[290px] sm:max-w-md md:max-w-lg h-auto -ml-1"
                     />
                 </motion.div>
 
@@ -99,11 +99,11 @@ export const Hero = () => {
                     </a>
                 </motion.div>
 
-                {/* SLOGAN DESTAQUE (PROPÓSITO GERA EXCELÊNCIA) */}
-                <div className="mt-10 sm:mt-12 pt-5 border-t border-neutral-900/80 w-full max-w-md">
+                {/* SLOGAN COM DESTAQUE IMPONENTE E MARCANTE */}
+                <div className="mt-10 sm:mt-12 pt-6 border-t border-neutral-800/60 w-full max-w-lg">
                     <MaskedLine
                         delay={0.95}
-                        className="font-extrabold uppercase tracking-[0.25em] text-sm sm:text-lg text-transparent bg-clip-text bg-gradient-to-r from-[#F0B375] via-[#C88A4B] to-[#99602B] drop-shadow-[0_2px_10px_rgba(200,138,75,0.2)]"
+                        className="font-black uppercase tracking-[0.2em] text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#D89B5C] to-[#99602B] drop-shadow-[0_4px_16px_rgba(200,138,75,0.3)]"
                     >
                         PROPÓSITO GERA EXCELÊNCIA
                     </MaskedLine>   

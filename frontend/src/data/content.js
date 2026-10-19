@@ -81,7 +81,7 @@ export const BENEFITS = [
 ];
 
 export const PRICING = {
-    subtitle: "Planos mensais · Individual, Dupla ou Grupos",
+    subtitle: "MENSAL",
     formats: [
         {
             id: "individual",

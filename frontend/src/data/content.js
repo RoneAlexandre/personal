@@ -1,5 +1,5 @@
 import fotoAbout from '../assets/foto01.JPEG';
-import fotoHero from '../assets/back5.jpg';
+import fotoHero from '../assets/back5.JPEG';
 
 export const WHATSAPP_NUMBER = "5515996984251";
 export const INSTAGRAM_HANDLE = "@treinador_rone";

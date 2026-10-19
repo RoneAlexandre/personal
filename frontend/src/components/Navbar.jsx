@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { MessageCircle, Menu, X } from "lucide-react";
-import { WHATSAPP_URL } from "../data/content";
+import { Menu, X } from "lucide-react";
 import { handleAnchorClick } from "../lib/utils";
 
 const LINKS = [
@@ -29,9 +28,17 @@ export const Navbar = () => {
             }`}
         >
             <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-3">
-                <a href="#topo" data-testid="nav-logo" className="font-display whitespace-nowrap text-[clamp(0.95rem,4.8vw,1.5rem)] tracking-wide text-cream" onClick={() => setOpen(false)}>
-                    RONE <span className="text-terracota">BATISTA</span>
+                {/* LADO ESQUERDO: RB | PERSONAL */}
+                <a 
+                    href="#topo" 
+                    data-testid="nav-logo" 
+                    className="font-display font-bold text-xs sm:text-sm tracking-[0.22em] uppercase text-cream hover:text-terracota transition-colors duration-200" 
+                    onClick={() => setOpen(false)}
+                >
+                    RB <span className="text-terracota">|</span> PERSONAL
                 </a>
+
+                {/* NAVEGAÇÃO DESKTOP */}
                 <nav className="hidden md:flex items-center gap-8">
                     {LINKS.map((l) => (
                         <a
@@ -45,28 +52,21 @@ export const Navbar = () => {
                         </a>
                     ))}
                 </nav>
-                <div className="flex items-center gap-2 shrink-0">
-                    <a
-                        href={WHATSAPP_URL}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        data-testid="nav-whatsapp-btn"
-                        className="inline-flex items-center gap-2 bg-terracota hover:bg-terracota-dark text-cream text-sm font-semibold px-4 py-2 uppercase tracking-wider transition-colors duration-200"
-                    >
-                        <MessageCircle size={16} strokeWidth={2} />
-                        <span className="hidden sm:inline">Agendar aula</span>
-                        <span className="sm:hidden">Agendar</span>
-                    </a>
+
+                {/* BOTÃO HAMBÚRGUER CLEAN (Sem o quadrado/borda) */}
+                <div className="flex items-center gap-2 shrink-0 md:hidden">
                     <button
                         onClick={() => setOpen(!open)}
                         data-testid="nav-toggle"
                         aria-label={open ? "Fechar menu" : "Abrir menu"}
-                        className="md:hidden text-cream p-2 border border-neutral-700 hover:border-terracota transition-colors duration-200"
+                        className="text-cream hover:text-terracota p-1 transition-colors duration-200 focus:outline-none"
                     >
-                        {open ? <X size={20} /> : <Menu size={20} />}
+                        {open ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
             </div>
+
+            {/* MENU MOBILE EXPANDIDO */}
             {open && (
                 <nav className="md:hidden border-t border-neutral-800 bg-black/95 backdrop-blur-md" data-testid="nav-mobile-menu">
                     {LINKS.map((l) => (

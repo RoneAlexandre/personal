@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { WHATSAPP_URL } from "../data/content";
 import { handleAnchorClick } from "../lib/utils";
 import logo from "../assets/logov2.png";
+import logoVazada from "../assets/Logo vazada.png";
 import { Calendar, ArrowUpRight } from "lucide-react";
 
 const MaskedLine = ({ children, delay, className = "" }) => (
@@ -29,7 +30,16 @@ export const Hero = () => {
             {/* LUZ AMBIENTAL DE FUNDO */}
             <div className="absolute top-1/3 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] bg-terracota/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-            {/* CONTEÚDO ALINHADO À ESQUERDA */}
+            {/* MARCA D'ÁGUA: LOGO VAZADA EM BACKGROUND */}
+            <div className="absolute right-[-10%] sm:right-[-5%] top-[15%] w-[380px] sm:w-[650px] md:w-[800px] opacity-[0.05] pointer-events-none select-none z-0">
+                <img 
+                    src={logoVazada} 
+                    alt="" 
+                    className="w-full h-auto object-contain"
+                />
+            </div>
+
+            {/* CONTEÚDO PRINCIPAL */}
             <motion.div
                 style={{ opacity: fade }}
                 className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 flex flex-col items-start text-left"
@@ -49,7 +59,7 @@ export const Hero = () => {
                     />
                 </motion.div>
 
-                {/* MODALIDADES (ALINHADASC À ESQUERDA PARA HARMONIZAR COM A LOGO) */}
+                {/* MODALIDADES (ALINHADAS À ESQUERDA) */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -61,14 +71,14 @@ export const Hero = () => {
                     </span>
                 </motion.div>
 
-                {/* DESCRIÇÃO ENQUADRADA EM 3 LINHAS PERFEITAS */}
+                {/* DESCRIÇÃO ENQUADRADA */}
                 <div className="max-w-[320px] sm:max-w-md">
                     <MaskedLine delay={0.55} className="text-xs sm:text-sm text-neutral-300 font-normal leading-relaxed normal-case">
                         Aulas particulares desenvolvidas para o seu objetivo. Transforme seu corpo e sua mente com um propósito alinhado para a excelência.
                     </MaskedLine>
                 </div>
 
-                {/* BOTÕES DE DESIGN PREMIUM (Média proporção) */}
+                {/* BOTÕES DE DESIGN PREMIUM */}
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -97,11 +107,11 @@ export const Hero = () => {
                     </a>
                 </motion.div>
 
-                {/* SLOGAN CENTRALIZADO EM 3 LINHAS COM LINHA DIVISÓRIA DESTACADA */}
-                <div className="mt-9 sm:mt-11 pt-5 border-t border-neutral-800/80 w-full flex flex-col items-center text-center">
+                {/* SLOGAN CENTRALIZADO EM 3 LINHAS */}
+                <div className="mt-10 sm:mt-12 w-full flex flex-col items-center text-center">
                     <MaskedLine
                         delay={0.95}
-                        className="font-black uppercase tracking-[0.24em] text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#D89B5C] to-[#99602B] drop-shadow-[0_4px_20px_rgba(200,138,75,0.35)] leading-tight"
+                        className="font-black uppercase tracking-[0.24em] text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#D89B5C] to-[#99602B] leading-tight"
                     >
                         <span className="block">PROPÓSITO</span>
                         <span className="block text-base sm:text-lg my-0.5 text-terracota font-bold">GERA</span>

@@ -34,7 +34,7 @@ export const Hero = () => {
                 style={{ opacity: fade }}
                 className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 flex flex-col items-start text-left"
             >
-                {/* LOGO COM ESPAÇAMENTO EQUILIBRADO NO TOPO */}
+                {/* LOGO COM ESPAÇAMENTO EQUILIBRADO */}
                 <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -49,20 +49,20 @@ export const Hero = () => {
                     />
                 </motion.div>
 
-                {/* MODALIDADES FINAS E ELEGANTES */}
+                {/* MODALIDADES (Muay Thai · Kickboxing · Boxe) */}
                 <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
                     className="mb-4"
                 >
-                    <span className="font-light tracking-[0.28em] uppercase text-xs sm:text-sm text-terracota/90 font-mono">
-                        Boxe · Muay Thai · Kickboxing
+                    <span className="font-light tracking-[0.25em] uppercase text-xs sm:text-sm text-terracota/90 font-mono">
+                        Muay Thai · Kickboxing · Boxe
                     </span>
                 </motion.div>
 
-                {/* DESCRIÇÃO ENQUADRADA E ORGANIZADA */}
-                <div className="max-w-md sm:max-w-lg">
+                {/* DESCRIÇÃO ENQUADRADA (Sem palavra isolada no final) */}
+                <div className="max-w-[340px] sm:max-w-lg">
                     <MaskedLine delay={0.55} className="text-sm sm:text-base text-neutral-300 font-normal leading-relaxed normal-case">
                         Aulas particulares desenvolvidas para o seu objetivo. Transforme seu corpo e sua mente com um propósito alinhado para você alcançar a excelência.
                     </MaskedLine>
@@ -99,13 +99,15 @@ export const Hero = () => {
                     </a>
                 </motion.div>
 
-                {/* SLOGAN COM DESTAQUE IMPONENTE E MARCANTE */}
-                <div className="mt-10 sm:mt-12 pt-6 border-t border-neutral-800/60 w-full max-w-lg">
+                {/* SLOGAN CENTRALIZADO EM 3 LINHAS (Com 'GERA' no meio) */}
+                <div className="mt-12 sm:mt-14 pt-8 border-t border-neutral-800/60 w-full flex flex-col items-center text-center">
                     <MaskedLine
                         delay={0.95}
-                        className="font-black uppercase tracking-[0.2em] text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#D89B5C] to-[#99602B] drop-shadow-[0_4px_16px_rgba(200,138,75,0.3)]"
+                        className="font-black uppercase tracking-[0.22em] text-2xl sm:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#D89B5C] to-[#99602B] drop-shadow-[0_4px_20px_rgba(200,138,75,0.35)] leading-tight"
                     >
-                        PROPÓSITO GERA EXCELÊNCIA
+                        <span className="block">PROPÓSITO</span>
+                        <span className="block text-xl sm:text-2xl my-0.5 text-terracota">GERA</span>
+                        <span className="block">EXCELÊNCIA</span>
                     </MaskedLine>   
                 </div>
             </motion.div>

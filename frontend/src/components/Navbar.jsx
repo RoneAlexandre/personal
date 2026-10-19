@@ -28,14 +28,14 @@ export const Navbar = () => {
             }`}
         >
             <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-3">
-                {/* LADO ESQUERDO: RB | PERSONAL */}
+                {/* LADO ESQUERDO: RB | PERSONAL FIGHT */}
                 <a 
                     href="#topo" 
                     data-testid="nav-logo" 
                     className="font-display font-bold text-xs sm:text-sm tracking-[0.22em] uppercase text-cream hover:text-terracota transition-colors duration-200" 
                     onClick={() => setOpen(false)}
                 >
-                    RB <span className="text-terracota">|</span> PERSONAL
+                    RB <span className="text-terracota">|</span> PERSONAL FIGHT
                 </a>
 
                 {/* NAVEGAÇÃO DESKTOP */}

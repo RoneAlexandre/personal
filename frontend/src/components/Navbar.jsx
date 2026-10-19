@@ -1,87 +1,124 @@
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { WHATSAPP_URL } from "../data/content";
 import { handleAnchorClick } from "../lib/utils";
+import logo from "../assets/logov2.png";
+import logoVazada from "../assets/Logo vazada.png"; // Ajuste o nome da imagem conforme salvo em assets
+import { Calendar, ArrowUpRight } from "lucide-react";
 
-const LINKS = [
-    { href: "#sobre", label: "Sobre" },
-    { href: "#aulas", label: "Aulas" },
-    { href: "#planos", label: "Planos" },
-    { href: "#galeria", label: "Galeria" },
-    { href: "#faq", label: "FAQ" },
-];
+const MaskedLine = ({ children, delay, className = "" }) => (
+    <span className="block overflow-hidden">
+        <motion.span
+            className={`block ${className}`}
+            initial={{ y: "115%" }}
+            animate={{ y: 0 }}
+            transition={{ duration: 1, delay, ease: [0.16, 1, 0.3, 1] }}
+        >
+            {children}
+        </motion.span>
+    </span>
+);
 
-export const Navbar = () => {
-    const [scrolled, setScrolled] = useState(false);
-    const [open, setOpen] = useState(false);
-
-    useEffect(() => {
-        const onScroll = () => setScrolled(window.scrollY > 40);
-        window.addEventListener("scroll", onScroll, { passive: true });
-        return () => window.removeEventListener("scroll", onScroll);
-    }, []);
+export const Hero = () => {
+    const ref = useRef(null);
+    const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+    const fade = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
     return (
-        <header
-            data-testid="navbar"
-            className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 border-b ${
-                scrolled || open ? "bg-black/85 backdrop-blur-md border-neutral-800" : "bg-transparent border-transparent"
-            }`}
-        >
-            <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-3">
-                {/* LADO ESQUERDO: RB | PERSONAL */}
-                <a 
-                    href="#topo" 
-                    data-testid="nav-logo" 
-                    className="font-display font-bold text-xs sm:text-sm tracking-[0.22em] uppercase text-cream hover:text-terracota transition-colors duration-200" 
-                    onClick={() => setOpen(false)}
-                >
-                    RB <span className="text-terracota">|</span> PERSONAL
-                </a>
+        <section id="topo" ref={ref} data-testid="hero-section" className="relative flex flex-col justify-start overflow-hidden bg-[#0A0A0A] grain pt-20 sm:pt-24 pb-10 sm:pb-14">
+            
+            {/* LUZ AMBIENTAL DE FUNDO */}
+            <div className="absolute top-1/3 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] bg-terracota/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-                {/* NAVEGAÇÃO DESKTOP */}
-                <nav className="hidden md:flex items-center gap-8">
-                    {LINKS.map((l) => (
-                        <a
-                            key={l.href}
-                            href={l.href}
-                            onClick={(e) => handleAnchorClick(e, l.href)}
-                            data-testid={`nav-link-${l.label.toLowerCase()}`}
-                            className="text-sm font-medium text-neutral-300 hover:text-cream transition-colors duration-200 uppercase tracking-widest"
-                        >
-                            {l.label}
-                        </a>
-                    ))}
-                </nav>
-
-                {/* BOTÃO HAMBÚRGUER CLEAN (Sem o quadrado/borda) */}
-                <div className="flex items-center gap-2 shrink-0 md:hidden">
-                    <button
-                        onClick={() => setOpen(!open)}
-                        data-testid="nav-toggle"
-                        aria-label={open ? "Fechar menu" : "Abrir menu"}
-                        className="text-cream hover:text-terracota p-1 transition-colors duration-200 focus:outline-none"
-                    >
-                        {open ? <X size={24} /> : <Menu size={24} />}
-                    </button>
-                </div>
+            {/* MARCA D'ÁGUA: LOGO VAZADA EM BACKGROUND */}
+            <div className="absolute right-[-10%] sm:right-[-5%] top-[15%] w-[380px] sm:w-[650px] md:w-[800px] opacity-[0.05] pointer-events-none select-none z-0">
+                <img 
+                    src={logoVazada} 
+                    alt="" 
+                    className="w-full h-auto object-contain filter invert-0"
+                />
             </div>
 
-            {/* MENU MOBILE EXPANDIDO */}
-            {open && (
-                <nav className="md:hidden border-t border-neutral-800 bg-black/95 backdrop-blur-md" data-testid="nav-mobile-menu">
-                    {LINKS.map((l) => (
-                        <a
-                            key={l.href}
-                            href={l.href}
-                            onClick={(e) => { setOpen(false); handleAnchorClick(e, l.href); }}
-                            data-testid={`nav-mobile-link-${l.label.toLowerCase()}`}
-                            className="block px-6 py-4 text-sm font-semibold text-neutral-200 hover:text-cream hover:bg-cream/5 uppercase tracking-widest border-b border-neutral-900 transition-colors duration-200"
-                        >
-                            {l.label}
-                        </a>
-                    ))}
-                </nav>
-            )}
-        </header>
+            {/* CONTEÚDO PRINCIPAL */}
+            <motion.div
+                style={{ opacity: fade }}
+                className="relative z-10 max-w-7xl mx-auto w-full px-6 sm:px-12 flex flex-col items-start text-left"
+            >
+                {/* LOGO */}
+                <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                    data-testid="hero-logo"
+                    className="w-full flex justify-start mb-3 mt-1 sm:mt-2"
+                >
+                    <img
+                        src={logo}
+                        alt="Rone Batista — Personal Fight"
+                        className="w-full max-w-[270px] sm:max-w-md md:max-w-lg h-auto -ml-1"
+                    />
+                </motion.div>
+
+                {/* MODALIDADES (ALINHADAS À ESQUERDA) */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    className="mb-3.5"
+                >
+                    <span className="font-light tracking-[0.24em] uppercase text-[11px] sm:text-xs text-terracota/90 font-mono">
+                        Muay Thai · Kickboxing · Boxe
+                    </span>
+                </motion.div>
+
+                {/* DESCRIÇÃO ENQUADRADA */}
+                <div className="max-w-[320px] sm:max-w-md">
+                    <MaskedLine delay={0.55} className="text-xs sm:text-sm text-neutral-300 font-normal leading-relaxed normal-case">
+                        Aulas particulares desenvolvidas para o seu objetivo. Transforme seu corpo e sua mente com um propósito alinhado para a excelência.
+                    </MaskedLine>
+                </div>
+
+                {/* BOTÕES DE DESIGN PREMIUM */}
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.75, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                    className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto"
+                >
+                    <a
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        data-testid="hero-whatsapp-cta"
+                        className="group inline-flex items-center justify-center gap-2.5 bg-terracota hover:bg-terracota-dark text-cream font-medium text-xs sm:text-sm tracking-wider px-7 py-3 rounded-full transition-all duration-300 shadow-lg shadow-terracota/20 hover:shadow-terracota/30 hover:-translate-y-0.5 active:translate-y-0"
+                    >
+                        <Calendar size={16} className="text-cream/90" />
+                        <span>Agende sua aula</span>
+                    </a>
+
+                    <a
+                        href="#planos"
+                        onClick={(e) => handleAnchorClick(e, "#planos")}
+                        data-testid="hero-secondary-cta"
+                        className="group inline-flex items-center justify-center gap-2 bg-neutral-900/80 hover:bg-neutral-800 text-neutral-300 hover:text-white border border-neutral-700/80 hover:border-neutral-500 backdrop-blur-md font-medium text-xs sm:text-sm tracking-wider px-7 py-3 rounded-full transition-all duration-300"
+                    >
+                        <span>Conheça os planos</span>
+                        <ArrowUpRight size={16} className="text-neutral-400 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </a>
+                </motion.div>
+
+                {/* SLOGAN CENTRALIZADO EM 3 LINHAS (SEM BACKGROUND / LINHAS FANTASMAS) */}
+                <div className="mt-10 sm:mt-12 w-full flex flex-col items-center text-center">
+                    <MaskedLine
+                        delay={0.95}
+                        className="font-black uppercase tracking-[0.24em] text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#D89B5C] to-[#99602B] leading-tight"
+                    >
+                        <span className="block">PROPÓSITO</span>
+                        <span className="block text-base sm:text-lg my-0.5 text-terracota font-bold">GERA</span>
+                        <span className="block">EXCELÊNCIA</span>
+                    </MaskedLine>   
+                </div>
+            </motion.div>
+        </section>
     );
 };

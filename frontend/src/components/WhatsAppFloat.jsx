@@ -8,11 +8,17 @@ export const WhatsAppFloat = () => (
         rel="noopener noreferrer"
         data-testid="whatsapp-float-btn"
         aria-label="Agendar aula pelo WhatsApp"
-        className="fixed bottom-6 right-6 z-50 group"
+        className="fixed bottom-6 right-6 z-50 group flex items-center gap-3 bg-neutral-900/90 hover:bg-neutral-800 text-cream border border-terracota/40 hover:border-terracota p-3.5 sm:px-5 sm:py-3.5 rounded-full backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:shadow-terracota/20 transition-all duration-300 hover:-translate-y-1 active:translate-y-0"
     >
-        <span className="absolute inset-0 rounded-full bg-green-500 animate-float-ping" aria-hidden="true" />
-        <span className="relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-green-500 group-hover:bg-green-400 shadow-lg shadow-green-500/30 transition-[background-color,transform] duration-300 group-hover:scale-105">
-            <MessageCircle size={28} className="text-cream" strokeWidth={2} fill="white" />
+        {/* Ícone com ponto pulsante sutil em terracota */}
+        <div className="relative flex items-center justify-center text-terracota group-hover:text-[#F5C28B] transition-colors duration-300">
+            <MessageCircle size={22} strokeWidth={1.8} />
+            <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-terracota rounded-full animate-pulse" />
+        </div>
+
+        {/* Texto do botão (oculto no mobile, visível no desktop) */}
+        <span className="hidden sm:inline font-mono text-xs uppercase tracking-widest text-neutral-300 group-hover:text-cream transition-colors duration-300">
+            Agendar
         </span>
     </a>
 );

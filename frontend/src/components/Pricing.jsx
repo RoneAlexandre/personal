@@ -1,20 +1,39 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Home, CalendarCheck, ArrowUpRight, Sparkles } from "lucide-react";
+import { Home, CalendarCheck, ArrowUpRight } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
 import { PRICING } from "../data/content";
 
-// Mapeamento dos ícones ajustados (com ícone temático de luta/equipamento)
+// ÍCONE PERSONALIZADO DE LUVA DE BOXE (Substitui o halter e a estrela)
+const BoxingGloveIcon = ({ size = 20, className = "" }) => (
+    <svg 
+        width={size} 
+        height={size} 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        strokeWidth="1.5" 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        className={className}
+    >
+        <path d="M19 11v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3z" />
+        <path d="M15 8V6a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v2" />
+        <path d="M12 12v4" />
+        <path d="M9 14h6" />
+    </svg>
+);
+
 const EXTRA_ICONS = { 
     Home, 
-    Dumbbell: Sparkles // Substituído para representar equipamento de luta com elegância
+    Dumbbell: BoxingGloveIcon // Mapeia rigorosamente para a Luva de Boxe
 };
 
-// Novos valores dinâmicos para a aula avulsa conforme o formato
+// Valores dinâmicos limpos para a aula avulsa sem poluição
 const DROP_IN_PRICES = {
     individual: "R$ 80,00",
-    dupla: "R$ 60,00 / pessoa",
-    grupo: "R$ 50,00 / pessoa"
+    dupla: "R$ 60,00",
+    grupo: "R$ 50,00"
 };
 
 export const Pricing = () => {
@@ -24,10 +43,9 @@ export const Pricing = () => {
     return (
         <section id="planos" data-testid="pricing-section" className="relative py-24 sm:py-32 bg-[#0A0A0A] grain overflow-hidden">
             
-            {/* LUZ AMBIENTAL DE FUNDO REFINADA */}
+            {/* LUZ AMBIENTAL DE FUNDO */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-terracota/10 rounded-full blur-[180px] pointer-events-none" aria-hidden="true" />
             
-            {/* BORDAS SUTIS EDITORIAIS */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" aria-hidden="true" />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" aria-hidden="true" />
 
@@ -39,11 +57,10 @@ export const Pricing = () => {
                     <p className="text-neutral-400 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed font-light">{PRICING.subtitle}</p>
                 </Reveal>
 
-                {/* CONTAINER PRINCIPAL DOS PLANOS (ESTILO STUDIO MODERNO) */}
+                {/* CONTAINER PRINCIPAL DOS PLANOS */}
                 <Reveal delay={0.15}>
                     <div className="mt-10 sm:mt-12 bg-neutral-900/40 border border-neutral-800/90 backdrop-blur-2xl rounded-3xl p-5 sm:p-9 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative overflow-hidden">
                         
-                        {/* BRILHO SUTIL NO TOPO DO CARD */}
                         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-terracota/40 to-transparent" />
 
                         {/* TABS DE SELEÇÃO DE FORMATO */}
@@ -88,7 +105,7 @@ export const Pricing = () => {
                                     </p>
                                 )}
 
-                                {/* LISTA DE VALORES COM DESTAQUE MÁXIMO NOS NÚMEROS */}
+                                {/* LISTA DE VALORES */}
                                 <div className="divide-y divide-neutral-800/80 border-t border-b border-neutral-800/80">
                                     {current.rows.map((row, i) => (
                                         <div
@@ -98,8 +115,7 @@ export const Pricing = () => {
                                         >
                                             <span className="font-semibold text-base sm:text-lg text-neutral-200 tracking-wide">{row.freq}</span>
                                             
-                                            {/* PREÇO PRINCIPAL DESTACADO E SEM SUBTÍTULO POIS FOI REMOVIDO */}
-                                            <div className="text-right">
+                                            <div className="text-right whitespace-nowrap">
                                                 <span className="font-display font-black text-2xl sm:text-4xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#E8B075] to-[#99602B]">
                                                     {row.price}
                                                 </span>
@@ -108,7 +124,7 @@ export const Pricing = () => {
                                     ))}
                                 </div>
 
-                                {/* BOTÃO 'QUERO TREINAR' DE DESIGN PREMIUM */}
+                                {/* BOTÃO 'QUERO TREINAR' */}
                                 <div className="mt-9 flex justify-center">
                                     <a
                                         href={current.waUrl}
@@ -124,17 +140,21 @@ export const Pricing = () => {
                             </motion.div>
                         </AnimatePresence>
 
-                        {/* BADGE DE AULA AVULSA COM VALORES ATUALIZADOS POR MODALIDADE */}
+                        {/* AULA AVULSA: LINHA ÚNICA SEM QUEBRAS FEIAS */}
                         <div className="mt-9 pt-6 border-t border-neutral-800/80 flex justify-center" data-testid="drop-in-badge">
-                            <span className="inline-flex items-center gap-2.5 border border-terracota/30 bg-terracota/10 text-cream font-mono text-xs sm:text-sm tracking-wider uppercase px-6 py-3 rounded-full backdrop-blur-md">
-                                <span className="text-neutral-400">Aula avulsa ({active}):</span>
-                                <strong className="text-[#F5C28B] font-bold text-sm sm:text-base">{DROP_IN_PRICES[active]}</strong>
-                            </span>
+                            <div className="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-6 border border-terracota/30 bg-terracota/10 px-6 py-3.5 rounded-full backdrop-blur-md">
+                                <span className="font-mono text-xs sm:text-sm tracking-wider uppercase text-neutral-300 whitespace-nowrap">
+                                    Aula avulsa
+                                </span>
+                                <span className="font-display font-bold text-base sm:text-lg text-[#F5C28B] whitespace-nowrap">
+                                    {DROP_IN_PRICES[active]}
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </Reveal>
 
-                {/* EXTRAS DE ATENDIMENTO (EQUIPAMENTO COM ÍCONE AJUSTADO) */}
+                {/* VALORES ADICIONAIS (COM ALINHAMENTO RIGOROSO E LUVA DE BOXE) */}
                 <Reveal delay={0.15} className="mt-12 sm:mt-16">
                     <h3 className="font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-terracota mb-6 font-semibold text-center sm:text-left">
                         {PRICING.extrasTitle}
@@ -143,20 +163,25 @@ export const Pricing = () => {
                         {PRICING.extras.map((ex) => {
                             const Icon = EXTRA_ICONS[ex.icon];
                             return (
-                                <div key={ex.text} className="flex items-center gap-4 border border-neutral-800/80 bg-neutral-900/30 p-4.5 rounded-2xl backdrop-blur-md">
-                                    <span className="w-11 h-11 shrink-0 flex items-center justify-center bg-terracota/10 border border-terracota/30 text-terracota rounded-xl">
-                                        <Icon size={20} strokeWidth={1.5} />
+                                <div key={ex.text} className="flex items-center justify-between gap-4 border border-neutral-800/80 bg-neutral-900/30 p-4.5 rounded-2xl backdrop-blur-md">
+                                    <div className="flex items-center gap-3.5 min-w-0">
+                                        <span className="w-11 h-11 shrink-0 flex items-center justify-center bg-terracota/10 border border-terracota/30 text-terracota rounded-xl">
+                                            <Icon size={20} className="text-terracota" />
+                                        </span>
+                                        <p className="text-xs sm:text-sm text-neutral-300 leading-snug font-light truncate">
+                                            {ex.text}
+                                        </p>
+                                    </div>
+                                    <span className="font-display font-bold text-sm sm:text-base text-cream whitespace-nowrap pl-2">
+                                        {ex.price}
                                     </span>
-                                    <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light">
-                                        {ex.text} <strong className="text-cream font-semibold">{ex.price}</strong>
-                                    </p>
                                 </div>
                             );
                         })}
                     </div>
                 </Reveal>
 
-                {/* BANNER: 'VOCÊ ESCOLHE A DATA' POSICIONADO ABAIXO DOS EXTRAS */}
+                {/* BANNER: 'VOCÊ ESCOLHE A DATA' NO FINAL */}
                 <Reveal delay={0.2} className="mt-8">
                     <div className="flex items-center gap-4 border border-neutral-800/80 bg-neutral-900/20 backdrop-blur-md px-6 py-5 rounded-2xl" data-testid="payment-date-banner">
                         <CalendarCheck size={26} strokeWidth={1.5} className="text-terracota shrink-0" />

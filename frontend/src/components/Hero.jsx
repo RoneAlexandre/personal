@@ -30,12 +30,12 @@ export const Hero = () => {
             {/* LUZ AMBIENTAL DE FUNDO */}
             <div className="absolute top-1/3 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] bg-terracota/10 rounded-full blur-[140px] pointer-events-none"></div>
 
-            {/* MARCA D'ÁGUA: LOGO VAZADA EM BACKGROUND */}
-            <div className="absolute right-[-10%] sm:right-[-5%] top-[15%] w-[380px] sm:w-[650px] md:w-[800px] opacity-[0.05] pointer-events-none select-none z-0">
+            {/* MARCA D'ÁGUA EM DESTAQUE (COBRINDO TODA A ÁREA CIRCULADA) */}
+            <div className="absolute inset-x-0 top-[10%] sm:top-[5%] w-full flex justify-center pointer-events-none select-none z-0">
                 <img 
                     src={logoVazada} 
                     alt="" 
-                    className="w-full h-auto object-contain"
+                    className="w-[92%] sm:w-[600px] md:w-[750px] max-w-none opacity-[0.14] filter contrast-125 sepia-[0.3] hue-rotate-[10deg]"
                 />
             </div>
 

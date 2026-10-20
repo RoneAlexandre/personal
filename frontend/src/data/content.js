@@ -81,7 +81,7 @@ export const BENEFITS = [
 ];
 
 export const PRICING = {
-    subtitle: "MENSAL",
+    subtitle: "Descubra o plano ideal para você",
     formats: [
         {
             id: "individual",

@@ -122,9 +122,9 @@ export const PRICING = {
     ],
     dropIn: "R$ 70",
     extrasTitle: "Valores Adicionais",
-    extras: [
-        { icon: "Home", text: "Aulas a domicílio ou em espaços públicos:", price: "R$ 20 por aula" },
-        { icon: "Dumbbell", text: "Aluguel de equipamento (bandagem, luvas e caneleiras):", price: "R$ 10 por aula" },
+   extras: [
+        { icon: "Home", text: "Aulas a domicílio ou em espaços públicos", price: "R$ 20 por aula" },
+        { icon: "Dumbbell", text: "Aluguel de equipamentos (bandagem, luvas e caneleiras)", price: "R$ 10 por aula" },
     ],
 };
 

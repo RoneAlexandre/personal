@@ -7,7 +7,7 @@ export const WhatsAppFloat = () => (
         target="_blank"
         rel="noopener noreferrer"
         data-testid="whatsapp-float-btn"
-        aria-label="Agendar aula pelo WhatsApp"
+        aria-label="Conversar pelo WhatsApp"
         className="fixed bottom-6 right-6 z-50 group flex items-center gap-3 bg-neutral-900/90 hover:bg-neutral-800 text-cream border border-terracota/40 hover:border-terracota p-3.5 sm:px-5 sm:py-3.5 rounded-full backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.8)] hover:shadow-terracota/20 transition-all duration-300 hover:-translate-y-1 active:translate-y-0"
     >
         {/* Ícone com ponto pulsante sutil em terracota */}

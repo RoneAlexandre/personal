@@ -4,7 +4,7 @@ import { Home, CalendarCheck, ArrowUpRight } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
 import { PRICING } from "../data/content";
 
-// ÍCONE PERSONALIZADO DE LUVA DE BOXE (Substitui o halter e a estrela)
+// ÍCONE DE LUVA DE BOXE FIDELIZADO À SUA IMAGEM DE REFERÊNCIA
 const BoxingGloveIcon = ({ size = 20, className = "" }) => (
     <svg 
         width={size} 
@@ -12,24 +12,31 @@ const BoxingGloveIcon = ({ size = 20, className = "" }) => (
         viewBox="0 0 24 24" 
         fill="none" 
         stroke="currentColor" 
-        strokeWidth="1.5" 
+        strokeWidth="1.8" 
         strokeLinecap="round" 
         strokeLinejoin="round" 
         className={className}
     >
-        <path d="M19 11v3a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5v-2a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3z" />
-        <path d="M15 8V6a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v2" />
-        <path d="M12 12v4" />
-        <path d="M9 14h6" />
+        {/* Formato principal da luva (cabeça arredondada e corpo) */}
+        <path d="M6 15V10C6 6.134 9.134 3 13 3C16.866 3 20 6.134 20 10V12C20 13.657 18.657 15 17 15H6Z" />
+        
+        {/* Detalhe do polegar dobrado na lateral */}
+        <path d="M16 8.5C14.8 8.5 14 9.3 14 10.5C14 12 15.5 13 17 13" />
+        
+        {/* Punho / Pulso da luva */}
+        <path d="M8 15V20C8 20.552 8.448 21 9 21H17C17.552 21 18 20.552 18 20V15" />
+        
+        {/* Tira do velcro no punho */}
+        <path d="M11 18H15" />
     </svg>
 );
 
 const EXTRA_ICONS = { 
     Home, 
-    Dumbbell: BoxingGloveIcon // Mapeia rigorosamente para a Luva de Boxe
+    Dumbbell: BoxingGloveIcon 
 };
 
-// Valores dinâmicos limpos para a aula avulsa sem poluição
+// VALORES DINÂMICOS DA AULA AVULSA CONFORME A MODALIDADE ATIVA
 const DROP_IN_PRICES = {
     individual: "R$ 80,00",
     dupla: "R$ 60,00",
@@ -46,6 +53,7 @@ export const Pricing = () => {
             {/* LUZ AMBIENTAL DE FUNDO */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-terracota/10 rounded-full blur-[180px] pointer-events-none" aria-hidden="true" />
             
+            {/* BORDAS SUTIS NO TOPO E BASE */}
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" aria-hidden="true" />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" aria-hidden="true" />
 
@@ -105,7 +113,7 @@ export const Pricing = () => {
                                     </p>
                                 )}
 
-                                {/* LISTA DE VALORES */}
+                                {/* LISTA DE PREÇOS COM DESTAQUE MÁXIMO NOS VALORES */}
                                 <div className="divide-y divide-neutral-800/80 border-t border-b border-neutral-800/80">
                                     {current.rows.map((row, i) => (
                                         <div
@@ -140,7 +148,7 @@ export const Pricing = () => {
                             </motion.div>
                         </AnimatePresence>
 
-                        {/* AULA AVULSA: LINHA ÚNICA SEM QUEBRAS FEIAS */}
+                        {/* BADGE DE AULA AVULSA (LIMPA E EM LINHA ÚNICA) */}
                         <div className="mt-9 pt-6 border-t border-neutral-800/80 flex justify-center" data-testid="drop-in-badge">
                             <div className="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-6 border border-terracota/30 bg-terracota/10 px-6 py-3.5 rounded-full backdrop-blur-md">
                                 <span className="font-mono text-xs sm:text-sm tracking-wider uppercase text-neutral-300 whitespace-nowrap">
@@ -154,7 +162,7 @@ export const Pricing = () => {
                     </div>
                 </Reveal>
 
-                {/* VALORES ADICIONAIS (COM ALINHAMENTO RIGOROSO E LUVA DE BOXE) */}
+                {/* VALORES ADICIONAIS (COM A LUVA DE BOXE CORRETA E LAYOUT ORGANIZADO) */}
                 <Reveal delay={0.15} className="mt-12 sm:mt-16">
                     <h3 className="font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-terracota mb-6 font-semibold text-center sm:text-left">
                         {PRICING.extrasTitle}
@@ -163,16 +171,16 @@ export const Pricing = () => {
                         {PRICING.extras.map((ex) => {
                             const Icon = EXTRA_ICONS[ex.icon];
                             return (
-                                <div key={ex.text} className="flex items-center justify-between gap-4 border border-neutral-800/80 bg-neutral-900/30 p-4.5 rounded-2xl backdrop-blur-md">
-                                    <div className="flex items-center gap-3.5 min-w-0">
+                                <div key={ex.text} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border border-neutral-800/80 bg-neutral-900/30 p-4.5 rounded-2xl backdrop-blur-md">
+                                    <div className="flex items-center gap-3.5">
                                         <span className="w-11 h-11 shrink-0 flex items-center justify-center bg-terracota/10 border border-terracota/30 text-terracota rounded-xl">
                                             <Icon size={20} className="text-terracota" />
                                         </span>
-                                        <p className="text-xs sm:text-sm text-neutral-300 leading-snug font-light truncate">
+                                        <p className="text-xs sm:text-sm text-neutral-300 leading-snug font-light">
                                             {ex.text}
                                         </p>
                                     </div>
-                                    <span className="font-display font-bold text-sm sm:text-base text-cream whitespace-nowrap pl-2">
+                                    <span className="font-display font-bold text-sm sm:text-base text-cream sm:whitespace-nowrap text-right sm:text-left pl-12 sm:pl-0">
                                         {ex.price}
                                     </span>
                                 </div>
@@ -181,7 +189,7 @@ export const Pricing = () => {
                     </div>
                 </Reveal>
 
-                {/* BANNER: 'VOCÊ ESCOLHE A DATA' NO FINAL */}
+                {/* BANNER: 'VOCÊ ESCOLHE A DATA DO PAGAMENTO' (POSICIONADO NO FINAL) */}
                 <Reveal delay={0.2} className="mt-8">
                     <div className="flex items-center gap-4 border border-neutral-800/80 bg-neutral-900/20 backdrop-blur-md px-6 py-5 rounded-2xl" data-testid="payment-date-banner">
                         <CalendarCheck size={26} strokeWidth={1.5} className="text-terracota shrink-0" />

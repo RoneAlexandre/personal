@@ -6,7 +6,7 @@ export const INSTAGRAM_HANDLE = "@treinador_rone";
 
 const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
-export const WHATSAPP_URL = waLink("Olá, Rone! Vi seu site e quero agendar uma aula particular de Muay Thai.");
+export const WHATSAPP_URL = waLink("Olá, Rone! Vi seu site e gostaria de saber mais sobre o seu trabalho.");
 export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 export const IMAGES = {

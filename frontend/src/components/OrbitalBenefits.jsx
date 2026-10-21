@@ -2,13 +2,6 @@ import { Activity, Shield, Flame, Brain, HeartPulse, Sparkles } from "lucide-rea
 
 const ICONS = { Activity, Shield, Flame, Brain, HeartPulse, Sparkles };
 
-// Grid estático de benefícios — leve e imediato: nada para animar
-// continuamente, nada para travar. Todo o conteúdo já fica visível de
-// cara, o que é melhor para a maioria dos visitantes, que estão no
-// celular e querem escanear a informação rápido, sem precisar tocar
-// em nada para "descobrir" o benefício.
-// 6 itens dividem igual em 2 colunas (mobile) e 3 colunas (tablet/desktop),
-// então nenhum bloco precisa esticar para preencher a última linha.
 export default function OrbitalBenefits({ timelineData }) {
     return (
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4" data-testid="benefits-grid">

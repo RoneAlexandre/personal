@@ -77,7 +77,7 @@ export const BENEFITS = [
     { icon: "Flame", title: "Queima de Gordura", text: "Até 1200 calorias por treino de alta intensidade." },
     { icon: "Brain", title: "Disciplina Mental", text: "Foco, constância e controle emocional dentro e fora do tatâme." },
     { icon: "HeartPulse", title: "Redução de Estresse", text: "Descarregue a tensão do dia a dia em cada golpe." },
-    { icon: "Sparkles", title: "Autoconfiança", text: "Conheça e supere os seus próprios limites." },
+    { icon: "Sparkles", title: "Melhoria do Sono", text: "Tenha uma melhor noite de sono desde a primeira aula." },
 ];
 
 export const PRICING = {

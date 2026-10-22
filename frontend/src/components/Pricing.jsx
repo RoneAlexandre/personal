@@ -4,7 +4,7 @@ import { Home, CalendarCheck, ArrowUpRight } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
 import { PRICING } from "../data/content";
 
-// ÍCONE DE LUVA DE BOXE EXATO DA IMAGEM
+// ÍCONE DE LUVA DE BOXE FIEL AO SEU DESIGN
 const BoxingGloveIcon = ({ size = 20, className = "" }) => (
     <svg 
         width={size} 
@@ -100,7 +100,7 @@ export const Pricing = () => {
                             >
                                 {current.perPerson && (
                                     <p className="text-center text-terracota/90 text-[11px] font-mono uppercase tracking-widest mb-6" data-testid={`per-person-${active}`}>
-                                        * Valores por pessoa nesta modalidade
+                                        * Valores por pessoa neste pacote
                                     </p>
                                 )}
 
@@ -113,9 +113,12 @@ export const Pricing = () => {
                                         >
                                             <span className="font-semibold text-base sm:text-lg text-neutral-200 tracking-wide">{row.freq}</span>
                                             
-                                            <div className="text-right whitespace-nowrap">
+                                            <div className="text-right whitespace-nowrap flex items-baseline gap-1.5 justify-end">
                                                 <span className="font-display font-black text-2xl sm:text-4xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#E8B075] to-[#99602B]">
                                                     {row.price}
+                                                </span>
+                                                <span className="text-xs sm:text-sm font-mono text-neutral-400 font-normal">
+                                                    / mês
                                                 </span>
                                             </div>
                                         </div>

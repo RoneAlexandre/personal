@@ -4,7 +4,7 @@ import { Home, CalendarCheck, ArrowUpRight } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
 import { PRICING } from "../data/content";
 
-// ÍCONE DE LUVA DE BOXE FIEL AO TEU DESIGN
+// ÍCONE DE LUVA DE BOXE EXATO DA SUA IMAGEM
 const BoxingGloveIcon = ({ size = 20, className = "" }) => (
     <svg 
         width={size} 
@@ -154,27 +154,33 @@ export const Pricing = () => {
                     </div>
                 </Reveal>
 
-                {/* VALORES ADICIONAIS COM CORREÇÃO DE CORTE NO MOBILE */}
+                {/* VALORES ADICIONAIS - FORMATADO EXATAMENTE COMO A TABELA PRINCIPAL */}
                 <Reveal delay={0.15} className="mt-12 sm:mt-16">
                     <h3 className="font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-terracota mb-6 font-semibold text-center sm:text-left">
                         {PRICING.extrasTitle}
                     </h3>
-                    <div className="grid sm:grid-cols-2 gap-4" data-testid="pricing-extras">
+                    <div className="flex flex-col gap-3" data-testid="pricing-extras">
                         {PRICING.extras.map((ex) => {
                             const Icon = EXTRA_ICONS[ex.icon];
                             return (
-                                <div key={ex.text} className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4 border border-neutral-800/80 bg-neutral-900/30 p-4 sm:p-4.5 rounded-2xl backdrop-blur-md">
-                                    <div className="flex items-center gap-3.5 min-w-0 w-full sm:w-auto">
+                                <div 
+                                    key={ex.text} 
+                                    className="flex items-center justify-between gap-3 sm:gap-6 border border-neutral-800/80 bg-neutral-900/30 p-4 sm:p-5 rounded-2xl backdrop-blur-md hover:bg-white/[0.015] transition-colors duration-200"
+                                >
+                                    <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
                                         <span className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center bg-terracota/10 border border-terracota/30 text-terracota rounded-xl">
                                             <Icon size={20} className="text-terracota" />
                                         </span>
-                                        <p className="text-xs sm:text-sm text-neutral-300 leading-snug font-light">
+                                        <p className="text-xs sm:text-sm text-neutral-200 leading-snug font-medium truncate sm:whitespace-normal">
                                             {ex.text}
                                         </p>
                                     </div>
-                                    <span className="font-display font-bold text-xs sm:text-sm text-cream uppercase tracking-wide whitespace-nowrap shrink-0 self-end sm:self-auto pl-2">
-                                        {ex.price}
-                                    </span>
+                                    
+                                    <div className="text-right whitespace-nowrap shrink-0">
+                                        <span className="font-display font-bold text-sm sm:text-xl tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#F5C28B] via-[#E8B075] to-[#99602B]">
+                                            {ex.price}
+                                        </span>
+                                    </div>
                                 </div>
                             );
                         })}

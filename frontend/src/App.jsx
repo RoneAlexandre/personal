@@ -17,7 +17,6 @@ import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 function App() {
     useEffect(() => {
-        // Desativa o Lenis no mobile para eliminar travamentos e garantir 60 FPS
         const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
         if (isMobile) return;
 

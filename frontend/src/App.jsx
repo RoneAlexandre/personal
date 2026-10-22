@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
-import "@/App.css";
+import "./App.css";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -17,6 +17,10 @@ import { WhatsAppFloat } from "./components/WhatsAppFloat";
 
 function App() {
     useEffect(() => {
+        // Desativa o Lenis no mobile para eliminar travamentos e garantir 60 FPS fluídos
+        const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
+        if (isMobile) return;
+
         const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
         let rafId;
         const raf = (time) => {

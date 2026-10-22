@@ -1,23 +1,23 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
-import "./App.css";
-import { Navbar } from "./components/Navbar";
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
-import { Journey } from "./components/Journey";
-import { Formats } from "./components/Formats";
-import { Benefits } from "./components/Benefits";
-import { Pricing } from "./components/Pricing";
-import { HomePack } from "./components/HomePack";
-import { Testimonials } from "./components/Testimonials";
-import { Gallery } from "./components/Gallery";
-import { FAQ } from "./components/FAQ";
-import { FinalCTA } from "./components/FinalCTA";
-import { WhatsAppFloat } from "./components/WhatsAppFloat";
+import "@/App.css";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/Hero";
+import { About } from "@/components/About";
+import { Journey } from "@/components/Journey";
+import { Formats } from "@/components/Formats";
+import { Benefits } from "@/components/Benefits";
+import { Pricing } from "@/components/Pricing";
+import { HomePack } from "@/components/HomePack";
+import { Testimonials } from "@/components/Testimonials";
+import { Gallery } from "@/components/Gallery";
+import { FAQ } from "@/components/FAQ";
+import { FinalCTA } from "@/components/FinalCTA";
+import { WhatsAppFloat } from "@/components/WhatsAppFloat";
 
 function App() {
     useEffect(() => {
-        // Desativa o Lenis no mobile para eliminar travamentos e garantir 60 FPS fluídos
+        // Desativa o Lenis no mobile para eliminar travamentos e garantir 60 FPS
         const isMobile = window.innerWidth < 768 || /Mobi|Android/i.test(navigator.userAgent);
         if (isMobile) return;
 

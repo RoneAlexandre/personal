@@ -42,7 +42,7 @@ export const FinalCTA = () => (
                     PERSONAL<span className="text-black">FIGHT</span>
                 </span>
                 <span>
-                    Desenvolvido por Rone Batista · © {new Date().getFullYear()}
+                    Desenvolvido por Rone Batista © {new Date().getFullYear()}
                 </span>
             </div>
         </footer>

@@ -2,7 +2,7 @@ import fotoAbout from '../assets/foto01.jpg';
 import fotoHero from '../assets/back5.jpg';
 
 export const WHATSAPP_NUMBER = "5515996984251";
-export const INSTAGRAM_HANDLE = "@treinador_rone";
+export const INSTAGRAM_HANDLE = "treinador_rone";
 
 const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
@@ -123,8 +123,8 @@ export const PRICING = {
     dropIn: "R$ 70",
     extrasTitle: "Valores Adicionais",
    extras: [
-        { icon: "Home", text: "Aulas a domicílio ou em espaços públicos", price: "R$ 20 por aula" },
-        { icon: "Dumbbell", text: "Aluguel de equipamentos (bandagem, luvas e caneleiras)", price: "R$ 10 por aula" },
+        { icon: "Home", text: "Aulas a domicílio", price: "R$ 20 por aula" },
+        { icon: "Dumbbell", text: "Aluguel de equipamentos", price: "R$ 10 por aula" },
     ],
 };
 

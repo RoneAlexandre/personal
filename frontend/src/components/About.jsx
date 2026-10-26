@@ -33,9 +33,10 @@ export const About = () => (
                                 alt="Professor Rone Batista"
                                 className="w-full aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-105"
                                 loading="lazy"
+                                decoding="async"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                            <div className="absolute bottom-4 left-4 flex items-center gap-2 text-cream/90 text-xs uppercase tracking-widest bg-black/60 backdrop-blur px-3 py-2 border border-neutral-700">
+                            <div className="absolute bottom-4 left-4 flex items-center gap-2 text-cream/90 text-xs uppercase tracking-widest bg-black/70 px-3 py-2 border border-neutral-700">
                                 <MapPin size={12} className="text-terracota" /> Itapeva · São Paulo
                             </div>
                         </div>

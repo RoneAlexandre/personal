@@ -28,7 +28,7 @@ export const Hero = () => {
         <section id="topo" ref={ref} data-testid="hero-section" className="relative flex flex-col justify-start overflow-hidden bg-[#0A0A0A] grain pt-20 sm:pt-24 pb-10 sm:pb-14">
             
             {/* LUZ AMBIENTAL DE FUNDO */}
-            <div className="absolute top-1/3 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] bg-terracota/10 rounded-full blur-[140px] pointer-events-none"></div>
+            <div className="absolute top-1/3 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(167,110,54,0.16) 0%, rgba(167,110,54,0) 68%)" }}></div>
 
             {/* MARCA D'ÁGUA EM DESTAQUE (COBRINDO TODA A ÁREA CIRCULADA) */}
             <div className="absolute inset-x-0 top-[10%] sm:top-[5%] w-full flex justify-center pointer-events-none select-none z-0">
@@ -100,7 +100,7 @@ export const Hero = () => {
                         href="#planos"
                         onClick={(e) => handleAnchorClick(e, "#planos")}
                         data-testid="hero-secondary-cta"
-                        className="group inline-flex items-center justify-center gap-2 bg-neutral-900/80 hover:bg-neutral-800 text-neutral-300 hover:text-white border border-neutral-700/80 hover:border-neutral-500 backdrop-blur-md font-medium text-xs sm:text-sm tracking-wider px-7 py-3 rounded-full transition-all duration-300"
+                        className="group inline-flex items-center justify-center gap-2 bg-neutral-900/80 hover:bg-neutral-800 text-neutral-300 hover:text-white border border-neutral-700/80 hover:border-neutral-500 font-medium text-xs sm:text-sm tracking-wider px-7 py-3 rounded-full transition-all duration-300"
                     >
                         <span>Conheça os planos</span>
                         <ArrowUpRight size={16} className="text-neutral-400 group-hover:text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

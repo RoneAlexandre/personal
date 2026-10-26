@@ -24,7 +24,7 @@ export const Navbar = () => {
         <header
             data-testid="navbar"
             className={`fixed top-0 left-0 right-0 z-40 transition-colors duration-300 border-b ${
-                scrolled || open ? "bg-black/85 backdrop-blur-md border-neutral-800" : "bg-transparent border-transparent"
+                scrolled || open ? "bg-black/95 border-neutral-800" : "bg-transparent border-transparent"
             }`}
         >
             <div className="max-w-7xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-3">
@@ -68,7 +68,7 @@ export const Navbar = () => {
 
             {/* MENU MOBILE EXPANDIDO */}
             {open && (
-                <nav className="md:hidden border-t border-neutral-800 bg-black/95 backdrop-blur-md" data-testid="nav-mobile-menu">
+                <nav className="md:hidden border-t border-neutral-800 bg-black/95" data-testid="nav-mobile-menu">
                     {LINKS.map((l) => (
                         <a
                             key={l.href}

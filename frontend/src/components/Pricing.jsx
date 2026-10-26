@@ -44,7 +44,7 @@ export const Pricing = () => {
         <section id="planos" data-testid="pricing-section" className="relative py-24 sm:py-32 bg-[#0A0A0A] grain overflow-hidden">
             
             {/* LUZ AMBIENTAL */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] bg-terracota/10 rounded-full blur-[180px] pointer-events-none" aria-hidden="true" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(167,110,54,0.16) 0%, rgba(167,110,54,0) 68%)" }} aria-hidden="true" />
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" aria-hidden="true" />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" aria-hidden="true" />
 
@@ -58,7 +58,7 @@ export const Pricing = () => {
 
                 {/* CONTAINER PRINCIPAL */}
                 <Reveal delay={0.15}>
-                    <div className="mt-10 sm:mt-12 bg-neutral-900/40 border border-neutral-800/90 backdrop-blur-2xl rounded-3xl p-5 sm:p-9 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative overflow-hidden">
+                    <div className="mt-10 sm:mt-12 bg-neutral-900/70 border border-neutral-800/90 rounded-3xl p-5 sm:p-9 shadow-[0_20px_50px_rgba(0,0,0,0.8)] relative overflow-hidden">
                         
                         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-terracota/40 to-transparent" />
 
@@ -142,7 +142,7 @@ export const Pricing = () => {
 
                         {/* AULA AVULSA */}
                         <div className="mt-9 pt-6 border-t border-neutral-800/80 flex justify-center" data-testid="drop-in-badge">
-                            <div className="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-6 border border-terracota/30 bg-terracota/10 px-6 py-3.5 rounded-full backdrop-blur-md">
+                            <div className="w-full sm:w-auto flex items-center justify-between sm:justify-center gap-6 border border-terracota/30 bg-terracota/10 px-6 py-3.5 rounded-full">
                                 <span className="font-mono text-xs sm:text-sm tracking-wider uppercase text-neutral-300 whitespace-nowrap">
                                     Aula avulsa
                                 </span>
@@ -165,7 +165,7 @@ export const Pricing = () => {
                             return (
                                 <div 
                                     key={ex.text} 
-                                    className="flex items-center justify-between gap-3 sm:gap-6 border border-neutral-800/80 bg-neutral-900/30 p-4 sm:p-5 rounded-2xl backdrop-blur-md hover:bg-white/[0.015] transition-colors duration-200"
+                                    className="flex items-center justify-between gap-3 sm:gap-6 border border-neutral-800/80 bg-neutral-900/30 p-4 sm:p-5 rounded-2xl hover:bg-white/[0.015] transition-colors duration-200"
                                 >
                                     <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
                                         <span className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center bg-terracota/10 border border-terracota/30 text-terracota rounded-xl">
@@ -189,7 +189,7 @@ export const Pricing = () => {
 
                 {/* BANNER DATA DE PAGAMENTO */}
                 <Reveal delay={0.2} className="mt-8">
-                    <div className="flex items-center gap-4 border border-neutral-800/80 bg-neutral-900/20 backdrop-blur-md px-6 py-5 rounded-2xl" data-testid="payment-date-banner">
+                    <div className="flex items-center gap-4 border border-neutral-800/80 bg-neutral-900/20 px-6 py-5 rounded-2xl" data-testid="payment-date-banner">
                         <CalendarCheck size={26} strokeWidth={1.5} className="text-terracota shrink-0" />
                         <p className="text-xs sm:text-sm text-neutral-300 leading-relaxed font-light">
                             <strong className="text-cream font-semibold">Você escolhe a data do pagamento.</strong>{" "}

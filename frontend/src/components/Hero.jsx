@@ -28,7 +28,7 @@ export const Hero = () => {
         <section id="topo" ref={ref} data-testid="hero-section" className="relative flex flex-col justify-start overflow-hidden bg-[#0A0A0A] grain pt-20 sm:pt-24 pb-10 sm:pb-14">
             
             {/* LUZ AMBIENTAL DE FUNDO */}
-            <div className="absolute top-1/3 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(167,110,54,0.16) 0%, rgba(167,110,54,0) 68%)" }}></div>
+            <div className="absolute top-1/3 left-0 -translate-x-1/3 w-[380px] sm:w-[600px] h-[380px] sm:h-[600px] rounded-full pointer-events-none" style={{ background: "radial-gradient(closest-side, rgba(167,110,54,0.18) 0%, rgba(167,110,54,0.11) 30%, rgba(167,110,54,0.045) 62%, rgba(167,110,54,0) 100%)" }}></div>
 
             {/* MARCA D'ÁGUA EM DESTAQUE (COBRINDO TODA A ÁREA CIRCULADA) */}
             <div className="absolute inset-x-0 top-[10%] sm:top-[5%] w-full flex justify-center pointer-events-none select-none z-0">
@@ -38,6 +38,9 @@ export const Hero = () => {
                     className="w-[92%] sm:w-[600px] md:w-[750px] max-w-none opacity-[0.14] filter contrast-125 sepia-[0.3] hue-rotate-[10deg]"
                 />
             </div>
+
+            {/* Une o fundo do Hero com a próxima seção, sem linha de emenda */}
+            <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent to-[#0A0A0A] pointer-events-none" aria-hidden="true" />
 
             {/* CONTEÚDO PRINCIPAL */}
             <motion.div

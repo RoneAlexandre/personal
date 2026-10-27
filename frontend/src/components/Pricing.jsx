@@ -44,7 +44,7 @@ export const Pricing = () => {
         <section id="planos" data-testid="pricing-section" className="relative py-24 sm:py-32 bg-[#0A0A0A] grain overflow-hidden">
             
             {/* LUZ AMBIENTAL */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(167,110,54,0.16) 0%, rgba(167,110,54,0) 68%)" }} aria-hidden="true" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[800px] h-[600px] sm:h-[800px] rounded-full pointer-events-none" style={{ background: "radial-gradient(closest-side, rgba(167,110,54,0.18) 0%, rgba(167,110,54,0.11) 30%, rgba(167,110,54,0.045) 62%, rgba(167,110,54,0) 100%)" }} aria-hidden="true" />
             <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" aria-hidden="true" />
             <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent" aria-hidden="true" />
 

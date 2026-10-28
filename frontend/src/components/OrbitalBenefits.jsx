@@ -1,6 +1,6 @@
-import { Activity, Shield, Flame, Brain, HeartPulse, Sparkles } from "lucide-react";
+import { Activity, Shield, Flame, Brain, HeartPulse, Moon } from "lucide-react";
 
-const ICONS = { Activity, Shield, Flame, Brain, HeartPulse, Sparkles };
+const ICONS = { Activity, Shield, Flame, Brain, HeartPulse, Moon };
 
 export default function OrbitalBenefits({ timelineData }) {
     return (

@@ -77,7 +77,7 @@ export const BENEFITS = [
     { icon: "Flame", title: "Queima de Gordura", text: "Até 1200 calorias por treino de alta intensidade." },
     { icon: "Brain", title: "Disciplina Mental", text: "Foco, constância e controle emocional dentro e fora do tatâme." },
     { icon: "HeartPulse", title: "Redução de Estresse", text: "Descarregue a tensão do dia a dia em cada golpe." },
-    { icon: "Sparkles", title: "Melhoria do Sono", text: "Tenha uma melhor noite de sono desde a primeira aula." },
+    { icon: "Moon", title: "Melhoria do Sono", text: "Tenha uma melhor noite de sono desde a primeira aula." },
 ];
 
 export const PRICING = {
@@ -134,30 +134,29 @@ export const HOME_PACKS = [
         title: 'Pack: Treine em Casa',
         description:
             "Um E-book de treinos físicos completos para fazer em casa, no seu ritmo e para o seu nível.",
-        includes: [
-            "Exercícios para realizar em qualquer lugar",
+        includes: [    
             "Condicionamento físico sem equipamento",
+            "Movimentos de luta junto aos exercícios",
+            "Exercícios para realizar em qualquer lugar",
             "Sequências de treinos com progressão diária",
             "Treino físico para auxiliar seu treino de luta",
-            "Movimentos de luta junto aos exercícios",
         ],
     },
     {
         waUrl: waLink("Olá, Rone! Quero ser avisado do lançamento do Pack Muay Thai do Zero."),
         title: 'Pack: Muay Thai do Zero',
         description:
-            "Video aulas para você aprender muay thai, do primeiro contato ao nível avançado sem sair de casa.",
+            "Video aulas para você aprender muay thai, do primeiro contato ao nível avançado, sem sair de casa.",
         includes: [
-            "Base e postura de luta corrigidas passo a passo",
-            "Golpes fundamentais (socos, chutes e joelhadas)",
+            "Os pilares do Muay Thai",
+            "Trabalho de movimentação e efetividade",
+            "Da base à golpes avançados, passo a passo",
             "Sequências técnicas para praticar sozinho",
-            "Trabalho de movimentação e agilidade",
-            "Fundamentos para elevar seu nível técnico",
+            "Fundamentos para treinar em qualquer lugar",
         ],
     }
 ];
 
-// Compatibilidade para componentes antigos que ainda buscam por HOMEPACK
 export const HOMEPACK = HOME_PACKS[0];
 
 export const TESTIMONIALS = [
@@ -172,18 +171,8 @@ export const TESTIMONIALS = [
         quote: "###",
     },
     {
-        name: "Diogo A.",
-        role: "Aluno há 4 anos ",
-        quote: "###",
-    },
-    {
         name: "Gustavo",
         role: "Aluno há 6 anos",
-        quote: "###",
-    },
-    {
-        name: "Talia",
-        role: "Aluna há 2 anos",
         quote: "###",
     },
     {

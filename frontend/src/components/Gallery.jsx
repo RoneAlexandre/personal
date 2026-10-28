@@ -8,7 +8,7 @@ export const Gallery = () => (
                 <SectionHeader kicker="Dentro do treino" title="Estrutura das aulas" />
                 <Reveal delay={0.2}>
                     <p className="text-neutral-400 text-sm sm:text-base max-w-sm md:text-right">
-                        Normalmente, nossas aulas são divididas em 5 etapas:
+                        Nossas aulas são divididas em 5 etapas:
                     </p>
                 </Reveal>
             </div>

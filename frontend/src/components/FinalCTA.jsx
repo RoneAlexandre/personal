@@ -1,44 +1,48 @@
-import { Instagram } from "lucide-react";
+import { Instagram, MessageCircle } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { WHATSAPP_URL, INSTAGRAM_URL, INSTAGRAM_HANDLE } from "../data/content";
 
 export const FinalCTA = () => (
-    <section data-testid="final-cta-section" className="relative py-28 sm:py-36 bg-terracota-dark overflow-hidden grain">
+    <section data-testid="final-cta-section" className="relative py-16 sm:py-20 bg-terracota-dark overflow-hidden grain">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0)_0%,rgba(0,0,0,0.45)_100%)]" aria-hidden="true" />
-        <div className="relative max-w-5xl mx-auto px-5 sm:px-8 text-center">
+        <div className="relative max-w-4xl mx-auto px-5 sm:px-8 text-center">
             <Reveal>
-                <h2 className="font-display text-5xl sm:text-7xl lg:text-8xl uppercase leading-[0.9] tracking-tight text-cream">
+                <h2 className="font-display text-4xl sm:text-5xl uppercase tracking-tight text-cream">
                     Bora treinar?
                 </h2>
             </Reveal>
-            <Reveal delay={0.3}>
-                <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Reveal delay={0.2}>
+                <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    {/* Botão do WhatsApp */}
                     <a
                         href={WHATSAPP_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="final-whatsapp-cta"
-                        className="inline-flex items-center gap-3 bg-black text-cream hover:bg-neutral-900 font-display text-2xl tracking-widest uppercase px-10 py-5 transition-[background-color,transform] duration-300 hover:-translate-y-0.5"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-black text-cream hover:bg-neutral-900 font-display text-base tracking-wider uppercase px-6 py-3 transition-[background-color,transform] duration-300 hover:-translate-y-0.5 border border-cream/20 shadow-md"
                     >
+                        <MessageCircle size={18} className="text-emerald-500" />
                         Chamar no WhatsApp
                     </a>
+
+                    {/* Botão do Instagram */}
                     <a
                         href={INSTAGRAM_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="final-instagram-link"
-                        className="inline-flex items-center gap-2 border border-cream/40 hover:border-cream text-cream font-semibold px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300"
+                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-black/40 hover:bg-black/60 border border-cream/30 hover:border-cream text-cream font-display text-base px-6 py-3 uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 shadow-md"
                     >
-                        <Instagram size={18} strokeWidth={1.8} />
-                        <span className="normal-case tracking-wide">@{INSTAGRAM_HANDLE}</span>
+                        <Instagram size={18} className="text-amber-500" />
+                        <span>@{INSTAGRAM_HANDLE}</span>
                     </a>
                 </div>
             </Reveal>
         </div>
 
-        <footer className="relative mt-8 sm:mt-10 border-t border-cream/15">
-            <div className="max-w-7xl mx-auto px-5 sm:px-8 py-3 flex flex-col sm:flex-row items-center justify-between gap-1.5 text-cream/60 text-[11px] uppercase tracking-widest text-center">
-                <span className="font-display text-base text-cream/90 tracking-wide">
+        <footer className="relative mt-10 sm:mt-12 border-t border-cream/15">
+            <div className="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-cream/60 text-[11px] uppercase tracking-widest text-center">
+                <span className="font-display text-sm text-cream/90 tracking-wide">
                     PERSONAL<span className="text-black">FIGHT</span>
                 </span>
                 <span>

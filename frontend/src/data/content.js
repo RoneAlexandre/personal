@@ -1,5 +1,5 @@
 import fotoAbout from '../assets/foto01.webp';
-import fotoHero from '../assets/back5.webp';
+import estruturaFoto from '../assets/estrutura.jpg';
 
 export const WHATSAPP_NUMBER = "5515996984251";
 export const INSTAGRAM_HANDLE = "treinador_rone";
@@ -22,32 +22,32 @@ export const IMAGES = {
     ],
     gallery: [
         {
-            url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=1200&auto=format&fit=crop",
-            alt: "Luvas de boxe em detalhe",
+            url: estruturaFoto,
+            alt: "Estrutura de treino",
             step: "Aquecimento",
             span: "md:col-span-2 md:row-span-2",
         },
         {
-            url: "https://images.unsplash.com/photo-1737381508529-a110d717d5a7?q=80&w=900&auto=format&fit=crop",
-            alt: "Lutador no ringue em luz dramática",
+            url: estruturaFoto,
+            alt: "Estrutura de treino",
             step: "Alongamento",
             span: "",
         },
         {
-            url: "https://images.unsplash.com/photo-1558366972-9db89881cbdb?q=80&w=900&auto=format&fit=crop",
-            alt: "Combate de boxe em preto e branco",
+            url: estruturaFoto,
+            alt: "Estrutura de treino",
             step: "Aquecimento técnico",
             span: "",
         },
         {
-            url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=900&auto=format&fit=crop",
-            alt: "Dois lutadores treinando no ringue",
+            url: estruturaFoto,
+            alt: "Estrutura de treino",
             step: "Técnica",
             span: "",
         },
         {
-            url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=900&auto=format&fit=crop",
-            alt: "Treino com aparadores",
+            url: estruturaFoto,
+            alt: "Estrutura de treino",
             step: "Sparring",
             span: "",
         },
@@ -166,49 +166,29 @@ export const TESTIMONIALS = [
         quote: "Depoimento",
     },    
     {
-        name: "Gabriel M.",
-        role: "Aluno há 6 anos",
-        quote: "###",
-    },
-    {
-        name: "Gustavo",
-        role: "Aluno há 6 anos",
-        quote: "###",
-    },
-    {
-        name: "Vasti + Alicia",
-        role: "Aulas em dupla",
-        quote: "###.",
-    },
-    {
         name: "André",
         role: "Aulas em domicílio",
         quote: "###",
     },
      {
         name: "Vitor",
-        role: "Aluno há 2 meses",
-        quote: "###",
+        role: "Treino individual",
+        quote: "Ta sendo uma experiência muito boa, as aulas estão sendo ótimas, estou gostando demais!",
     },
      {
         name: "Mariana",
-        role: "Aula em domicílio",
+        role: "Aulas em domicílio",
         quote: "###",
     },
      {
         name: "Rosilma",
         role: "Atleta de competição",
-        quote: "###",
-    },
-     {
-        name: "Giovani",
-        role: "Atleta de competição",
-        quote: "###",
+        quote: "Minha experiência durante as aulas foi muito boa. Aprendi bastante, evoluí não só tecnicamente, mas também na disciplina, na confiança e na superação dos meus próprios limites. A dedicação, a paciência e o incentivo durante os treinos fizeram toda a diferença para mim. Sou grata por cada ensinamento e por todo o incentivo para continuar evoluindo e acreditando no meu potencial.",
     },
      {
         name: "Matheus",
-        role: "Projeto social",
-        quote: "###",
+        role: "Treino em grupo",
+        quote: "Irmão, antes das aulas eu já tinha uma noção básica sobre luta, porém não sentia tanta segurança se precisasse entrar em combate. Depois das suas aulas eu me sinto seguro e tranquilo tanto se for para lutar ou se for em caso de defesa pessoal! Com certeza você mudou a minha mentalidade e ampliou minhas técnicas.",
     },
 ];
 

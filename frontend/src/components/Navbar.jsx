@@ -3,11 +3,15 @@ import { Menu, X } from "lucide-react";
 import { handleAnchorClick } from "../lib/utils";
 
 const LINKS = [
-    { href: "#sobre", label: "Sobre" },
-    { href: "#aulas", label: "Aulas" },
-    { href: "#planos", label: "Planos" },
-    { href: "#galeria", label: "Galeria" },
-    { href: "#faq", label: "FAQ" },
+    { href: "#sobre", label: "Quem sou?" },
+    { href: "#trajetoria", label: "Trajetória" },
+    { href: "#local", label: "Onde treinar" },
+    { href: "#beneficios", label: "Benefícios" },
+    { href: "#planos", label: "Planos e valores" },
+    { href: "#pack", label: "Pacotes online" },
+    { href: "#depoimentos", label: "Depoimentos" },
+    { href: "#estrutura", label: "Estrutura das aulas" },
+    { href: "#faq", label: "Perguntas frequentes" },
 ];
 
 export const Navbar = () => {

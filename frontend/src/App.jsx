@@ -37,16 +37,36 @@ function App() {
         <div className="bg-[#0A0A0A] text-white min-h-screen">
             <Navbar />
             <main>
-                <Hero />
-                <About />
-                <Journey />
-                <Formats />
-                <Benefits />
-                <Pricing />
-                <HomePack />
-                <Testimonials />
-                <Gallery />
-                <FAQ />
+                <div id="topo">
+                    <Hero />
+                </div>
+                <div id="sobre">
+                    <About />
+                </div>
+                <div id="trajetoria">
+                    <Journey />
+                </div>
+                <div id="local">
+                    <Formats />
+                </div>
+                <div id="beneficios">
+                    <Benefits />
+                </div>
+                <div id="planos">
+                    <Pricing />
+                </div>
+                <div id="pack">
+                    <HomePack />
+                </div>
+                <div id="depoimentos">
+                    <Testimonials />
+                </div>
+                <div id="estrutura">
+                    <Gallery />
+                </div>
+                <div id="faq">
+                    <FAQ />
+                </div>
                 <FinalCTA />
             </main>
             <WhatsAppFloat />

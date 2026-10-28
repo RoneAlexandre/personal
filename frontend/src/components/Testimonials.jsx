@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useCallback } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeader } from "./Reveal";
 import { TESTIMONIALS } from "../data/content";
@@ -14,12 +14,10 @@ const Stars = () => (
 const QuoteCard = ({ t, i }) => (
     <figure
         data-testid={`testimonial-card-${i}`}
-        className="w-full max-w-[320px] sm:max-w-sm mx-auto flex flex-col justify-between h-full bg-[#141414] border border-neutral-800 p-6 sm:p-8"
+        className="w-full max-w-[320px] sm:max-w-sm mx-auto flex flex-col bg-[#141414] border border-neutral-800 p-6 sm:p-8"
     >
-        <div>
-            <Stars />
-            <blockquote className="mt-4 text-neutral-300 text-sm sm:text-base leading-relaxed">“{t.quote}”</blockquote>
-        </div>
+        <Stars />
+        <blockquote className="mt-4 text-neutral-300 text-sm sm:text-base leading-relaxed">“{t.quote}”</blockquote>
         <figcaption className="mt-6 pt-4 border-t border-neutral-800 flex items-center gap-3">
             <span className="w-10 h-10 shrink-0 flex items-center justify-center bg-terracota/15 border border-terracota/40 font-display text-base text-terracota">
                 {t.name.split(" ").map((w) => w[0]).join("").replace(".", "")}
@@ -46,7 +44,6 @@ const ArrowButton = ({ direction, onClick, className = "" }) => (
 export const Testimonials = () => {
     const total = TESTIMONIALS.length;
     const [index, setIndex] = useState(0);
-    const viewportRef = useRef(null);
     const touchStartX = useRef(null);
 
     const goTo = useCallback(
@@ -76,43 +73,45 @@ export const Testimonials = () => {
 
             <div className="max-w-3xl mx-auto mt-12 px-4 sm:px-16 relative">
                 <div
-                    ref={viewportRef}
                     className="relative overflow-hidden"
                     onTouchStart={onTouchStart}
                     onTouchEnd={onTouchEnd}
                     data-testid="testimonial-track"
                 >
                     <div
-                        className="flex transition-transform duration-500 ease-out items-stretch"
+                        className="flex transition-transform duration-500 ease-out items-start"
                         style={{ transform: `translateX(-${index * 100}%)` }}
                     >
                         {TESTIMONIALS.map((t, i) => (
-                            <div key={t.name} className="w-full shrink-0 px-1 flex">
+                            <div key={t.name} className="w-full shrink-0 px-1 flex flex-col items-center">
                                 <QuoteCard t={t} i={i} />
+
+                                {/* Controlos móveis (telemóvel) logo abaixo de cada card individualmente */}
+                                <div className="flex sm:hidden items-center justify-center gap-4 mt-6 w-full">
+                                    <ArrowButton direction="prev" onClick={prev} />
+                                    <div className="flex gap-1.5">
+                                        {TESTIMONIALS.map((_, dotIndex) => (
+                                            <button
+                                                key={dotIndex}
+                                                type="button"
+                                                aria-label={`Ir para depoimento ${dotIndex + 1}`}
+                                                onClick={() => goTo(dotIndex)}
+                                                className={`h-1.5 rounded-full transition-all duration-300 ${dotIndex === index ? "w-5 bg-[#9C8674]" : "w-1.5 bg-neutral-700"}`}
+                                            />
+                                        ))}
+                                    </div>
+                                    <ArrowButton direction="next" onClick={next} />
+                                </div>
                             </div>
                         ))}
                     </div>
 
-                    <ArrowButton direction="prev" onClick={prev} className="hidden sm:flex absolute -left-14 top-1/2 -translate-y-1/2 z-10" />
-                    <ArrowButton direction="next" onClick={next} className="hidden sm:flex absolute -right-14 top-1/2 -translate-y-1/2 z-10" />
+                    {/* Setas de desktop posicionadas à esquerda e direita do carrossel */}
+                    <ArrowButton direction="prev" onClick={prev} className="hidden sm:flex absolute -left-14 top-[45%] -translate-y-1/2 z-10" />
+                    <ArrowButton direction="next" onClick={next} className="hidden sm:flex absolute -right-14 top-[45%] -translate-y-1/2 z-10" />
                 </div>
 
-                <div className="flex sm:hidden items-center justify-center gap-4 mt-6">
-                    <ArrowButton direction="prev" onClick={prev} />
-                    <div className="flex gap-1.5">
-                        {TESTIMONIALS.map((_, i) => (
-                            <button
-                                key={i}
-                                type="button"
-                                aria-label={`Ir para depoimento ${i + 1}`}
-                                onClick={() => goTo(i)}
-                                className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? "w-5 bg-[#9C8674]" : "w-1.5 bg-neutral-700"}`}
-                            />
-                        ))}
-                    </div>
-                    <ArrowButton direction="next" onClick={next} />
-                </div>
-
+                {/* Indicadores de desktop fixos em baixo */}
                 <div className="hidden sm:flex justify-center gap-1.5 mt-8">
                     {TESTIMONIALS.map((_, i) => (
                         <button

@@ -119,12 +119,12 @@ export const AIChatWidget = () => {
                     </div>
 
                     <form onSubmit={handleSend} className="p-3 bg-[#0D0D0D] border-t border-neutral-800 flex items-center gap-2">
-                        <input
+                       <input
                             type="text"
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder="Escreve a tua dúvida..."
-                            className="flex-1 bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-xs sm:text-sm text-cream placeholder-neutral-500 focus:outline-none focus:border-[#9C8674] transition-colors"
+                            className="flex-1 bg-neutral-900 border border-neutral-800 rounded-lg px-3 py-2 text-base sm:text-sm text-cream placeholder-neutral-500 focus:outline-none focus:border-[#9C8674] transition-colors"
                         />
                         <button
                             type="submit"

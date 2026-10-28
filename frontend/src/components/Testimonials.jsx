@@ -14,11 +14,13 @@ const Stars = () => (
 const QuoteCard = ({ t, i }) => (
     <figure
         data-testid={`testimonial-card-${i}`}
-        className="w-full max-w-[320px] sm:max-w-sm mx-auto flex flex-col bg-[#141414] border border-neutral-800 p-6 sm:p-8"
+        className="w-full max-w-[320px] sm:max-w-sm mx-auto flex flex-col justify-between h-full bg-[#141414] border border-neutral-800 p-6 sm:p-8"
     >
-        <Stars />
-        <blockquote className="mt-4 flex-1 text-neutral-300 text-sm sm:text-base leading-relaxed">“{t.quote}”</blockquote>
-        <figcaption className="mt-5 pt-4 border-t border-neutral-800 flex items-center gap-3">
+        <div>
+            <Stars />
+            <blockquote className="mt-4 text-neutral-300 text-sm sm:text-base leading-relaxed">“{t.quote}”</blockquote>
+        </div>
+        <figcaption className="mt-6 pt-4 border-t border-neutral-800 flex items-center gap-3">
             <span className="w-10 h-10 shrink-0 flex items-center justify-center bg-terracota/15 border border-terracota/40 font-display text-base text-terracota">
                 {t.name.split(" ").map((w) => w[0]).join("").replace(".", "")}
             </span>
@@ -72,7 +74,7 @@ export const Testimonials = () => {
                 <SectionHeader kicker="Depoimentos" title="Quem treina, recomenda" align="center" />
             </div>
 
-            <div className="max-w-3xl mx-auto mt-12 px-4 sm:px-16">
+            <div className="max-w-3xl mx-auto mt-12 px-4 sm:px-16 relative">
                 <div
                     ref={viewportRef}
                     className="relative overflow-hidden"
@@ -81,18 +83,18 @@ export const Testimonials = () => {
                     data-testid="testimonial-track"
                 >
                     <div
-                        className="flex transition-transform duration-500 ease-out"
+                        className="flex transition-transform duration-500 ease-out items-stretch"
                         style={{ transform: `translateX(-${index * 100}%)` }}
                     >
                         {TESTIMONIALS.map((t, i) => (
-                            <div key={t.name} className="w-full shrink-0 px-1">
+                            <div key={t.name} className="w-full shrink-0 px-1 flex">
                                 <QuoteCard t={t} i={i} />
                             </div>
                         ))}
                     </div>
 
-                    <ArrowButton direction="prev" onClick={prev} className="hidden sm:flex absolute -left-14 top-1/2 -translate-y-1/2" />
-                    <ArrowButton direction="next" onClick={next} className="hidden sm:flex absolute -right-14 top-1/2 -translate-y-1/2" />
+                    <ArrowButton direction="prev" onClick={prev} className="hidden sm:flex absolute -left-14 top-1/2 -translate-y-1/2 z-10" />
+                    <ArrowButton direction="next" onClick={next} className="hidden sm:flex absolute -right-14 top-1/2 -translate-y-1/2 z-10" />
                 </div>
 
                 <div className="flex sm:hidden items-center justify-center gap-4 mt-6">

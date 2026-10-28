@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useCallback, useEffect } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeader } from "./Reveal";
 import { TESTIMONIALS } from "../data/content";
@@ -14,7 +14,7 @@ const Stars = () => (
 const QuoteCard = ({ t, i }) => (
     <figure
         data-testid={`testimonial-card-${i}`}
-        className="w-full max-w-[320px] sm:max-w-sm mx-auto flex flex-col bg-[#141414] border border-neutral-800 p-6 sm:p-8"
+        className="w-full max-w-[300px] sm:max-w-sm mx-auto flex flex-col bg-[#141414] border border-neutral-800 p-6 sm:p-8"
     >
         <Stars />
         <blockquote className="mt-4 text-neutral-300 text-sm sm:text-base leading-relaxed">“{t.quote}”</blockquote>
@@ -35,7 +35,7 @@ const ArrowButton = ({ direction, onClick, className = "" }) => (
         type="button"
         aria-label={direction === "prev" ? "Ver depoimento anterior" : "Ver próximo depoimento"}
         onClick={onClick}
-        className={`w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-[#0D0D0D]/90 border border-neutral-800 text-neutral-300 hover:border-[#9C8674]/70 hover:text-[#9C8674] active:border-[#9C8674]/70 active:text-[#9C8674] transition-colors duration-300 ${className}`}
+        className={`w-9 h-9 sm:w-11 sm:h-11 flex items-center justify-center rounded-full bg-[#141414]/90 border border-neutral-800 text-neutral-300 hover:border-[#9C8674]/70 hover:text-[#9C8674] active:border-[#9C8674]/70 active:text-[#9C8674] transition-colors duration-300 shadow-lg ${className}`}
     >
         {direction === "prev" ? <ChevronLeft size={20} /> : <ChevronRight size={20} />}
     </button>
@@ -44,6 +44,7 @@ const ArrowButton = ({ direction, onClick, className = "" }) => (
 export const Testimonials = () => {
     const total = TESTIMONIALS.length;
     const [index, setIndex] = useState(0);
+    const [isPaused, setIsPaused] = useState(false);
     const touchStartX = useRef(null);
 
     const goTo = useCallback(
@@ -52,6 +53,15 @@ export const Testimonials = () => {
     );
     const next = useCallback(() => goTo(index + 1), [goTo, index]);
     const prev = useCallback(() => goTo(index - 1), [goTo, index]);
+
+    // Rolagem automática (autoplay) a cada 5 segundos
+    useEffect(() => {
+        if (isPaused) return;
+        const interval = setInterval(() => {
+            next();
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [next, isPaused]);
 
     const onTouchStart = (e) => {
         touchStartX.current = e.touches[0].clientX;
@@ -66,12 +76,34 @@ export const Testimonials = () => {
     };
 
     return (
-        <section data-testid="testimonials-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800 overflow-hidden">
+        <section 
+            data-testid="testimonials-section" 
+            className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800 overflow-hidden"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
+        >
             <div className="max-w-7xl mx-auto px-5 sm:px-8">
                 <SectionHeader kicker="Depoimentos" title="Quem treina, recomenda" align="center" />
             </div>
 
-            <div className="max-w-3xl mx-auto mt-12 px-4 sm:px-16 relative">
+            <div className="max-w-3xl mx-auto mt-12 px-12 sm:px-16 relative">
+                
+                {/* Seta Esquerda Fixa na Lateral */}
+                <ArrowButton 
+                    direction="prev" 
+                    onClick={prev} 
+                    className="absolute left-1 sm:-left-14 top-[45%] -translate-y-1/2 z-20" 
+                />
+
+                {/* Seta Direita Fixa na Lateral */}
+                <ArrowButton 
+                    direction="next" 
+                    onClick={next} 
+                    className="absolute right-1 sm:-right-14 top-[45%] -translate-y-1/2 z-20" 
+                />
+
                 <div
                     className="relative overflow-hidden"
                     onTouchStart={onTouchStart}
@@ -83,45 +115,11 @@ export const Testimonials = () => {
                         style={{ transform: `translateX(-${index * 100}%)` }}
                     >
                         {TESTIMONIALS.map((t, i) => (
-                            <div key={t.name} className="w-full shrink-0 px-1 flex flex-col items-center">
+                            <div key={t.name} className="w-full shrink-0 px-2">
                                 <QuoteCard t={t} i={i} />
-
-                                {/* Controlos móveis (telemóvel) logo abaixo de cada card individualmente */}
-                                <div className="flex sm:hidden items-center justify-center gap-4 mt-6 w-full">
-                                    <ArrowButton direction="prev" onClick={prev} />
-                                    <div className="flex gap-1.5">
-                                        {TESTIMONIALS.map((_, dotIndex) => (
-                                            <button
-                                                key={dotIndex}
-                                                type="button"
-                                                aria-label={`Ir para depoimento ${dotIndex + 1}`}
-                                                onClick={() => goTo(dotIndex)}
-                                                className={`h-1.5 rounded-full transition-all duration-300 ${dotIndex === index ? "w-5 bg-[#9C8674]" : "w-1.5 bg-neutral-700"}`}
-                                            />
-                                        ))}
-                                    </div>
-                                    <ArrowButton direction="next" onClick={next} />
-                                </div>
                             </div>
                         ))}
                     </div>
-
-                    {/* Setas de desktop posicionadas à esquerda e direita do carrossel */}
-                    <ArrowButton direction="prev" onClick={prev} className="hidden sm:flex absolute -left-14 top-[45%] -translate-y-1/2 z-10" />
-                    <ArrowButton direction="next" onClick={next} className="hidden sm:flex absolute -right-14 top-[45%] -translate-y-1/2 z-10" />
-                </div>
-
-                {/* Indicadores de desktop fixos em baixo */}
-                <div className="hidden sm:flex justify-center gap-1.5 mt-8">
-                    {TESTIMONIALS.map((_, i) => (
-                        <button
-                            key={i}
-                            type="button"
-                            aria-label={`Ir para depoimento ${i + 1}`}
-                            onClick={() => goTo(i)}
-                            className={`h-1.5 rounded-full transition-all duration-300 ${i === index ? "w-6 bg-[#9C8674]" : "w-1.5 bg-neutral-700"}`}
-                        />
-                    ))}
                 </div>
             </div>
         </section>

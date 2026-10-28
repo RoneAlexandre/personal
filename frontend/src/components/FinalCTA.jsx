@@ -1,4 +1,3 @@
-import { Instagram, MessageCircle } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { WHATSAPP_URL, INSTAGRAM_URL, INSTAGRAM_HANDLE } from "../data/content";
 
@@ -19,9 +18,8 @@ export const FinalCTA = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="final-whatsapp-cta"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-black text-cream hover:bg-neutral-900 font-display text-base tracking-wider uppercase px-6 py-3 transition-[background-color,transform] duration-300 hover:-translate-y-0.5 border border-cream/20 shadow-md"
+                        className="w-full sm:w-auto inline-flex items-center justify-center bg-black text-cream hover:bg-neutral-900 font-display text-base tracking-wider uppercase px-8 py-3.5 transition-[background-color,transform] duration-300 hover:-translate-y-0.5 border border-cream/20 shadow-md"
                     >
-                        <MessageCircle size={18} className="text-emerald-500" />
                         Chamar no WhatsApp
                     </a>
 
@@ -31,16 +29,16 @@ export const FinalCTA = () => (
                         target="_blank"
                         rel="noopener noreferrer"
                         data-testid="final-instagram-link"
-                        className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-black/40 hover:bg-black/60 border border-cream/30 hover:border-cream text-cream font-display text-base px-6 py-3 uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 shadow-md"
+                        className="w-full sm:w-auto inline-flex items-center justify-center bg-black/40 hover:bg-black/60 border border-cream/30 hover:border-cream text-cream font-display text-base px-8 py-3.5 uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 shadow-md"
                     >
-                        <Instagram size={18} className="text-amber-500" />
-                        <span>@{INSTAGRAM_HANDLE}</span>
+                        @{INSTAGRAM_HANDLE}
                     </a>
                 </div>
             </Reveal>
         </div>
 
-        <footer className="relative mt-10 sm:mt-12 border-t border-cream/15">
+        {/* Rodapé sem a linha divisória */}
+        <footer className="relative mt-10 sm:mt-12">
             <div className="max-w-7xl mx-auto px-5 sm:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-cream/60 text-[11px] uppercase tracking-widest text-center">
                 <span className="font-display text-sm text-cream/90 tracking-wide">
                     PERSONAL<span className="text-black">FIGHT</span>

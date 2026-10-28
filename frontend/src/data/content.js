@@ -10,7 +10,7 @@ export const WHATSAPP_URL = waLink("Olá, Rone! Vi seu site e gostaria de saber 
 export const INSTAGRAM_URL = `https://instagram.com/${INSTAGRAM_HANDLE}`;
 
 export const IMAGES = {
-    hero: fotoHero,
+    hero: estruturaFoto, 
     about: fotoAbout,
     journey: [
         { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores", description: "[Sua descrição aqui]", cat: "treinos" },
@@ -53,7 +53,6 @@ export const IMAGES = {
         },
     ],
 };
-
 export const FORMATS = [
     {
         number: "01",

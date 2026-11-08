@@ -12,7 +12,7 @@ const CATS = [
 export const Journey = () => {
     const wrapRef = useRef(null);
     const [cat, setCat] = useState("lutas");
-    const items = IMAGES.journey.filter((i) => i.cat === cat);
+    const items = IMAGES.journey.filter((i) => i.cat === cat && i.url);
 
     return (
         <section id="trajetoria" data-testid="journey-section" className="py-24 sm:py-32 bg-[#0D0D0D] border-y border-neutral-800 overflow-hidden">
@@ -63,21 +63,26 @@ export const Journey = () => {
                             >
                                 <img
                                     src={img.url}
-                                    alt={img.caption}
+                                    alt={img.alt || img.caption || "Foto da trajetória"}
                                     loading="lazy"
+                                    decoding="async"
                                     draggable={false}
                                     className="w-full h-full object-cover grayscale-[30%] transition-[transform,filter] duration-700 group-hover:scale-105 group-hover:grayscale-0"
                                 />
-                                <figcaption className="absolute bottom-0 inset-x-0 pt-16 pb-4 px-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
-                                    <span className="block text-[11px] uppercase tracking-[0.15em] text-cream font-semibold">
-                                        {img.caption}
-                                    </span>
-                                    {img.description && (
-                                        <span className="block text-xs text-neutral-300 normal-case leading-relaxed mt-1">
-                                            {img.description}
-                                        </span>
-                                    )}
-                                </figcaption>
+                                {(img.caption || img.description) && (
+                                    <figcaption className="absolute bottom-0 inset-x-0 pt-16 pb-4 px-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent">
+                                        {img.caption && (
+                                            <span className="block text-[11px] uppercase tracking-[0.15em] text-cream font-semibold">
+                                                {img.caption}
+                                            </span>
+                                        )}
+                                        {img.description && (
+                                            <span className="block text-xs text-neutral-300 normal-case leading-relaxed mt-1">
+                                                {img.description}
+                                            </span>
+                                        )}
+                                    </figcaption>
+                                )}
                             </motion.figure>
                         ))}
                     </motion.div>

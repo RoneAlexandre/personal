@@ -1,5 +1,15 @@
 import fotoAbout from '../assets/foto01.webp';
 import estruturaFoto from '../assets/estrutura.jpg';
+import luta1 from '../assets/jornada/luta1.webp';
+import luta2 from '../assets/jornada/luta2.webp';
+import luta3 from '../assets/jornada/luta3.webp';
+import luta4 from '../assets/jornada/luta4.webp';
+import luta5 from '../assets/jornada/luta5.webp';
+import luta6 from '../assets/jornada/luta6.webp';
+import luta7 from '../assets/jornada/luta7.webp';
+import luta9 from '../assets/jornada/luta9.webp';
+import seminarioLobo from '../assets/jornada/seminario-lobo.webp';
+import seminarioRangel from '../assets/jornada/seminario-rangel.webp';
 
 export const WHATSAPP_NUMBER = "5515996984251";
 export const INSTAGRAM_HANDLE = "treinador_rone";
@@ -13,11 +23,23 @@ export const IMAGES = {
     hero: estruturaFoto, 
     about: fotoAbout,
     journey: [
+        // ---- LUTAS (ordem decrescente: luta9 primeiro) ----
+        { url: luta9, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        // luta8: ESPAÇO RESERVADO. Quando tiver a foto, salve em assets/jornada/luta8.webp,
+        // importe no topo deste arquivo (import luta8 from '../assets/jornada/luta8.webp') e troque null por luta8.
+        { url: null, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta7, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta6, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta5, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta4, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta3, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta2, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta1, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        // ---- SEMINÁRIOS ----
+        { url: seminarioLobo, alt: "Foto de seminário", caption: "", description: "", cat: "seminarios" },
+        { url: seminarioRangel, alt: "Foto de seminário", caption: "", description: "", cat: "seminarios" },
+        // ---- TREINOS (fotos de exemplo: trocar pelas suas quando tiver) ----
         { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores", description: "[Sua descrição aqui]", cat: "treinos" },
-        { url: "https://images.unsplash.com/photo-1525680996651-0222228be6f0?q=80&w=800&auto=format&fit=crop", caption: "Dia de luta", description: "[Sua descrição aqui]", cat: "lutas" },
-        { url: "https://images.unsplash.com/photo-1762336219284-a0a5488342a0?q=80&w=800&auto=format&fit=crop", caption: "Seminários e cursos", description: "[Sua descrição aqui]", cat: "seminarios" },
-        { url: "https://images.unsplash.com/photo-1737381508529-a110d717d5a7?q=80&w=800&auto=format&fit=crop", caption: "Preparação no ringue", description: "[Sua descrição aqui]", cat: "lutas" },
-        { url: "https://images.unsplash.com/photo-1558366972-9db89881cbdb?q=80&w=800&auto=format&fit=crop", caption: "Competição", description: "[Sua descrição aqui]", cat: "lutas" },
         { url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=800&auto=format&fit=crop", caption: "Aulas em Itapeva", description: "[Sua descrição aqui]", cat: "treinos" },
     ],
     gallery: [

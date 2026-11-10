@@ -52,7 +52,7 @@ export const IMAGES = {
         {
             url: estruturaFoto,
             alt: "Estrutura de treino",
-            step: "Alongamento",
+            step: "Mobilidade",
             span: "",
         },
         {
@@ -71,6 +71,12 @@ export const IMAGES = {
             url: estruturaFoto,
             alt: "Estrutura de treino",
             step: "Sparring",
+            span: "",
+        },
+        {
+            url: estruturaFoto,
+            alt: "Estrutura de treino",
+            step: "Desaquecimento e alongamento",
             span: "",
         },
     ],

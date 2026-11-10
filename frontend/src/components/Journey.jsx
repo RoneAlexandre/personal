@@ -67,7 +67,7 @@ export const Journey = () => {
                                     loading="lazy"
                                     decoding="async"
                                     draggable={false}
-                                    className="w-full h-full object-cover grayscale-[30%] transition-[transform,filter] duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 {(img.caption || img.description) && (
                                     <figcaption className="absolute bottom-0 inset-x-0 pt-16 pb-4 px-4 bg-gradient-to-t from-black/95 via-black/60 to-transparent">

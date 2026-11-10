@@ -33,8 +33,8 @@ export const IMAGES = {
     journey: [
         // ---- 1º: LUTAS ----
         { url: luta9, alt: "Foto de luta", caption: "Festival de Boxe", description: "Boxe | Outubro de 2026", cat: "lutas" },
-        { url: null, alt: "Foto de luta", caption: "Brasileiro de Kickboxing - ISKA", description: "Kickboxing | Maio de 2023", cat: "lutas" },
-        { url: luta7, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: null, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta7, alt: "Foto de luta", caption: "Brasileiro de Kickboxing - ISKA", description: "Kickboxing | Nocaute 1º Round | Maio de 2023 ", cat: "lutas" },
         { url: luta6, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
         { url: luta5, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
         { url: luta4, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },

@@ -5,8 +5,8 @@ import { IMAGES } from "../data/content";
 
 const CATS = [
     { id: "lutas", label: "Lutas" },
-    { id: "seminarios", label: "Seminários" },
     { id: "treinos", label: "Treinos" },
+    { id: "seminarios", label: "Seminários" },
 ];
 
 export const Journey = () => {

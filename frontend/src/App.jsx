@@ -13,7 +13,6 @@ import { Testimonials } from "@/components/Testimonials";
 import { Gallery } from "@/components/Gallery";
 import { FAQ } from "@/components/FAQ";
 import { FinalCTA } from "@/components/FinalCTA";
-import { AIChatWidget } from "@/components/AIChatWidget"; // Novo widget de IA
 
 function App() {
     useEffect(() => {
@@ -69,7 +68,6 @@ function App() {
                 </div>
                 <FinalCTA />
             </main>
-            <AIChatWidget /> {/* O assistente inteligente flutuante */}
         </div>
     );
 }

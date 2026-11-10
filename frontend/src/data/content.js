@@ -31,11 +31,9 @@ export const IMAGES = {
     hero: estruturaFoto, 
     about: fotoAbout,
     journey: [
-        // ---- LUTAS (ordem decrescente: luta9 primeiro) ----
-        { url: luta9, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
-        // luta8: ESPAÇO RESERVADO. Quando tiver a foto, salve em assets/jornada/luta8.webp,
-        // importe no topo deste arquivo (import luta8 from '../assets/jornada/luta8.webp') e troque null por luta8.
-        { url: null, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        // ---- 1º: LUTAS ----
+        { url: luta9, alt: "Foto de luta", caption: "Festival de Boxe", description: "Boxe | Outubro de 2026", cat: "lutas" },
+        { url: null, alt: "Foto de luta", caption: "Brasileiro de Kickboxing - ISKA", description: "Kickboxing | Maio de 2023", cat: "lutas" },
         { url: luta7, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
         { url: luta6, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
         { url: luta5, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
@@ -43,16 +41,18 @@ export const IMAGES = {
         { url: luta3, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
         { url: luta2, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
         { url: luta1, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
-        // ---- SEMINÁRIOS ----
+
+        // ---- 2º: TREINOS ----
+        { url: treino1, alt: "Treino de Muay Thai", caption: "", description: "", cat: "treinos" },
+        { url: treino2, alt: "Treino de Muay Thai", caption: "", description: "", cat: "treinos" },
+        { url: treino3, alt: "Treino de Muay Thai", caption: "", description: "", cat: "treinos" },
+        { url: treino4, alt: "Treino de Muay Thai", caption: "", description: "", cat: "treinos" },
+        { url: treino5, alt: "Treino de Muay Thai", caption: "", description: "", cat: "treinos" },
+        { url: treino6, alt: "Treino de Muay Thai", caption: "", description: "", cat: "treinos" },
+
+        // ---- 3º: SEMINÁRIOS ----
         { url: seminarioLobo, alt: "Foto de seminário", caption: "", description: "", cat: "seminarios" },
         { url: seminarioRangel, alt: "Foto de seminário", caption: "", description: "", cat: "seminarios" },
-        // ---- TREINOS ----
-        { url: treino1, alt: "Treino de Muay Thai", caption: "Treino com aparadores", description: "[Sua descrição aqui]", cat: "treinos" },
-        { url: treino2, alt: "Treino de Muay Thai", caption: "Trabalho técnico", description: "[Sua descrição aqui]", cat: "treinos" },
-        { url: treino3, alt: "Treino de Muay Thai", caption: "Sequência de golpes", description: "[Sua descrição aqui]", cat: "treinos" },
-        { url: treino4, alt: "Treino de Muay Thai", caption: "Defesa e contra-ataque", description: "[Sua descrição aqui]", cat: "treinos" },
-        { url: treino5, alt: "Treino de Muay Thai", caption: "Potência e explosão", description: "[Sua descrição aqui]", cat: "treinos" },
-        { url: treino6, alt: "Treino de Muay Thai", caption: "Aulas em Itapeva", description: "[Sua descrição aqui]", cat: "treinos" },
     ],
     gallery: [
         {

@@ -11,6 +11,14 @@ import luta9 from '../assets/jornada/luta9.webp';
 import seminarioLobo from '../assets/jornada/seminario-lobo.webp';
 import seminarioRangel from '../assets/jornada/seminario-rangel.webp';
 
+// Imports das fotos de treino da pasta assets/fotos treino
+import treino1 from '../assets/fotos treino/treino1.jpeg';
+import treino2 from '../assets/fotos treino/treino2.jpeg';
+import treino3 from '../assets/fotos treino/treino3.jpeg';
+import treino4 from '../assets/fotos treino/treino4.jpeg';
+import treino5 from '../assets/fotos treino/treino5.jpeg';
+import treino6 from '../assets/fotos treino/treino6.jpeg';
+
 export const WHATSAPP_NUMBER = "5515996984251";
 export const INSTAGRAM_HANDLE = "treinador_rone";
 
@@ -38,9 +46,13 @@ export const IMAGES = {
         // ---- SEMINÁRIOS ----
         { url: seminarioLobo, alt: "Foto de seminário", caption: "", description: "", cat: "seminarios" },
         { url: seminarioRangel, alt: "Foto de seminário", caption: "", description: "", cat: "seminarios" },
-        // ---- TREINOS (fotos de exemplo: trocar pelas suas quando tiver) ----
-        { url: "https://images.unsplash.com/photo-1773289337904-c8b3e110b9f1?q=80&w=800&auto=format&fit=crop", caption: "Treino com aparadores", description: "[Sua descrição aqui]", cat: "treinos" },
-        { url: "https://images.unsplash.com/photo-1561532325-7d5231a2dede?q=80&w=800&auto=format&fit=crop", caption: "Aulas em Itapeva", description: "[Sua descrição aqui]", cat: "treinos" },
+        // ---- TREINOS ----
+        { url: treino1, alt: "Treino de Muay Thai", caption: "Treino com aparadores", description: "[Sua descrição aqui]", cat: "treinos" },
+        { url: treino2, alt: "Treino de Muay Thai", caption: "Trabalho técnico", description: "[Sua descrição aqui]", cat: "treinos" },
+        { url: treino3, alt: "Treino de Muay Thai", caption: "Sequência de golpes", description: "[Sua descrição aqui]", cat: "treinos" },
+        { url: treino4, alt: "Treino de Muay Thai", caption: "Defesa e contra-ataque", description: "[Sua descrição aqui]", cat: "treinos" },
+        { url: treino5, alt: "Treino de Muay Thai", caption: "Potência e explosão", description: "[Sua descrição aqui]", cat: "treinos" },
+        { url: treino6, alt: "Treino de Muay Thai", caption: "Aulas em Itapeva", description: "[Sua descrição aqui]", cat: "treinos" },
     ],
     gallery: [
         {
@@ -81,6 +93,7 @@ export const IMAGES = {
         },
     ],
 };
+
 export const FORMATS = [
     {
         number: "01",
@@ -149,7 +162,7 @@ export const PRICING = {
     ],
     dropIn: "R$ 70",
     extrasTitle: "Valores Adicionais",
-   extras: [
+    extras: [
         { icon: "Home", text: "Aulas a domicílio", price: "R$ 20 por aula" },
         { icon: "Dumbbell", text: "Aluguel de equipamentos", price: "R$ 10 por aula" },
     ],

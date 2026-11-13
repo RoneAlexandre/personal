@@ -11,7 +11,6 @@ import luta9 from '../assets/jornada/luta9.webp';
 import seminarioLobo from '../assets/jornada/seminario-lobo.webp';
 import seminarioRangel from '../assets/jornada/seminario-rangel.webp';
 
-// Imports das fotos de treino da pasta assets/fotos treino
 import treino1 from '../assets/fotos treino/treino1.jpeg';
 import treino2 from '../assets/fotos treino/treino2.jpeg';
 import treino3 from '../assets/fotos treino/treino3.jpeg';
@@ -19,11 +18,10 @@ import treino4 from '../assets/fotos treino/treino4.jpeg';
 import treino5 from '../assets/fotos treino/treino5.jpeg';
 import treino6 from '../assets/fotos treino/treino6.jpeg';
 
-// Imports dos vídeos de treino da pasta assets/videos
-import videoAlongamento from '../assets/videos/alongamento.MOV';
-import videoAquecimento from '../assets/videos/aquecimento.MOV';
-import videoMobilidade from '../assets/videos/mobilidade.MOV';
-import videoTecnica from '../assets/videos/tecnica.MOV';
+import videoAlongamento from '../assets/videos/alongamento.mp4';
+import videoAquecimento from '../assets/videos/aquecimento.mp4';
+import videoMobilidade from '../assets/videos/mobilidade.mp4';
+import videoTecnica from '../assets/videos/tecnica.mp4';
 
 export const WHATSAPP_NUMBER = "5515996984251";
 export const INSTAGRAM_HANDLE = "treinador_rone";

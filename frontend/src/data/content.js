@@ -19,6 +19,12 @@ import treino4 from '../assets/fotos treino/treino4.jpeg';
 import treino5 from '../assets/fotos treino/treino5.jpeg';
 import treino6 from '../assets/fotos treino/treino6.jpeg';
 
+// Imports dos vídeos de treino da pasta assets/videos
+import videoAlongamento from '../assets/videos/alongamento.MOV';
+import videoAquecimento from '../assets/videos/aquecimento.MOV';
+import videoMobilidade from '../assets/videos/mobilidade.MOV';
+import videoTecnica from '../assets/videos/tecnica.MOV';
+
 export const WHATSAPP_NUMBER = "5515996984251";
 export const INSTAGRAM_HANDLE = "treinador_rone";
 
@@ -34,7 +40,7 @@ export const IMAGES = {
         // ---- 1º: LUTAS ----
         { url: luta9, alt: "Foto de luta", caption: "Festival de Boxe", description: "Boxe | Outubro de 2026", cat: "lutas" },
         { url: null, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
-        { url: luta7, alt: "Foto de luta", caption: "Brasileiro de Kickboxing - ISKA", description: "Kickboxing | Nocaute 1º Round | Maio de 2023 ", cat: "lutas" },
+        { url: luta7, alt: "Foto de luta", caption: "Brasileiro de Kickboxing - ISKA", description: "Kickboxing | KO 1º Round | Maio de 2023 ", cat: "lutas" },
         { url: luta6, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
         { url: luta5, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
         { url: luta4, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
@@ -56,14 +62,14 @@ export const IMAGES = {
     ],
     gallery: [
         {
-            url: estruturaFoto,
-            alt: "Estrutura de treino",
+            url: videoAquecimento,
+            alt: "Aquecimento",
             step: "Aquecimento",
             span: "md:col-span-2 md:row-span-2",
         },
         {
-            url: estruturaFoto,
-            alt: "Estrutura de treino",
+            url: videoMobilidade,
+            alt: "Mobilidade",
             step: "Mobilidade",
             span: "",
         },
@@ -74,8 +80,8 @@ export const IMAGES = {
             span: "",
         },
         {
-            url: estruturaFoto,
-            alt: "Estrutura de treino",
+            url: videoTecnica,
+            alt: "Técnica",
             step: "Técnica",
             span: "",
         },
@@ -86,8 +92,8 @@ export const IMAGES = {
             span: "",
         },
         {
-            url: estruturaFoto,
-            alt: "Estrutura de treino",
+            url: videoAlongamento,
+            alt: "Desaquecimento e alongamento",
             step: "Desaquecimento e alongamento",
             span: "",
         },

@@ -14,14 +14,13 @@ export const Gallery = () => (
             </div>
             <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[220px] md:auto-rows-[240px] gap-4">
                 {IMAGES.gallery.map((img, i) => {
-                    // Verifica se a URL termina com .mp4 para saber se é um vídeo
                     const isVideo = typeof img.url === "string" && img.url.toLowerCase().endsWith(".mp4");
 
                     return (
                         <Reveal key={`${img.step}-${i}`} delay={i * 0.08} className={img.span}>
                             <figure
                                 data-testid={`gallery-item-${i}`}
-                                className="relative h-full w-full overflow-hidden group border border-neutral-800 bg-neutral-900"
+                                className="relative h-full w-full overflow-hidden border border-neutral-800 bg-neutral-900"
                             >
                                 {isVideo ? (
                                     <video
@@ -30,20 +29,19 @@ export const Gallery = () => (
                                         loop
                                         muted
                                         playsInline
-                                        className="h-full w-full object-cover grayscale-[35%] transition-[transform,filter] duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                                        className="h-full w-full object-cover"
                                     />
                                 ) : (
                                     <img
                                         src={img.url}
                                         alt={img.alt}
                                         loading="lazy"
-                                        className="h-full w-full object-cover grayscale-[35%] transition-[transform,filter] duration-700 group-hover:scale-105 group-hover:grayscale-0"
+                                        className="h-full w-full object-cover"
                                     />
                                 )}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80 pointer-events-none" />
-                                <span className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-[#9C8674] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true" />
-                                <span className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-[#9C8674] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" aria-hidden="true" />
-                                <figcaption className="absolute inset-x-0 bottom-0 pt-14 pb-4 px-4 bg-gradient-to-t from-black/90 via-black/55 to-transparent flex items-end gap-3 pointer-events-none">
+                                
+                                {/* Legenda limpa na parte inferior com fundo sólido leve para destacar o texto */}
+                                <figcaption className="absolute inset-x-0 bottom-0 py-3 px-4 bg-black/80 flex items-end gap-3 pointer-events-none">
                                     <span className="font-display text-3xl leading-none text-terracota">{String(i + 1).padStart(2, "0")}</span>
                                     <span className="font-display text-2xl sm:text-3xl leading-none uppercase tracking-wide text-cream">{img.step}</span>
                                 </figcaption>

@@ -3,31 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Home, CalendarCheck, ArrowUpRight } from "lucide-react";
 import { Reveal, SectionHeader } from "./Reveal";
 import { PRICING } from "../data/content";
-
-// ÍCONE DE LUVA DE BOXE EXATO DA SUA IMAGEM
-const BoxingGloveIcon = ({ size = 20, className = "" }) => (
-    <svg 
-        width={size} 
-        height={size} 
-        viewBox="0 0 24 24" 
-        fill="none" 
-        stroke="currentColor" 
-        strokeWidth="2" 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-        className={className}
-    >
-        <path d="M7 16V8.5C7 5.5 9 3.5 12.5 3.5C16 3.5 18 5.5 18 8.5V11" />
-        <path d="M15 8C16.8 8.5 19.5 9.8 19.5 12.5C19.5 15.2 16.5 16 15 16" />
-        <path d="M7 16C7 17.5 8 18 12.5 18C15 18 15 17.5 15 16" />
-        <rect x="8" y="16.5" width="8" height="5" rx="1.5" />
-        <rect x="10" y="18.2" width="4" height="1.6" rx="0.8" fill="currentColor" />
-    </svg>
-);
+import luvaSvg from "../assets/luva.svg";
 
 const EXTRA_ICONS = { 
-    Home, 
-    Dumbbell: BoxingGloveIcon 
+    Home 
 };
 
 const DROP_IN_PRICES = {
@@ -154,14 +133,14 @@ export const Pricing = () => {
                     </div>
                 </Reveal>
 
-                {/* VALORES ADICIONAIS - FORMATADO EXATAMENTE COMO A TABELA PRINCIPAL */}
+                {/* VALORES ADICIONAIS */}
                 <Reveal delay={0.15} className="mt-12 sm:mt-16">
                     <h3 className="font-mono text-xs sm:text-sm uppercase tracking-[0.2em] text-terracota mb-6 font-semibold text-center sm:text-left">
                         {PRICING.extrasTitle}
                     </h3>
                     <div className="flex flex-col gap-3" data-testid="pricing-extras">
                         {PRICING.extras.map((ex) => {
-                            const Icon = EXTRA_ICONS[ex.icon];
+                            const IconComponent = EXTRA_ICONS[ex.icon];
                             return (
                                 <div 
                                     key={ex.text} 
@@ -169,7 +148,15 @@ export const Pricing = () => {
                                 >
                                     <div className="flex items-center gap-3 sm:gap-4 min-w-0 flex-1">
                                         <span className="w-10 h-10 sm:w-11 sm:h-11 shrink-0 flex items-center justify-center bg-terracota/10 border border-terracota/30 text-terracota rounded-xl">
-                                            <Icon size={20} className="text-terracota" />
+                                            {IconComponent ? (
+                                                <IconComponent size={20} className="text-terracota" />
+                                            ) : (
+                                                <img 
+                                                    src={ex.icon === "Dumbbell" ? luvaSvg : ex.icon} 
+                                                    alt={ex.text} 
+                                                    className="w-5 h-5 object-contain" 
+                                                />
+                                            )}
                                         </span>
                                         <p className="text-xs sm:text-sm text-neutral-200 leading-snug font-medium truncate sm:whitespace-normal">
                                             {ex.text}

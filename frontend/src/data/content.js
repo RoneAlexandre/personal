@@ -21,6 +21,7 @@ import treino6 from '../assets/fotos treino/treino6.jpeg';
 
 import videoAlongamento from '../assets/videos/alongamento.mp4';
 import videoAquecimento from '../assets/videos/aquecimento.mp4';
+import videoAqtecnico from '../assets/videos/aqtecnico.mp4';
 import videoMobilidade from '../assets/videos/mobilidade.mp4';
 import videoTecnica from '../assets/videos/tecnica.mp4';
 
@@ -75,8 +76,8 @@ export const IMAGES = {
             span: "",
         },
         {
-            url: estruturaFoto,
-            alt: "Estrutura de treino",
+            url: videoAqtecnico,
+            alt: "Aquecimento técnico",
             step: "Aquecimento técnico",
             span: "",
         },

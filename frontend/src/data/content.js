@@ -7,6 +7,7 @@ import luta4 from '../assets/jornada/luta4.webp';
 import luta5 from '../assets/jornada/luta5.webp';
 import luta6 from '../assets/jornada/luta6.webp';
 import luta7 from '../assets/jornada/luta7.webp';
+import luta8 from '../assets/jornada/luta8.webp';
 import luta9 from '../assets/jornada/luta9.webp';
 import seminarioLobo from '../assets/jornada/seminario-lobo.webp';
 import seminarioRangel from '../assets/jornada/seminario-rangel.webp';
@@ -37,14 +38,14 @@ export const IMAGES = {
     journey: [
         // ---- 1º: LUTAS ----
         { url: luta9, alt: "Foto de luta", caption: "Festival de Boxe", description: "Boxe | Outubro de 2026", cat: "lutas" },
-        { url: null, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta8, alt: "Foto de luta", caption: "Hard Fight", description: "Muay Thai | KO 1º Round | Julho de 2023", cat: "lutas" },
         { url: luta7, alt: "Foto de luta", caption: "Brasileiro de Kickboxing - ISKA", description: "Kickboxing | KO 1º Round | Maio de 2023 ", cat: "lutas" },
-        { url: luta6, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
-        { url: luta5, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
-        { url: luta4, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
-        { url: luta3, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
-        { url: luta2, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
-        { url: luta1, alt: "Foto de luta", caption: "", description: "", cat: "lutas" },
+        { url: luta6, alt: "Foto de luta", caption: "Hard Fight", description: "Muay Thai | Maio de 2022", cat: "lutas" },
+        { url: luta5, alt: "Foto de luta", caption: "Hard Fight", description: "Kickboxing | Dezembro de 2021", cat: "lutas" },
+        { url: luta4, alt: "Foto de luta", caption: "Hard Fight", description: "Muay Thai | Março de 2020", cat: "lutas" },
+        { url: luta3, alt: "Foto de luta", caption: "Kombat One", description: "Kickboxing | KO 2º Round | Dezembro de 2019", cat: "lutas" },
+        { url: luta2, alt: "Foto de luta", caption: "Lek Fight", description: " Muay Thai | Outubro de 2019", cat: "lutas" },
+        { url: luta1, alt: "Foto de luta", caption: "CTB FIGHT", description: "Kickboxing | Dezembro de 2017", cat: "lutas" },
 
         // ---- 2º: TREINOS ----
         { url: treino1, alt: "Treino de Muay Thai", caption: "", description: "", cat: "treinos" },
@@ -204,17 +205,7 @@ export const HOME_PACKS = [
 export const HOMEPACK = HOME_PACKS[0];
 
 export const TESTIMONIALS = [
-     {
-        name: "Nome",
-        role: "Subtítulo",
-        quote: "Depoimento",
-    },    
     {
-        name: "André",
-        role: "Aulas em domicílio",
-        quote: "###",
-    },
-     {
         name: "Vitor",
         role: "Treino individual",
         quote: "Ta sendo uma experiência muito boa, as aulas estão sendo ótimas, estou gostando demais!",
@@ -222,7 +213,7 @@ export const TESTIMONIALS = [
      {
         name: "Mariana",
         role: "Aulas em domicílio",
-        quote: "###",
+        quote: "Eu estou gostando demais das aulas! Você ensina com paciência e me ajuda a superar meus limites quando nem eu acho que consigo. Uns meses atrás eu não me imaginava lutando e hoje eu amo, já vejo muita diferença no meu condicionamento físico!",
     },
      {
         name: "Rosilma",

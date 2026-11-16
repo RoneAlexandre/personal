@@ -24,6 +24,8 @@ import videoAquecimento from '../assets/videos/aquecimento.mp4';
 import videoMobilidade from '../assets/videos/mobilidade.mp4';
 import videoTecnica from '../assets/videos/tecnica.mp4';
 
+import luvaSvg from '../assets/luva.svg';
+
 export const WHATSAPP_NUMBER = "5515996984251";
 export const INSTAGRAM_HANDLE = "treinador_rone";
 
@@ -42,7 +44,7 @@ export const IMAGES = {
         { url: luta7, alt: "Foto de luta", caption: "Brasileiro de Kickboxing - ISKA", description: "Kickboxing | KO 1º Round | Maio de 2023 ", cat: "lutas" },
         { url: luta6, alt: "Foto de luta", caption: "Hard Fight", description: "Muay Thai | Maio de 2022", cat: "lutas" },
         { url: luta5, alt: "Foto de luta", caption: "Hard Fight", description: "Kickboxing | Dezembro de 2021", cat: "lutas" },
-        { url: luta4, alt: "Foto de luta", caption: "Hard Fight", description: "Muay Thai | Março de 2020", cat: "lutas" },
+        { url: luta4, alt: "Foto de luta", caption: "Hard Fight", description: "Kickboxing | Março de 2020", cat: "lutas" },
         { url: luta3, alt: "Foto de luta", caption: "Kombat One", description: "Kickboxing | KO 2º Round | Dezembro de 2019", cat: "lutas" },
         { url: luta2, alt: "Foto de luta", caption: "Lek Fight", description: " Muay Thai | Outubro de 2019", cat: "lutas" },
         { url: luta1, alt: "Foto de luta", caption: "CTB FIGHT", description: "Kickboxing | Dezembro de 2017", cat: "lutas" },
@@ -169,7 +171,7 @@ export const PRICING = {
     extrasTitle: "Valores Adicionais",
     extras: [
         { icon: "Home", text: "Aulas a domicílio", price: "R$ 20 por aula" },
-        { icon: "Dumbbell", text: "Aluguel de equipamentos", price: "R$ 10 por aula" },
+        { icon: luvaSvg, text: "Aluguel de equipamentos", price: "R$ 10 por aula" },
     ],
 };
 
@@ -212,7 +214,7 @@ export const TESTIMONIALS = [
     },
      {
         name: "Mariana",
-        role: "Aulas em domicílio",
+        role: "Treino individual",
         quote: "Eu estou gostando demais das aulas! Você ensina com paciência e me ajuda a superar meus limites quando nem eu acho que consigo. Uns meses atrás eu não me imaginava lutando e hoje eu amo, já vejo muita diferença no meu condicionamento físico!",
     },
      {

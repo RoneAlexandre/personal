@@ -59,8 +59,8 @@ export const IMAGES = {
         { url: treino6, alt: "Treino de Muay Thai", caption: "", description: "", cat: "treinos" },
 
         // ---- 3º: SEMINÁRIOS ----
-        { url: seminarioLobo, alt: "Foto de seminário", caption: "", description: "", cat: "seminarios" },
-        { url: seminarioRangel, alt: "Foto de seminário", caption: "", description: "", cat: "seminarios" },
+        { url: seminarioLobo, alt: "Foto de seminário", caption: "Julio Lobo", description: "Março de 2023", cat: "seminarios" },
+        { url: seminarioRangel, alt: "Foto de seminário", caption: "Rangel e Bruno", description: "Agosto de 2024", cat: "seminarios" },
     ],
     gallery: [
         {

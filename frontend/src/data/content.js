@@ -19,11 +19,12 @@ import treino4 from '../assets/fotos treino/treino4.jpeg';
 import treino5 from '../assets/fotos treino/treino5.jpeg';
 import treino6 from '../assets/fotos treino/treino6.jpeg';
 
-import videoAlongamento from '../assets/videos/alongamento.mp4';
 import videoAquecimento from '../assets/videos/aquecimento.mp4';
-import videoAqtecnico from '../assets/videos/aqtecnico.mp4';
 import videoMobilidade from '../assets/videos/mobilidade.mp4';
+import videoAqtecnico from '../assets/videos/aqtecnico.mp4';
 import videoTecnica from '../assets/videos/tecnica.mp4';
+import videoSparring from '../assets/videos/sparring.mp4';
+import videoAlongamento from '../assets/videos/alongamento.mp4';
 
 import luvaSvg from '../assets/luva.svg';
 
@@ -88,8 +89,8 @@ export const IMAGES = {
             span: "",
         },
         {
-            url: estruturaFoto,
-            alt: "Estrutura de treino",
+            url: videoSparring,
+            alt: "Sparring",
             step: "Sparring",
             span: "",
         },

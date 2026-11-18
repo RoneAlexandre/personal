@@ -29,7 +29,7 @@ import videoAlongamento from '../assets/videos/alongamento.mp4';
 import luvaSvg from '../assets/luva.svg';
 
 export const WHATSAPP_NUMBER = "5515996984251";
-export const INSTAGRAM_HANDLE = "treinador_rone";
+export const INSTAGRAM_HANDLE = "rone_treinador";
 
 const waLink = (msg) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 
